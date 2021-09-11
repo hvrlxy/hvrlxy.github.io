@@ -13,7 +13,7 @@ You can access my latest CV [here](./assets/pdfs/Grad_School_Resume.pdf)
 ## PAPERS AND PRESENTATIONS
 **A study on Channel Popularity in Twitch**<br />
 **Ha Le**, Junming Wu, Louis Yu, Melissa Lynn<br />
-\[[paper]\](./assets/pdfs/channel_popularity.pdf)\[[presentation]\](./assets/pdfs/twitch_present_draft.pptx.pdf) | \[[code]\](https://github.com/hvrlxy/twitch_crawling)
+\[[paper](./assets/pdfs/channel_popularity.pdf)\]\[[presentation](./assets/pdfs/twitch_present_draft.pptx.pdf)\]\[[code](https://github.com/hvrlxy/twitch_crawling)\]
 
 **One-dimensional Port-and-Sweep Solitaire Armies**<br />
 Filip Belik, **Ha Le**, Jacob Siehler<br />
