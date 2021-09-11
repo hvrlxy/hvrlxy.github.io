@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# ABOUT ME
+## ABOUT ME
 
 Hi! My name is Ha Le and I'm currently an undergraduate student from Gustavus Adolphus College. I'm pursuing a double major in Computer Science and Mathematics, and possibly a minor in Statistics as well. My research focus on social computing, natural language processing and human-centered machine learning.
 
@@ -10,27 +10,21 @@ During the summer of 2020, I was fortunate enough to work with Dr. Jacob Siehler
 
 You can access my latest CV [here](./assets/pdfs/Grad_School_Resume.pdf)
 
-# PAPERS AND PRESENTATIONS
-**A study on Channel Popularity in Twitch**
+## PAPERS AND PRESENTATIONS
+**A study on Channel Popularity in Twitch**<br />
+**Ha Le**, Junming Wu, Louis Yu, Melissa Lynn<br />
+\[[paper]\](./assets/pdfs/channel_popularity.pdf)\[[presentation]\](./assets/pdfs/twitch_present_draft.pptx.pdf) | \[[code]\](https://github.com/hvrlxy/twitch_crawling)
 
-**Ha Le**, Junming Wu, Louis Yu, Melissa Lynn
+**One-dimensional Port-and-Sweep Solitaire Armies**<br />
+Filip Belik, **Ha Le**, Jacob Siehler<br />
+\[[paper]\](./assets/pdfs/One_dimensional_Port_and_Sweep_Solitaire_Armies__Copy_.pdf)\[[presentation]\](./assets/pdfs/PaSS.pdf)
 
-[paper](./assets/pdfs/channel_popularity.pdf) | [presentation](./assets/pdfs/twitch_present_draft.pptx.pdf) | [code](https://github.com/hvrlxy/twitch_crawling)
-
-**One-dimensional Port-and-Sweep Solitaire Armies**
-
-Filip Belik, **Ha Le**, Jacob Siehler
-
-[paper](./assets/pdfs/One_dimensional_Port_and_Sweep_Solitaire_Armies__Copy_.pdf) | [presentation](./assets/pdfs/PaSS.pdf)
-
-# TEACHING EXPERIENCE
-Fall 2020, Spring 2020: Introduction to Computer Science I&II (178,177)
-
-Spring 2021: Principles of Programming Languages (287)
-
+## TEACHING EXPERIENCE
+Fall 2020, Spring 2020: Introduction to Computer Science I&II (178,177) <br />
+Spring 2021: Principles of Programming Languages (287) <br />
 Fall 2021: Intro to Computer Organization (284)
 
-# NEWS
+## NEWS
 9/7/2021: Start my last semester at Gustavus Adolphus College!
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~.
