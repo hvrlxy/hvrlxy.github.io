@@ -4,9 +4,11 @@ layout: default
 
 ## ABOUT ME
 
-Hi! My name is Ha Le and I'm currently an undergraduate student from Gustavus Adolphus College. I'm pursuing a double major in Computer Science and Mathematics, and possibly a minor in Statistics as well. My research focus on social computing, natural language processing and human-centered machine learning.
+My name is Ha Le and I'm currently an undergraduate student from Gustavus Adolphus College. I'm pursuing a double major in Computer Science and Mathematics, and possibly a minor in Statistics as well. My research focus on social computing, natural language processing and human-centered machine learning.
 
-During the summer of 2020, I was fortunate enough to work with Dr. Jacob Siehler on a solving a modified version of Conway's Soldiers problems: one dimensional port-and-sweep-solitaire army problem. After the summer, I worked under the supervision of Professor Louis Yu on studying channel popularity on Twitch. Our result paper is currently under reviewed at ADMA'21.
+During the summer of 2020, I was fortunate enough to work with Dr. [Jacob Siehler](http://homepages.gac.edu/~jsiehler/) on a solving a modified version of Conway's Soldiers problems: one dimensional port-and-sweep-solitaire army problem. After the summer, I worked under the supervision of Professor [Louis Yu](https://homepages.gac.edu/~lyu/) on studying channel popularity on Twitch. Our result paper is currently under reviewed at ADMA'21.
+
+I have worked at [FPT Software](https://www.fpt-software.com/) as a data engineer during my stay in Vietnam on 2021. During my time there, I also worked for [Renesas Electronics](https://www.renesas.com/us/en) as data scientist intern.
 
 You can access my latest CV [here](./assets/pdfs/Grad_School_Resume.pdf)
 
@@ -20,7 +22,7 @@ Filip Belik, **Ha Le**, Jacob Siehler<br />
 \[[paper](./assets/pdfs/One_dimensional_Port_and_Sweep_Solitaire_Armies__Copy_.pdf)\]\[[presentation](./assets/pdfs/PaSS.pdf)\]
 
 ## TEACHING EXPERIENCE
-* Fall 2020, Spring 2020: Introduction to Computer Science I&II (178,177) <br />
+* Spring 2020 - now: Introduction to Computer Science I&II (178,177) <br />
 * Spring 2021: Principles of Programming Languages (287) <br />
 * Fall 2021: Intro to Computer Organization (284)
 
