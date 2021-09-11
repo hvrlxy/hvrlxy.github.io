@@ -20,9 +20,14 @@ Filip Belik, **Ha Le**, Jacob Siehler<br />
 \[[paper](./assets/pdfs/One_dimensional_Port_and_Sweep_Solitaire_Armies__Copy_.pdf)\]\[[presentation](./assets/pdfs/PaSS.pdf)\]
 
 ## TEACHING EXPERIENCE
-Fall 2020, Spring 2020: Introduction to Computer Science I&II (178,177) <br />
-Spring 2021: Principles of Programming Languages (287) <br />
-Fall 2021: Intro to Computer Organization (284)
+* Fall 2020, Spring 2020: Introduction to Computer Science I&II (178,177) <br />
+* Spring 2021: Principles of Programming Languages (287) <br />
+* Fall 2021: Intro to Computer Organization (284)
+
+## AWARDS AND FUNDINGS
+**Summer 2021 Jeff Roseoff Fund** for undergraduate summer research in MCS department ($2000)<br />
+**Summer 2020 Stephen Hilding Fund** for undergraduate summer research ($3000)<br />
+**Count Folke Bernadotte International Student Scholarship** for international students ($120 000)
 
 ## NEWS
 9/7/2021: Start my last semester at Gustavus Adolphus College!
