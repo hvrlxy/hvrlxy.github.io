@@ -10,7 +10,7 @@ During the summer of 2020, I was fortunate enough to work with Dr. [Jacob Siehle
 
 I have worked at [FPT Software](https://www.fpt-software.com/) as a data engineer during my stay in Vietnam on 2021. During my time there, I also worked for [Renesas Electronics](https://www.renesas.com/us/en) as data scientist intern.
 
-You can access my latest CV [here](./assets/pdfs/Grad_School_Resume.pdf)
+You can access my latest CV [here](./assets/pdfs/Grad_School_Resume.pdf).
 
 ## PAPERS AND PRESENTATIONS
 **A study on Channel Popularity in Twitch**<br />
@@ -22,9 +22,9 @@ Filip Belik, **Ha Le**, Jacob Siehler<br />
 \[[paper](./assets/pdfs/One_dimensional_Port_and_Sweep_Solitaire_Armies__Copy_.pdf)\]\[[presentation](./assets/pdfs/PaSS.pdf)\]
 
 ## TEACHING EXPERIENCE
-* Spring 2020 - now: Introduction to Computer Science I&II (178,177) <br />
-* Spring 2021: Principles of Programming Languages (287) <br />
-* Fall 2021: Intro to Computer Organization (284)
+* Spring 2020 - now: Introduction to Computer Science I&II (MCS-178,177) <br />
+* Spring 2021: Principles of Programming Languages (MCS-287) <br />
+* Fall 2021: Intro to Computer Organization (MCS-284)
 
 ## AWARDS AND FUNDINGS
 **Summer 2021 Jeff Roseoff Fund** for undergraduate summer research in MCS department ($2000)<br />
