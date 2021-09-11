@@ -32,7 +32,7 @@ Filip Belik, **Ha Le**, Jacob Siehler<br />
 **Count Folke Bernadotte International Student Scholarship** for international students ($120 000)
 
 ## NEWS
-9/7/2021: Start my last semester at Gustavus Adolphus College!
+9/7/2021: Start my last year at Gustavus Adolphus College!
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~.
 
