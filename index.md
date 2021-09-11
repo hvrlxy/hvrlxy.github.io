@@ -17,7 +17,7 @@ You can access my latest CV [here](./assets/pdfs/Grad_School_Resume.pdf)
 
 **One-dimensional Port-and-Sweep Solitaire Armies**<br />
 Filip Belik, **Ha Le**, Jacob Siehler<br />
-\[[paper]\](./assets/pdfs/One_dimensional_Port_and_Sweep_Solitaire_Armies__Copy_.pdf)\[[presentation]\](./assets/pdfs/PaSS.pdf)
+\[[paper](./assets/pdfs/One_dimensional_Port_and_Sweep_Solitaire_Armies__Copy_.pdf)\]\[[presentation](./assets/pdfs/PaSS.pdf)\]
 
 ## TEACHING EXPERIENCE
 Fall 2020, Spring 2020: Introduction to Computer Science I&II (178,177) <br />
