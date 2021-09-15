@@ -25,6 +25,7 @@ Filip Belik, **Ha Le**, Jacob Siehler<br />
 * Spring 2020 - now: Introduction to Computer Science I&II (MCS-178,177) <br />
 * Spring 2021: Principles of Programming Languages (MCS-287) <br />
 * Fall 2021: Intro to Computer Organization (MCS-284)
+* Spring 2020 - now: Pre-Calculus, Calculus I, Calculus II, Multivariables Calculus (MCS-119,121,122,222)
 
 ## AWARDS AND FUNDINGS
 **Summer 2021 Jeff Roseoff Fund** for undergraduate summer research in MCS department ($2000)<br />
