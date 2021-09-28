@@ -6,6 +6,9 @@ I like to write about my projects and my hobbies, and I found Medium is the best
 
 ## BLOG POSTS
 
+**Crawling Reddit posts and comment using Python and Pushshift API** <br />
+[\[link\]](https://medium.com/@hle5_28535/crawling-reddit-posts-and-comment-using-python-and-pushshift-api-cb4079de1bb)[\[code\]](https://github.com/hvrlxy/insomnia_analysis/tree/main/code/crawl)
+
 **What people talk about when talking about lockdown** <br />
 [\[link\]](https://medium.com/@hle5_28535/what-do-people-most-concern-during-lockdown-a97c56761f87)[\[code\]](https://github.com/hvrlxy/lockdown_stress)
 
