@@ -33,6 +33,8 @@ Filip Belik, **Ha Le**, Jacob Siehler<br />
 **Count Folke Bernadotte International Student Scholarship** for international students ($120 000)
 
 ## NEWS
+10/5 - 10/6: I'm delighted to be a student host of Professor Francesca Dominici for Nobel Conference 57! Check out her presentation where she talked about her latest research regarding the effects of climate change on COVID-19 mortality [here](https://www.youtube.com/watch?v=clkkG58TWWU)
+
 9/7/2021: Start my last year at Gustavus Adolphus College!
 
 <!-- Text can be **bold**, _italic_, or ~~strikethrough~~.
