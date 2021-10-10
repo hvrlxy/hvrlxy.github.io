@@ -7,7 +7,7 @@ I like to write about my projects and my hobbies, and I found Medium is the best
 ## BLOG POSTS
 
 **PageRank Algorithm and Implementation** <br />
-[\[link\]](https://hvrlxy.github.io//PR.html)[\[paper\]](h./assets/pdfs/PageRank.pdf)
+[\[link\]](https://hvrlxy.github.io//PR.html)[\[paper\]](./assets/pdfs/PageRank.pdf)
 
 **Fourier Transformation and Applications** <br />
 [\[paper\]](./assets/pdfs/Discrete_Fourier_Tranformation.pdf)
