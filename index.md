@@ -4,7 +4,7 @@ layout: default
 
 ## ABOUT ME
 
-My name is Ha Le and I'm currently an undergraduate student from Gustavus Adolphus College. I'm pursuing a double major in Computer Science and Mathematics, and possibly a minor in Statistics as well. My research focus on social computing, natural language processing and human-centered machine learning.
+My name is Ha Le and I'm currently an undergraduate student from Gustavus Adolphus College. I'm pursuing a double major in Computer Science and Mathematics, and possibly a minor in Statistics as well. My research interest is on social computing, natural language processing and human-centered machine learning.
 
 During the summer of 2020, I was fortunate enough to work with Dr. [Jacob Siehler](http://homepages.gac.edu/~jsiehler/) on solving a modified version of Conway's Soldiers: one dimensional port-and-sweep-solitaire army problem. After the summer, I worked under the supervision of Professor [Louis Yu](https://homepages.gac.edu/~lyu/) on studying channel popularity on Twitch. Our result paper is currently under reviewed at ADMA'21.
 
