@@ -9,6 +9,9 @@ I like to write about my projects and my hobbies, and I found Medium is the best
 **PageRank Algorithm and Implementation** <br />
 [\[link\]](https://hvrlxy.github.io//PR.html)[\[paper\]](h./assets/pdfs/PageRank.pdf)
 
+**Fourier Transformation and Applications** <br />
+[\[paper\]](./assets/pdfs/Discrete_Fourier_Tranformation.pdf)
+
 **Crawling Reddit posts and comment using Python and Pushshift API** <br />
 [\[link\]](https://medium.com/@hle5_28535/crawling-reddit-posts-and-comment-using-python-and-pushshift-api-cb4079de1bb)[\[code\]](https://github.com/hvrlxy/insomnia_analysis/tree/main/code/crawl)
 
