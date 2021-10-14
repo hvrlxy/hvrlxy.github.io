@@ -6,6 +6,10 @@ I like to write about my projects and my hobbies, and I found Medium is the best
 
 ## BLOG POSTS
 
+**Rush Hour: HARNESSING THE RAW THEORETICAL POWER OF GRAVITY**
+A fun, competitive board game that I and my partner created during the winter of 2019-2020 that was based on a famous puzzle.
+[\[paper\]](./assets/pdfs/rushhour.pdf)
+
 **PageRank Algorithm and Implementation** <br />
 [\[link\]](https://hvrlxy.github.io//PR.html)[\[paper\]](./assets/pdfs/PageRank.pdf)
 
