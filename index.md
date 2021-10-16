@@ -10,7 +10,7 @@ During the summer of 2020, I was fortunate enough to work with Dr. [Jacob Siehle
 
 I have worked at [FPT Software](https://www.fpt-software.com/) as a data engineer during my stay in Vietnam on 2021. During my time there, I also worked for [Renesas Electronics](https://www.renesas.com/us/en) as data scientist intern.
 
-You can access my latest CV [here](./assets/pdfs/HALE_CV.pdf). I also love to write about my projects and interests, which you can read [here](https://hvrlxy.github.io/blog).
+You can access my latest CV [here](./assets/pdfs/HALE_CV.pdf). I also love to write about my projects and interests, which you can read [here](https://hvrlxy.github.io/blog). My interest revolves around information extraction on the Web, machine learning algorithms, mental health issues and board games.
 
 ## PAPERS AND PRESENTATIONS
 **A study on Channel Popularity in Twitch**<br />
