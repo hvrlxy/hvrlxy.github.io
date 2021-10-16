@@ -11,19 +11,19 @@ A fun, competitive board game that I and my partner created during the winter of
 [\[paper\]](./assets/pdfs/rushhour.pdf)
 
 **PageRank Algorithm and Implementation** <br />
-[\[link\]](https://hvrlxy.github.io//PR.html)[\[paper\]](./assets/pdfs/PageRank.pdf)
+[\[notebook\]](https://hvrlxy.github.io//PR.html)[\[paper\]](./assets/pdfs/PageRank.pdf)
 
 **Fourier Transformation and Applications** <br />
 [\[paper\]](./assets/pdfs/Discrete_Fourier_Tranformation.pdf)
 
 **Crawling Reddit posts and comment using Python and Pushshift API** <br />
-[\[link\]](https://medium.com/@hle5_28535/crawling-reddit-posts-and-comment-using-python-and-pushshift-api-cb4079de1bb)[\[code\]](https://github.com/hvrlxy/insomnia_analysis/tree/main/code/crawl)
+[\[post\]](https://medium.com/@hle5_28535/crawling-reddit-posts-and-comment-using-python-and-pushshift-api-cb4079de1bb)[\[code\]](https://github.com/hvrlxy/insomnia_analysis/tree/main/code/crawl)
 
 **What people talk about when talking about lockdown** <br />
-[\[link\]](https://medium.com/@hle5_28535/what-do-people-most-concern-during-lockdown-a97c56761f87)[\[code\]](https://github.com/hvrlxy/lockdown_stress)
+[\[post\]](https://medium.com/@hle5_28535/what-do-people-most-concern-during-lockdown-a97c56761f87)[\[code\]](https://github.com/hvrlxy/lockdown_stress)
 
 **Color your terminal with Rich API** <br />
-[\[link\]](https://medium.com/@hle5_28535/color-your-terminal-with-rich-api-b2c9cf6a7b88)[\[source\]](https://rich.readthedocs.io/en/latest/index.html)
+[\[post\]](https://medium.com/@hle5_28535/color-your-terminal-with-rich-api-b2c9cf6a7b88)[\[source\]](https://rich.readthedocs.io/en/latest/index.html)
 
 **A SELF-QUIZ PROGRAM ON RENAISSANCE ARTWORKS** <br />
 Open-source dataset on Renaissance artworks from 1250-1425, and a self-quiz program that has helped me tremendously getting through the exams for ART-245. <br />
