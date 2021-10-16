@@ -32,6 +32,11 @@ Filip Belik, **Ha Le**, Jacob Siehler<br />
 **Summer 2020 Stephen Hilding Fund** for undergraduate summer research ($3000)<br />
 **Count Folke Bernadotte International Student Scholarship** for international students ($120 000)
 
+## MISCELLANEOUS
+* I am a big fan of algorithmic problem solving! I used to be active on Kattis, and at one point make it to top100 programmers with the highest score. My profile is [ha-le](https://open.kattis.com/users/ha-le) and I posted all of my submission (in Kotlin) on [github](https://github.com/hvrlxy/KATTIS)
+* I love running! I started running everyday since my freshman year as part of a weightloss effort, but overtime, I grew very fond of the sport. I tried to run 5 miles almost everyday, and enjoy a few cheat days now and then.
+* Over the summer of 2021, I started to do pilates to mitigate my insomnia and headache.
+
 ## NEWS
 10/5 - 10/6: I'm delighted to be a student host of Professor Francesca Dominici for Nobel Conference 57! Check out her presentation where she talked about her latest research regarding the effects of climate change on COVID-19 mortality [here](https://www.youtube.com/watch?v=clkkG58TWWU)
 
