@@ -6,6 +6,9 @@ I like to write about my projects and my hobbies, and I found Medium is the best
 
 ## BLOG POSTS
 
+**Examining the use of Prescription Pills and Alternative Treatments for Insomnia through data from Reddit (Part 1)** <br />
+[\[post\]](https://medium.com/@hle5_28535/examining-the-use-of-prescription-pills-and-alternative-treatments-for-insomnia-through-data-from-517c79c878cf)[\[dataset\]](https://github.com/hvrlxy/insomnia_analysis/tree/main/data)
+
 **Rush Hour: HARNESSING THE RAW THEORETICAL POWER OF GRAVITY** <br />
 A fun, competitive board game that I and my partner created during the winter of 2019-2020 that was based on a famous puzzle. <br />
 [\[paper\]](./assets/pdfs/rushhour.pdf)
