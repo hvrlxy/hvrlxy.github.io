@@ -4,7 +4,7 @@ layout: default
 
 I like to write about my projects and my hobbies, and I found Medium is the best platform that provide easy format for people to start writing. This helps me documenting my work and my thoughts, and it is also my way of practicing writing. However, I felt like what I wrote is beyond the scope of Medium, so I mostly kept my posts as unlisted, and I linked them back here.
 
-## BLOG POSTS
+## PROJECTS AND BLOG POSTS
 
 **Examining the use of Prescription Pills and Alternative Treatments for Insomnia through data from Reddit (Part 1)** <br />
 [\[post\]](https://medium.com/@hle5_28535/examining-the-use-of-prescription-pills-and-alternative-treatments-for-insomnia-through-data-from-517c79c878cf)[\[dataset\]](https://github.com/hvrlxy/insomnia_analysis/tree/main/data)
