@@ -6,7 +6,7 @@ layout: default
 
 My name is Ha Le and I'm currently an undergraduate student from Gustavus Adolphus College. I'm pursuing a double major in Computer Science and Mathematics, and possibly a minor in Statistics as well. My research interest is on social computing, natural language processing and human-centered machine learning.
 
-During the summer of 2020, I was fortunate enough to work with Dr. [Jacob Siehler](http://homepages.gac.edu/~jsiehler/) on solving a modified version of Conway's Soldiers: one dimensional port-and-sweep-solitaire army problem. After the summer, I worked under the supervision of Professor [Louis Yu](https://homepages.gac.edu/~lyu/) on studying channel popularity on Twitch. Our result paper is currently under reviewed at ADMA'21.
+During the summer of 2020, I was fortunate enough to work with Dr. [Jacob Siehler](http://homepages.gac.edu/~jsiehler/) on solving a modified version of Conway's Soldiers: one dimensional port-and-sweep-solitaire army problem. After the summer, I worked under the supervision of Professor [Louis Yu](https://homepages.gac.edu/~lyu/) on studying channel popularity on Twitch. Our result paper is currently under reviewed at ISAIC'21.
 
 I have worked at [FPT Software](https://www.fpt-software.com/) as a data engineer during my stay in Vietnam on 2021. During my time there, I also worked for [Renesas Electronics](https://www.renesas.com/us/en) as data scientist intern.
 
@@ -35,9 +35,10 @@ Filip Belik, **Ha Le**, Jacob Siehler<br />
 ## MISCELLANEOUS
 * I am a big fan of algorithmic problem solving! I used to be active on Kattis, and at one point make it to top100 programmers with the highest score. My profile is [ha-le](https://open.kattis.com/users/ha-le) and I posted all of my submission (in Kotlin) on [github](https://github.com/hvrlxy/KATTIS)
 * I love running! I started running everyday since my freshman year as part of a weightloss effort, but overtime, I grew very fond of the sport. I tried to run 5 miles almost everyday, and enjoy a few cheat days now and then.
-* Over the summer of 2021, I started to do pilates to mitigate my insomnia and headache. It was extremely effective! I have tried acupunture, sleeping pills, therapy, ... but none of them work as great as pilates.
 
 ## NEWS
+10/25: Great news! Our poster titled "A study on Channel Popularity in Twitch" has been accepted at the Midstates Consortium’s Physical Sciences, Math & Computer Science Research Symposium on November 13, 2021.
+
 10/5 - 10/6: I'm delighted to be a student host of Professor Francesca Dominici for Nobel Conference 57! Check out her presentation where she talked about her latest research regarding the effects of climate change on COVID-19 mortality [here](https://www.youtube.com/watch?v=clkkG58TWWU)
 
 9/7/2021: Start my last year at Gustavus Adolphus College!
