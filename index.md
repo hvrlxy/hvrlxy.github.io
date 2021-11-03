@@ -37,6 +37,8 @@ Filip Belik, **Ha Le**, Jacob Siehler<br />
 * I love running! I started running everyday since my freshman year as part of a weightloss effort, but overtime, I grew very fond of the sport. I tried to run 5 miles almost everyday, and enjoy a few cheat days now and then.
 
 ## NEWS
+11/1: I will start my new independent research project with Professor Jillian Downey and Professor Jeff Ford on the efficacy of the new standard-based teaching techniques employed at Gustavus. The project will start next spring and be a part of my honor thesis.
+
 10/25: Great news! Our poster titled "A study on Channel Popularity in Twitch" has been accepted at the Midstates Consortium’s Physical Sciences, Math & Computer Science Research Symposium on November 13, 2021.
 
 10/5 - 10/6: I'm delighted to be a student host of Professor Francesca Dominici for Nobel Conference 57! Check out her presentation where she talked about her latest research regarding the effects of climate change on COVID-19 mortality [here](https://www.youtube.com/watch?v=clkkG58TWWU)
