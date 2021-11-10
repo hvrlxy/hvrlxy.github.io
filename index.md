@@ -15,7 +15,7 @@ You can access my latest CV [here](./assets/pdfs/HALE_CV.pdf). I also love to wr
 ## PAPERS AND PRESENTATIONS
 **A study on Channel Popularity in Twitch**<br />
 **Ha Le**, Junming Wu, Louis Yu, Melissa Lynn<br />
-\[[paper](./assets/pdfs/twitch.pdf)\]\[[presentation](./assets/pdfs/twitch_present_draft.pptx.pdf)\]\[[code](https://github.com/hvrlxy/twitch_crawling)\]\[[poster] (https://symposium.foragerone.com/mcms-2021-symposium-phyical-sci-math-computer-sci/presentations/34700)\]
+\[[paper](./assets/pdfs/twitch.pdf)\]\[[presentation](./assets/pdfs/twitch_present_draft.pptx.pdf)\]\[[code](https://github.com/hvrlxy/twitch_crawling)\]\[[poster](https://symposium.foragerone.com/mcms-2021-symposium-phyical-sci-math-computer-sci/presentations/34700)\]
 
 **One-dimensional Port-and-Sweep Solitaire Armies**<br />
 Filip Belik, **Ha Le**, Jacob Siehler<br />
