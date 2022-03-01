@@ -38,7 +38,8 @@ Filip Belik, **Ha Le**, Jacob Siehler<br />
 * Currently, I am working on a python package to assist data scientist in exttracting meaningful table-like information from a html source code. There have been a lot of great library designed to extract information from the web, but I aim to create a library that can help data scientists extracting data without format knowlegde of HTML/CSS. Link to the project [here]{https://github.com/hvrlxy/html_mining} 
 
 ## NEWS
-2/3: Receive acceptance letter from my dream PhD program! Looking forwards to visiting day.
+2/14: Receive acceptance letter from my dream PhD program! Looking forwards to visiting day.
+
 11/1: I will start my new independent research project with Professor Jillian Downey and Professor Jeff Ford on the efficacy of the new standard-based teaching techniques employed at Gustavus. The project will start next spring and be a part of my honor thesis.
 
 10/25: Our poster titled "A study on Channel Popularity in Twitch" has been accepted at the Midstates Consortium’s Physical Sciences, Math & Computer Science Research Symposium on November 13, 2021.
