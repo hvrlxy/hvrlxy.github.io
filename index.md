@@ -4,15 +4,20 @@ layout: default
 
 ## ABOUT ME
 
-My name is Ha Le and I'm currently an undergraduate student from Gustavus Adolphus College. I'm pursuing a double major in Computer Science and Mathematics. My research focuses on algorithms,machine learning, data science and social computing.
+My name is Ha Le and I'm an incoming PhD student in Computer Science at Northeastern University. My research lies in the intersection of HCI and Data Science. I'm interested in designing software and algorithms to detect mental health issues, and coming up with novel intervention system to aid the treatment of people with mental problems. I'm very fortunate to be under the supervision of Professor [Varun Mishra](https://varunmishra.com/) and Professor [Stephen Intille](https://www.ccs.neu.edu/home/intille/).
 
-During the summer of 2020, I was fortunate enough to work with Dr. [Jacob Siehler](http://homepages.gac.edu/~jsiehler/) on solving a modified version of Conway's Soldiers: one dimensional port-and-sweep-solitaire army problem. After the summer, I worked under the supervision of Professor [Louis Yu](https://homepages.gac.edu/~lyu/) on studying channel popularity on Twitch. Our result paper is currently under reviewed at KDD Workshop'21.
+I received my Bachelor degree in Mathematics and Computer Science from Gustavus Adolphus College in 2022. During my 4 years at Gustavus, I did research under the supervision of Prof. Louis Yu, Jillian Downey and Jacob Siehler. I worked under a number of research project in Mathematics, Statistics and Social Computing. I considered myself a theoretical person, but I enjoy coding and would love to branch out to other applied fields.
 
 I have worked at [FPT Software](https://www.fpt-software.com/) as a data engineer during my stay in Vietnam on 2021. During my time there, I also worked for [Renesas Electronics](https://www.renesas.com/us/en) as data scientist intern.
 
-You can access my latest CV [here](./assets/pdfs/GRADCV.pdf). I also love to write about my projects and interests, which you can read [here](https://hvrlxy.github.io/blog). My interest revolves around information extraction on the Web, machine learning algorithms, mental health issues and board games.
+You can access my latest CV [here](./assets/pdfs/GRADAPP_CV.pdf). I also love to write about my projects and interests, which you can read [here](https://hvrlxy.github.io/blog). My interest revolves around information extraction on the Web, machine learning algorithms, mental health issues and board games.
 
 ## PAPERS AND PRESENTATIONS
+**Investigating Student Participation and Performance in Calculus I Courses that Utilize Standards-Based Grading**<br />
+*Undergraduate Research Project Competition (USRESP)*
+Rachel Erickson, Ha Le, Kaylee Vick, Jillian Downey<br />
+\[[paper](./assets/pdfs/SBG_paper.pdf)\]\[[code/dataset](https://github.com/hvrlxy/sbg_research)\] \[[poster](./assets/pdfs/SBG_Research.pdf)\]
+
 **A study on Channel Popularity in Twitch**<br />
 **Ha Le**, Junming Wu, Louis Yu, Melissa Lynn<br />
 \[[paper](./assets/pdfs/twitch.pdf)\]\[[presentation](./assets/pdfs/twitch_present_draft.pptx.pdf)\]\[[code](https://github.com/hvrlxy/twitch_crawling)\] \[[poster](./assets/pdfs/POSTER.pdf)\]
@@ -35,11 +40,9 @@ Filip Belik, **Ha Le**, Jacob Siehler<br />
 ## MISCELLANEOUS
 * I am a big fan of algorithmic problem solving! I used to be active on Kattis, and at one point make it to top100 programmers with the highest score. My profile is [ha-le](https://open.kattis.com/users/ha-le) and I posted all of my submission (in Kotlin) on [github](https://github.com/hvrlxy/KATTIS)
 * I love running! I started running everyday since my freshman year as part of a weightloss effort, but overtime, I grew very fond of the activity. I tried to run 5 miles almost everyday, and enjoy a few cheat days now and then.
-* Currently, I am working on a python package to assist data scientist in exttracting meaningful table-like information from a html source code. There have been a lot of great library designed to extract information from the web, but I aim to create a library that can help data scientists extracting data without format knowlegde of HTML/CSS. Link to the project [here]{https://github.com/hvrlxy/html_mining} 
+
 
 ## NEWS
-2/14: Receive acceptance letter from my dream PhD program! Looking forwards to visiting day.
-
 11/1: I will start my new independent research project with Professor Jillian Downey and Professor Jeff Ford on the efficacy of the new standard-based teaching techniques employed at Gustavus. The project will start next spring and be a part of my honor thesis.
 
 10/25: Our poster titled "A study on Channel Popularity in Twitch" has been accepted at the Midstates Consortium’s Physical Sciences, Math & Computer Science Research Symposium on November 13, 2021.
