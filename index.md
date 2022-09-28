@@ -14,8 +14,9 @@ You can access my latest CV [here](./assets/pdfs/GRADAPP_CV.pdf). I also love to
 
 ## PAPERS AND PRESENTATIONS
 **Investigating Student Participation and Performance in Calculus I Courses that Utilize Standards-Based Grading**<br />
-*Undergraduate Research Project Competition (USRESP)* <br />
-Rachel Erickson, Ha Le, Kaylee Vick, Jillian Downey<br />
+***Honorable Mention*** *at Undergraduate Research Project Competition (USRESP)* <br />
+*Electronic Undergraduate Research Conference (eURC)* (To be presented) <br />
+**Ha Le**, Rachel Erickson, Kaylee Vick, Jillian Downey<br />
 \[[paper](./assets/pdfs/SBG_paper.pdf)\]\[[code/dataset](https://github.com/hvrlxy/sbg_research)\] \[[poster](./assets/pdfs/SBG_Research.pdf)\]
 
 **A study on Channel Popularity in Twitch**<br />
