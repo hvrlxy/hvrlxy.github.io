@@ -4,15 +4,32 @@ layout: default
 
 ## ABOUT ME
 
-My name is Ha Le and I'm an incoming PhD student in Computer Science at Northeastern University. My research lies in the intersection of HCI and Data Science. I'm interested in designing software and algorithms to detect mental health issues, and coming up with novel intervention system to aid the treatment of people with mental problems. I'm very fortunate to be under the supervision of Professor [Varun Mishra](https://varunmishra.com/) and Professor [Stephen Intille](https://www.ccs.neu.edu/home/intille/).
+My name is Ha Le and I'm an incoming PhD student in Computer Science at Northeastern University. My research lies in the intersection of HCI and Data Science. My research areas are HCI, Ubicomp and Wearables. Particularly, I worked on multimodal data annotation interface for human activity and behavioral recognition. I love leveraging different device form factors, input modalities and sensors to design software that empower people to monitor their data and train their own machine learning models.
 
-I received my Bachelor degree in Mathematics and Computer Science from Gustavus Adolphus College in 2022. During my 4 years at Gustavus, I did research under the supervision of Prof. Louis Yu, Jillian Downey and Jacob Siehler. I worked under a number of research project in Mathematics, Statistics and Social Computing. I considered myself a theoretical person, but I enjoy coding and would love to branch out to other applied fields.
-
-I have worked at [FPT Software](https://www.fpt-software.com/) as a data engineer during my stay in Vietnam on 2021. During my time there, I also worked for [Renesas Electronics](https://www.renesas.com/us/en) as data scientist intern.
-
-You can access my latest CV [here](./assets/pdfs/GRADAPP_CV.pdf). I also love to write about my projects and interests, which you can read [here](https://hvrlxy.github.io/blog). My interest revolves around information extraction on the Web, machine learning algorithms, mental health issues and board games.
+I received my Bachelor degree in Mathematics and Computer Science from Gustavus Adolphus College in 2022. During my 4 years at Gustavus, I did research under the supervision of Prof. Louis Yu, Jillian Downey and Jacob Siehler.
 
 ## PAPERS AND PRESENTATIONS
+
+**Collecting self-reported physical activity and posture data using audio-based ecological momentary assessment**<br />
+Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies<br />
+**Ha Le**, Rithika Lakshminarayanan, Jixin Li, Varun Mishra, and Stephen Intille<br />
+\[[link](https://doi.org/10.1145/3678584)\]
+
+**Detecting Sleep Disruptions in Adolescents Using Context-sensitive Ecological Momentary Assessment: A Feasibility Study**<br />
+Proceedings of the 13th EAI International Conference on Pervasive Computing Technologies for Healthcare<br />
+Rithika Lakshminarayanan, Arushi Uppal, **Ha Le**, James C. Spilsbury and Stephen Intille<br />
+\[[link](https://www.researchprotocols.org/2024/1/e57699)\]
+
+**mHealth-Based Just-in-Time Adaptive Intervention to Improve the Physical Activity Levels of Individuals With Spinal Cord Injury: Protocol for a Randomized Controlled Trial**<br />
+JMIR Research Protocols<br />
+Rachel L Carey\*,  **Ha Le\***, Donna L Coffman, Inbal Nahum-Shani, Mohanraj Thirumalai, Cole Hagen, Laura A Baehr, Mary Schmidt-Read, Marlyn S R Lamboy, Stephanie A Kolakowsky-Hayner, Ralph J Marino, Stephen S Intille, Shivayogi V Hiremath<br />
+\[[link](https://www.researchprotocols.org/2024/1/e57699)\]
+
+**A feasibility study on the use of audio-based ecological momentary assessment with persons with aphasia**<br />
+ASSETS '23: Proceedings of the 25th International ACM SIGACCESS Conference on Computers and Accessibility<br />
+Jack Hester, **Ha Le**, Stephen Intille, Erin Meier<br />
+\[[link](https://doi.org/10.1145/3597638.3608419)\]
+
 **Investigating Student Participation and Performance in Calculus I Courses that Utilize Standards-Based Grading**<br />
 ***Honorable Mention*** *at Undergraduate Research Project Competition (USRESP)* <br />
 *Electronic Undergraduate Research Conference (eURC)* (To be presented) <br />
@@ -38,16 +55,5 @@ Filip Belik, **Ha Le**, Jacob Siehler<br />
 **Summer 2020 Stephen Hilding Fund** for undergraduate summer research ($3000)<br />
 **Count Folke Bernadotte International Student Scholarship** for international students ($120 000)
 
-## MISCELLANEOUS
-* I am a big fan of algorithmic problem solving! I used to be active on Kattis, and at one point make it to top100 programmers with the highest score. My profile is [ha-le](https://open.kattis.com/users/ha-le) and I posted all of my submission (in Kotlin) on [github](https://github.com/hvrlxy/KATTIS)
-* I love running! I started running everyday since my freshman year as part of a weightloss effort, but overtime, I grew very fond of the activity. I tried to run 5 miles almost everyday, and enjoy a few cheat days now and then.
-
-
 ## NEWS
-11/1: I will start my new independent research project with Professor Jillian Downey and Professor Jeff Ford on the efficacy of the new standard-based teaching techniques employed at Gustavus. The project will start next spring and be a part of my honor thesis.
-
-10/25: Our poster titled "A study on Channel Popularity in Twitch" has been accepted at the Midstates Consortium’s Physical Sciences, Math & Computer Science Research Symposium on November 13, 2021.
-
-10/5 - 10/6: I'm delighted to be a student host of Professor Francesca Dominici for Nobel Conference 57! Check out her presentation where she talked about her latest research regarding the effects of climate change on COVID-19 mortality [here](https://www.youtube.com/watch?v=clkkG58TWWU)
-
-9/7/2021: Start my last year at Gustavus Adolphus College!
+10/5/24-10/9/24: I will be presenting my work on audio-uEMA at Ubicomp/IWSC 2024!
