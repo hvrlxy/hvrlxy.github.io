@@ -16,7 +16,7 @@ Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technolog
 \[[link](https://doi.org/10.1145/3678584)\]\[[paper](./assets/pdfs/audiouEMA.pdf)\]
 
 **Detecting Sleep Disruptions in Adolescents Using Context-sensitive Ecological Momentary Assessment: A Feasibility Study**<br />
-Proceedings of the 18th EAI International Conference on Pervasive Computing Technologies for Healthcare (*PervasiveHealth*)<br />
+Proceedings of the 18th EAI International Conference on Pervasive Computing Technologies for Healthcare (*PervasiveHealth*)<br/>
 Rithika Lakshminarayanan, Arushi Uppal, **Ha Le**, James C. Spilsbury and Stephen Intille<br />
 \[[link](https://www.researchprotocols.org/2024/1/e57699)\]\[[paper](./assets/pdfs/sleep.pdf)\]
 
