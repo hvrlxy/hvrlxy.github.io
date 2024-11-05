@@ -32,7 +32,7 @@ JMIR Research Protocols<br />
 Rachel L Carey\*,  **Ha Le\***, Donna L Coffman, Inbal Nahum-Shani, Mohanraj Thirumalai, Cole Hagen, Laura A Baehr, Mary Schmidt-Read, Marlyn S R Lamboy, Stephanie A Kolakowsky-Hayner, Ralph J Marino, Stephen S Intille, Shivayogi V Hiremath<br />
 \[[link](https://www.researchprotocols.org/2024/1/e57699)\]
 
-**A feasibility study on the use of audio-based ecological momentary assessment with persons with aphasia**<br />
+**A Feasibility Study on the Use of Audio-based Ecological Momentary Assessment with Persons with Aphasia**<br />
 Proceedings of the 25th International ACM SIGACCESS Conference on Computers and Accessibility (*ASSETS'23*) <br />
 Jack Hester, **Ha Le**, Stephen Intille, Erin Meier<br />
 \[[link](https://doi.org/10.1145/3597638.3608419)\]
