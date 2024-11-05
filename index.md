@@ -32,7 +32,7 @@ Rachel L Carey\*,  **Ha Le\***, Donna L Coffman, Inbal Nahum-Shani, Mohanraj Thi
 \[[link](https://www.researchprotocols.org/2024/1/e57699)\]
 
 **A feasibility study on the use of audio-based ecological momentary assessment with persons with aphasia**<br />
-*ASSETS '23*: Proceedings of the 25th International ACM SIGACCESS Conference on Computers and Accessibility<br />
+Proceedings of the 25th International ACM SIGACCESS Conference on Computers and Accessibility (*ASSETS'23*) <br />
 Jack Hester, **Ha Le**, Stephen Intille, Erin Meier<br />
 \[[link](https://doi.org/10.1145/3597638.3608419)\]
 
