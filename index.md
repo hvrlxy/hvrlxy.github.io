@@ -24,8 +24,9 @@ Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technolog
 **Detecting Sleep Disruptions in Adolescents Using Context-sensitive Ecological Momentary Assessment: A Feasibility Study**<br />
 Proceedings of the 18th EAI International Conference on Pervasive Computing Technologies for Healthcare (*PervasiveHealth'24*)<br/>
 Rithika Lakshminarayanan, Arushi Uppal, **Ha Le**, James C. Spilsbury and Stephen Intille<br />
-\[[pdf](./assets/pdfs/sleep.pdf)\] 
+\[[pdf](./assets/pdfs/sleep.pdf)\] <br />
 <!-- \[[link](https://www.researchprotocols.org/2024/1/e57699)\]\[[paper](./assets/pdfs/sleep.pdf)\] -->
+
 **mHealth-Based Just-in-Time Adaptive Intervention to Improve the Physical Activity Levels of Individuals With Spinal Cord Injury: Protocol for a Randomized Controlled Trial**<br />
 JMIR Research Protocols<br />
 Rachel L Carey\*,  **Ha Le\***, Donna L Coffman, Inbal Nahum-Shani, Mohanraj Thirumalai, Cole Hagen, Laura A Baehr, Mary Schmidt-Read, Marlyn S R Lamboy, Stephanie A Kolakowsky-Hayner, Ralph J Marino, Stephen S Intille, Shivayogi V Hiremath<br />
