@@ -10,11 +10,11 @@ I received my Bachelor degree in Mathematics and Computer Science from Gustavus 
 
 ## PUBLICATIONS
 
-**Feasibility and Utility of Multimodal Micro Ecological Momentary Assessment on a Smartwatch**<br />
+<!-- **Feasibility and Utility of Multimodal Micro Ecological Momentary Assessment on a Smartwatch**<br />
 **Ha Le**, Veronika Potter, Rithika Lakshminarayanan, Varun Mishra, and Stephen Intille<br />
 
 **An Evaluation of Temporal and Categorical Uncertainty on Timelines: A Case Study in Human Activity Recall Visualizations**<br />
-Veronika Potter, **Ha Le**, Uzma Haque Syeda, Stephen Intille and Michelle Borkin<br />
+Veronika Potter, **Ha Le**, Uzma Haque Syeda, Stephen Intille and Michelle Borkin<br /> -->
 
 **Collecting Self-reported Physical Activity and Posture Data using Audio-based Ecological Momentary Assessment**<br />
 Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (*IMWUT'24*)<br />
