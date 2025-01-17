@@ -10,8 +10,9 @@ I received my Bachelor degree in Mathematics and Computer Science from Gustavus 
 
 ## PUBLICATIONS
 **Feasibility and Utility of Multimodal Micro Ecological Momentary Assessment on a Smartwatch**<br />
-Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems (*CHI'25*)<br />
+Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (*CHI'25*)<br />
 **Ha Le**, Veronika Potter, Rithika  Lakshminarayanan, Varun Mishra, and Stephen Intille<br /> 
+\[[link](https://doi.org/10.1145/3706598.3714086)\]
 
 **An Evaluation of Temporal and Categorical Uncertainty on Timelines: A Case Study in Human Activity Recall Visualizations**<br />
 Veronika Potter, **Ha Le**, Uzma Haque Syeda, Stephen Intille and Michelle Borkin<br />
@@ -37,11 +38,10 @@ Proceedings of the 25th International ACM SIGACCESS Conference on Computers and 
 Jack Hester, **Ha Le**, Stephen Intille, Erin Meier<br />
 \[[link](https://doi.org/10.1145/3597638.3608419)\]
 
-**Investigating Student Participation and Performance in Calculus I Courses that Utilize Standards-Based Grading**<br />
-***Honorable Mention*** *at Undergraduate Research Project Competition (USRESP)* <br />
-*Electronic Undergraduate Research Conference (eURC)* (To be presented) <br />
-**Ha Le**, Rachel Erickson, Kaylee Vick, Jillian Downey<br />
-\[[pdf](./assets/pdfs/SBG_paper.pdf)\]\[[code/dataset](https://github.com/hvrlxy/sbg_research)\] \[[poster](./assets/pdfs/SBG_Research.pdf)\]
+**Relating Consistent Improvement to Overall Performance in a Calculus I Course that Utilizes Standards-Based Grading**<br />
+Problems, Resources, and Issues in Mathematics Undergraduate Studies (*PRIMUS*)<br />
+Jeff Ford, Rachel Erickson, **Ha Le**, Kaylee Vick, and Jillian Downey
+\[[link](https://doi.org/10.1080/10511970.2024.2361374)\]
 
 **A study on Channel Popularity in Twitch**<br />
 **Ha Le**, Junming Wu, Louis Yu, Melissa Lynn<br />
