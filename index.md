@@ -12,7 +12,7 @@ I received my Bachelor degree in Mathematics and Computer Science from Gustavus 
 **Feasibility and Utility of Multimodal Micro Ecological Momentary Assessment on a Smartwatch**<br />
 Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (*CHI'25*)<br />
 **Ha Le**, Veronika Potter, Rithika  Lakshminarayanan, Varun Mishra, and Stephen Intille<br /> 
-\[[link](https://doi.org/10.1145/3706598.3714086)\]
+\[[link](https://doi.org/10.1145/3706598.3714086)\]\[[pdf](./assets/pdfs/multimodalEMA.pdf)\]
 
 **An Evaluation of Temporal and Categorical Uncertainty on Timelines: A Case Study in Human Activity Recall Visualizations**<br />
 Veronika Potter, **Ha Le**, Uzma Haque Syeda, Stephen Intille and Michelle Borkin<br />
