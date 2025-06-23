@@ -9,13 +9,14 @@ My name is Ha Le and I'm a third year PhD student in Computer Science at Northea
 I received my Bachelor degree in Mathematics and Computer Science from Gustavus Adolphus College in 2022. During my 4 years at Gustavus, I did research under the supervision of Prof. Louis Yu, Jillian Downey and Jacob Siehler.
 
 ## PUBLICATIONS
+**An Evaluation of Temporal and Categorical Uncertainty on Timelines: A Case Study in Human Activity Recall Visualizations**<br />
+In 2025 IEEE Visualization and Visual Analytics (*VIS'25*) <br />
+Veronika Potter, **Ha Le**, Uzma Haque Syeda, Stephen Intille and Michelle Borkin<br />
+
 **Feasibility and Utility of Multimodal Micro Ecological Momentary Assessment on a Smartwatch**<br />
 Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (*CHI'25*)<br />
 **Ha Le**, Veronika Potter, Rithika  Lakshminarayanan, Varun Mishra, and Stephen Intille<br /> 
 \[[link](https://doi.org/10.1145/3706598.3714086)\]\[[pdf](./assets/pdfs/multimodalEMA.pdf)\]
-
-**An Evaluation of Temporal and Categorical Uncertainty on Timelines: A Case Study in Human Activity Recall Visualizations**<br />
-Veronika Potter, **Ha Le**, Uzma Haque Syeda, Stephen Intille and Michelle Borkin<br />
 
 **Collecting Self-reported Physical Activity and Posture Data using Audio-based Ecological Momentary Assessment**<br />
 Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (*IMWUT'24*)<br />
