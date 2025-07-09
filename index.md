@@ -9,6 +9,11 @@ My name is Ha Le and I'm a third year PhD student in Computer Science at Northea
 I received my Bachelor degree in Mathematics and Computer Science from Gustavus Adolphus College in 2022. During my 4 years at Gustavus, I did research under the supervision of Prof. Louis Yu, Jillian Downey and Jacob Siehler.
 
 ## PUBLICATIONS
+**GLOSS: Group of LLMs for Open-Ended Sensemaking of Passive Sensing Data for Health and Wellbeing**<br />
+Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (*IMWUT'25*)<br />
+Akshat Choube, **Ha Le**, Jiachen Li, Kaixin Ji, Vedant Das Swain, Varun Mishra<br />
+\[[link](https://arxiv.org/abs/2507.05461)\]\[[pdf](./assets/pdfs/GLOSS.pdf)\]
+
 **An Evaluation of Temporal and Categorical Uncertainty on Timelines: A Case Study in Human Activity Recall Visualizations**<br />
 In 2025 IEEE Visualization and Visual Analytics (*VIS'25*) <br />
 Veronika Potter, **Ha Le**, Uzma Haque Syeda, Stephen Intille and Michelle Borkin<br />
