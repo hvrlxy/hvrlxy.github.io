@@ -17,6 +17,7 @@ Akshat Choube, **Ha Le**, Jiachen Li, Kaixin Ji, Vedant Das Swain, Varun Mishra<
 **An Evaluation of Temporal and Categorical Uncertainty on Timelines: A Case Study in Human Activity Recall Visualizations**<br />
 In 2025 IEEE Visualization and Visual Analytics (*VIS'25*) <br />
 Veronika Potter, **Ha Le**, Uzma Haque Syeda, Stephen Intille and Michelle Borkin<br />
+\[[pdf](./assets/pdfs/VIS25.pdf)\]
 
 **Feasibility and Utility of Multimodal Micro Ecological Momentary Assessment on a Smartwatch**<br />
 Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (*CHI'25*)<br />
@@ -31,8 +32,7 @@ Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technolog
 **Detecting Sleep Disruptions in Adolescents Using Context-sensitive Ecological Momentary Assessment: A Feasibility Study**<br />
 Proceedings of the 18th EAI International Conference on Pervasive Computing Technologies for Healthcare (*PervasiveHealth'24*)<br/>
 Rithika Lakshminarayanan, Arushi Uppal, **Ha Le**, James C. Spilsbury and Stephen Intille<br />
-\[[pdf](./assets/pdfs/sleep.pdf)\] <br />
-<!-- \[[link](https://www.researchprotocols.org/2024/1/e57699)\]\[[paper](./assets/pdfs/sleep.pdf)\] -->
+\[[link](https://link.springer.com/chapter/10.1007/978-3-031-85572-6_20)\]\[[pdf](./assets/pdfs/sleep.pdf)\] <br />
 
 **mHealth-Based Just-in-Time Adaptive Intervention to Improve the Physical Activity Levels of Individuals With Spinal Cord Injury: Protocol for a Randomized Controlled Trial**<br />
 JMIR Research Protocols<br />
