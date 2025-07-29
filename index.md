@@ -4,11 +4,17 @@ layout: default
 
 ## ABOUT ME
 
-My name is Ha Le and I'm a third year PhD student in Computer Science at Northeastern University. My research areas are HCI and Ubiquitous and Wearables Computing. Particularly, I worked on multimodal data annotation interfaces for human activity and behavioral recognition. I combined different device form factors, input modalities and sensors to design software that empower people to monitor their data and train their own machine learning models.
+I am a Ph.D. candidate in Computer Science (HCI) at Northeastern University, researching human-AI
+systems that integrate multimodal sensing and interaction, machine learning, and UI/UX design. My work spans building wearable and mobile systems for activity recognition and experience sampling.
 
 I received my Bachelor degree in Mathematics and Computer Science from Gustavus Adolphus College in 2022. During my 4 years at Gustavus, I did research under the supervision of Prof. Louis Yu, Jillian Downey and Jacob Siehler.
 
 ## PUBLICATIONS
+**A Multi-Agent LLM Network for Suggesting and Correcting Human Activity and Posture Annotations**<br />
+In Companion of the 2025 on ACM International
+Joint Conference on Pervasive and Ubiquitous Computing (GENAI4HS Workshop @Ubicomp'25)<br />
+**Ha Le**, Akshat Choube, Vedant Das Swain, Varun Mishra, Stephen Intille<br />
+
 **GLOSS: Group of LLMs for Open-Ended Sensemaking of Passive Sensing Data for Health and Wellbeing**<br />
 Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (*IMWUT'25*)<br />
 Akshat Choube, **Ha Le**, Jiachen Li, Kaixin Ji, Vedant Das Swain, Varun Mishra<br />
