@@ -5,7 +5,7 @@ layout: default
 ## ABOUT ME
 
 I am a Ph.D. candidate in Computer Science (HCI) at Northeastern University, researching human-AI
-systems that integrate multimodal sensing and interaction, machine learning, and UI/UX design. My work spans building wearable and mobile systems for activity recognition and experience sampling.
+systems that integrate multimodal sensing and interaction, machine learning, and UI/UX design. I am advised by Prof. \[[Stephen Intille](https://www.khoury.northeastern.edu/home/intille/) and Prof. \[[Varun Mishra](https://varunmishra.com/). My work spans building wearable and mobile systems for activity recognition and experience sampling.
 
 I received my Bachelor degree in Mathematics and Computer Science from Gustavus Adolphus College in 2022. During my 4 years at Gustavus, I did research under the supervision of Prof. Louis Yu, Jillian Downey and Jacob Siehler.
 
@@ -75,10 +75,3 @@ Filip Belik, **Ha Le**, Jacob Siehler<br />
 * Fall 2021: Intro to Computer Organization (MCS-284)
 * Spring 2020 - Fall 2021: Pre-Calculus, Calculus I, Calculus II, Multivariables Calculus (MCS-119,121,122,222)
 
-## AWARDS AND FUNDINGS
-**Summer 2021 Jeff Roseoff Fund** for undergraduate summer research in MCS department ($2000)<br />
-**Summer 2020 Stephen Hilding Fund** for undergraduate summer research ($3000)<br />
-**Count Folke Bernadotte International Student Scholarship** for international students ($120 000)
-
-## NEWS
-10/5/24-10/9/24: I will be presenting my work on audio-uEMA at Ubicomp/IWSC 2024!
