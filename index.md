@@ -23,7 +23,7 @@ Joint Conference on Pervasive and Ubiquitous Computing (GENAI4HS Workshop @Ubico
 **GLOSS: Group of LLMs for Open-Ended Sensemaking of Passive Sensing Data for Health and Wellbeing**<br />
 Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (*IMWUT'25*)<br />
 Akshat Choube, **Ha Le**, Jiachen Li, Kaixin Ji, Vedant Das Swain, Varun Mishra<br />
-\[[link](https://arxiv.org/abs/2507.05461)\]\[[pdf](./assets/pdfs/GLOSS.pdf)\]
+\[[link](https://dl.acm.org/doi/10.1145/3749474)\]\[[pdf](./assets/pdfs/GLOSS.pdf)\]
 
 **An Evaluation of Temporal and Categorical Uncertainty on Timelines: A Case Study in Human Activity Recall Visualizations**<br />
 In 2025 IEEE Visualization and Visual Analytics (*VIS'25*) <br />
