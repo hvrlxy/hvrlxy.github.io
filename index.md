@@ -5,7 +5,7 @@ layout: default
 ## ABOUT ME
 
 I am a Ph.D. candidate in Computer Science (HCI) at Northeastern University, researching human-AI
-systems that integrate multimodal sensing and interaction, machine learning, and UI/UX design. I am advised by Prof. \[Stephen Intille](https://www.khoury.northeastern.edu/home/intille/) and Prof. \[Varun Mishra](https://varunmishra.com/). My work spans building wearable and mobile systems for activity recognition and experience sampling.
+systems that integrate multimodal sensing and interaction, machine learning, and UI/UX design. I am advised by Prof. [Stephen Intille](https://www.khoury.northeastern.edu/home/intille/) and Prof. [Varun Mishra](https://varunmishra.com/). My work spans building wearable and mobile systems for activity recognition and experience sampling.
 
 I received my Bachelor degree in Mathematics and Computer Science from Gustavus Adolphus College in 2022. During my 4 years at Gustavus, I did research under the supervision of Prof. Louis Yu, Jillian Downey and Jacob Siehler.
 
