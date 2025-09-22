@@ -18,7 +18,7 @@ Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technolog
 In Companion of the 2025 on ACM International
 Joint Conference on Pervasive and Ubiquitous Computing (GENAI4HS Workshop @Ubicomp'25)<br />
 **Ha Le**, Akshat Choube, Vedant Das Swain, Varun Mishra, Stephen Intille<br />
-\[[link](https://doi.org/10.1145/3714394.3756185)\]
+\[[link](https://doi.org/10.1145/3714394.3756185)\] \[[pdf](./assets/pdfs/3714394.3756185.pdf)\]
 
 **GLOSS: Group of LLMs for Open-Ended Sensemaking of Passive Sensing Data for Health and Wellbeing**<br />
 Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (*IMWUT'25*)<br />
