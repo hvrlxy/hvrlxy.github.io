@@ -13,6 +13,7 @@ I received my Bachelor degree in Mathematics and Computer Science from Gustavus 
 **A Context-Assisted, Semi-Automated Activity Recall Interface Allowing Uncertainty**<br />
 Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (*IMWUT'25*)<br />
 **Ha Le**, Veronika Potter, Akshat Choube, Rithika  Lakshminarayanan, Varun Mishra, and Stephen Intille<br /> 
+\[[link](https://doi.org/10.1145/3770710)\] \[[pdf](./assets/pdfs/ACAI.pdf)\]
 
 **A Multi-Agent LLM Network for Suggesting and Correcting Human Activity and Posture Annotations**<br />
 In Companion of the 2025 on ACM International
