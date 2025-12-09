@@ -11,9 +11,9 @@ I develop behavioral tracking systems on wearable devices that help individuals 
 (2) enable users to provide feedback with minimal effort.
 I pursue this goal through:
 
-* Developing novel tracking systems using both *in-situ* methods ([IMWUT'24](https://doi.org/10.1145/3678584), [CHI'25](https://doi.org/10.1145/3706598.3714086), [PervasiveHealth'24](https://link.springer.com/chapter/10.1007/978-3-031-85572-6_20)) and *retrospective recall* methods ([IMWUT'25](https://doi.org/10.1145/3770710)).
-* Enabling users to express uncertainty during tracking/annotation and examining how to incorporate that uncertainty into the tracking process ([VIS'25](./assets/pdfs/VIS25.pdf), [IMWUT'25](https://doi.org/10.1145/3770710)).
-* Investigating how AI/LLMs can support the extraction of high-quality behavioral labels and enable low-effort tracking for health and wellbeing ([Ubicomp'25](https://doi.org/10.1145/3714394.3756185), [IMWUT'25](https://dl.acm.org/doi/10.1145/3749474)).
+* Developing novel multimodal tracking systems using both *in-situ* methods ([IMWUT'24](https://doi.org/10.1145/3678584), [CHI'25](https://doi.org/10.1145/3706598.3714086), [PervasiveHealth'24](https://link.springer.com/chapter/10.1007/978-3-031-85572-6_20)) and *retrospective recall* methods ([IMWUT'25](https://doi.org/10.1145/3770710)).
+* Studying users' uncertainty when self-reporting their behaviors and examining how to incorporate that uncertainty into the tracking process ([VIS'25](./assets/pdfs/VIS25.pdf), [IMWUT'25](https://doi.org/10.1145/3770710)).
+* Investigating how AI/LLMs can support the extraction of high-quality behavioral labels and enable low-effort tracking for health and wellbeing ([Ubicomp'25](./assets/pdfs/3714394.3756185.pdf), [IMWUT'25](https://dl.acm.org/doi/10.1145/3749474)).
 * Integrating behavioral tracking into health-related interactive or intervention systems to improve outcomes ([ASSETS'23](https://doi.org/10.1145/3597638.3608419), [JMIR'24](https://www.researchprotocols.org/2024/1/e57699)).
 
 I received my Bachelor degree in Mathematics and Computer Science from Gustavus Adolphus College in 2022. During my 4 years at Gustavus, I did research under the supervision of Prof. Louis Yu, Jillian Downey and Jacob Siehler.
