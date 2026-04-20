@@ -16,7 +16,7 @@ Akshat Choube, **Ha Le**, Jiachen Li, Kaixin Ji, Vedant Das Swain, Varun Mishra<
 
 **A Multi-Agent LLM Network for Suggesting and Correcting Human Activity and Posture Annotations**<br />
 In Companion of the 2025 on ACM International
-Joint Conference on Pervasive and Ubiquitous Computing (GENAI4HS Workshop @Ubicomp'25)<br />
+Joint Conference on Pervasive and Ubiquitous Computing (*GENAI4HS Workshop @Ubicomp'25*)<br />
 **Ha Le**, Akshat Choube, Vedant Das Swain, Varun Mishra, Stephen Intille<br />
 \[[link](https://doi.org/10.1145/3714394.3756185)\] \[[pdf](./assets/pdfs/3714394.3756185.pdf)\]
 
