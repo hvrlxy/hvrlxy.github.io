@@ -4,7 +4,7 @@ layout: default
 
 ## ABOUT ME
 
-I am a Ph.D. candidate at Khoury College of Computer Sciences, Northeastern University. I am advised by Prof. [Stephen Intille](https://www.khoury.northeastern.edu/home/intille/) and Prof. [Varun Mishra](https://varunmishra.com/). My research interest lies between the spaces of Human-Computer Interaction, Ubiquitous/Wearables Computing and Personal Health Informatics. For my works, I have been honored to received [Northeastern University's Outstanding PhD Student Awards in Humanics](https://academic-honors.provost.northeastern.edu/graduate-awards/outstanding-graduate-student-award-for-humanics/), and the [Apple AI/ML Fellowship 2026](https://machinelearning.apple.com/updates/apple-scholars-aiml-2026).
+I am a Ph.D. candidate at Khoury College of Computer Sciences, Northeastern University. I am advised by Prof. [Stephen Intille](https://www.khoury.northeastern.edu/home/intille/) and Prof. [Varun Mishra](https://varunmishra.com/). My research interest lies between the spaces of Human-Computer Interaction, Ubiquitous/Wearables Computing and Personal Health Informatics. For my works, I have been honored to receive [Northeastern University's Outstanding PhD Student Award in Humanics](https://academic-honors.provost.northeastern.edu/graduate-awards/outstanding-graduate-student-award-for-humanics/), and the [Apple AI/ML PhD Fellowship 2026](https://machinelearning.apple.com/updates/apple-scholars-aiml-2026).
 
 I develop behavioral tracking systems on wearable devices that help individuals monitor the activities and behavioral patterns that matter to them. Most commercial systems rely solely on passive sensing and machine learning models trained on lab-collected datasets, which often fail to generalize to real-world settings and across individuals. My work focuses on building **personalized, human-in-the-loop tracking and measurement systems** that:
 (1) collect high-quality behavioral labels to better capture each person’s habits and support personalized recognition models, and
@@ -79,7 +79,7 @@ Filip Belik, **Ha Le**, Jacob Siehler<br />
 \[[pdf](./assets/pdfs/One_dimensional_Port_and_Sweep_Solitaire_Armies__Copy_.pdf)\]\[[presentation](./assets/pdfs/PaSS.pdf)\]
 
 ## TEACHING EXPERIENCE
-* Spring 2020 - now: Introduction to Computer Science I&II (MCS-178,177) <br />
+* Spring 2020 - Spring 2022: Introduction to Computer Science I&II (MCS-178,177) <br />
 * Spring 2021, Spring 2022: Principles of Programming Languages (MCS-287) <br />
 * Fall 2021: Intro to Computer Organization (MCS-284)
 * Spring 2020 - Fall 2021: Pre-Calculus, Calculus I, Calculus II, Multivariables Calculus (MCS-119,121,122,222)
