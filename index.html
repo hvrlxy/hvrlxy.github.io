@@ -290,14 +290,36 @@
     color: var(--ink);
   }
   .pub-links{
-    margin-top: 8px;
+    margin-top: 10px;
     display: flex;
-    gap: 14px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.78rem;
+    gap: 8px;
   }
-  .pub-links a{ color: var(--teal-deep); }
-  .pub-links a::before{ content: "→ "; color: var(--amber); }
+  .icon-btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: var(--paper-raised);
+    color: var(--ink-soft);
+    transition: border-color .15s ease, color .15s ease, background .15s ease;
+  }
+  .icon-btn svg{
+    width: 15px;
+    height: 15px;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+  }
+  .icon-btn:hover{
+    border-color: var(--teal);
+    color: var(--teal-deep);
+    background: #fff;
+  }
 
   /* teaching */
   .teach-list{ list-style: none; margin: 0; padding: 0; }
@@ -357,7 +379,9 @@
       <div>
         <h1>Ha Le</h1>
         <p class="role">
-          I build human-in-the-loop wearable sensing systems for personalized activity recognition.
+          I build human-in-the-loop wearable sensing systems for personalized activity recognition,
+          advised by Prof. <a href="https://www.khoury.northeastern.edu/home/intille/" target="_blank" rel="noopener">Stephen Intille</a>
+          and Prof. <a href="https://varunmishra.com/" target="_blank" rel="noopener">Varun Mishra</a> at Northeastern University.
         </p>
       </div>
       <img class="headshot" src="img/ha.jpg" alt="Portrait of Ha Le">
@@ -390,8 +414,7 @@
     <p>
       I am a PhD candidate at Khoury College of Computer Sciences, Northeastern University, working
       at the intersection of Human-Computer Interaction, Ubiquitous/Wearable Computing, and Personal
-      Health Informatics. I am advised by Prof. <a href="https://www.khoury.northeastern.edu/home/intille/" target="_blank" rel="noopener">Stephen Intille</a>
-      and Prof. <a href="https://varunmishra.com/" target="_blank" rel="noopener">Varun Mishra</a> at Northeastern University. My work has been recognized with Northeastern University's
+      Health Informatics. My work has been recognized with Northeastern University's
       <a href="https://academic-honors.provost.northeastern.edu/graduate-awards/outstanding-graduate-student-award-for-humanics/" target="_blank" rel="noopener">Outstanding PhD Student Award in Humanics</a>
       and the <a href="https://machinelearning.apple.com/updates/apple-scholars-aiml-2026" target="_blank" rel="noopener">Apple AI/ML PhD Fellowship 2026</a>.
     </p>
@@ -484,8 +507,8 @@
       <p class="pub-venue">IMWUT'25</p>
       <p class="pub-authors"><strong>Ha Le</strong>, Veronika Potter, Akshat Choube, Rithika Lakshminarayanan, Varun Mishra, and Stephen Intille</p>
       <div class="pub-links">
-        <a href="https://doi.org/10.1145/3770710" target="_blank" rel="noopener">link</a>
-        <a href="pdfs/ACAI.pdf" target="_blank" rel="noopener">pdf</a>
+        <a class="icon-btn" href="https://doi.org/10.1145/3770710" target="_blank" rel="noopener" aria-label="View publication link" title="View publication link"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+        <a class="icon-btn" href="pdfs/ACAI.pdf" target="_blank" rel="noopener" aria-label="Download PDF" title="Download PDF"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></a>
       </div>
     </div>
 
@@ -494,8 +517,8 @@
       <p class="pub-venue">GenAI4HS Workshop @ Ubicomp'25</p>
       <p class="pub-authors"><strong>Ha Le</strong>, Akshat Choube, Vedant Das Swain, Varun Mishra, Stephen Intille</p>
       <div class="pub-links">
-        <a href="https://doi.org/10.1145/3714394.3756185" target="_blank" rel="noopener">link</a>
-        <a href="pdfs/3714394.3756185.pdf" target="_blank" rel="noopener">pdf</a>
+        <a class="icon-btn" href="https://doi.org/10.1145/3714394.3756185" target="_blank" rel="noopener" aria-label="View publication link" title="View publication link"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+        <a class="icon-btn" href="pdfs/3714394.3756185.pdf" target="_blank" rel="noopener" aria-label="Download PDF" title="Download PDF"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></a>
       </div>
     </div>
 
@@ -504,8 +527,8 @@
       <p class="pub-venue">IMWUT'25</p>
       <p class="pub-authors">Akshat Choube, <strong>Ha Le</strong>, Jiachen Li, Kaixin Ji, Vedant Das Swain, Varun Mishra</p>
       <div class="pub-links">
-        <a href="https://dl.acm.org/doi/10.1145/3749474" target="_blank" rel="noopener">link</a>
-        <a href="pdfs/GLOSS.pdf" target="_blank" rel="noopener">pdf</a>
+        <a class="icon-btn" href="https://dl.acm.org/doi/10.1145/3749474" target="_blank" rel="noopener" aria-label="View publication link" title="View publication link"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+        <a class="icon-btn" href="pdfs/GLOSS.pdf" target="_blank" rel="noopener" aria-label="Download PDF" title="Download PDF"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></a>
       </div>
     </div>
 
@@ -514,7 +537,8 @@
       <p class="pub-venue">IEEE VIS'25</p>
       <p class="pub-authors">Veronika Potter, <strong>Ha Le</strong>, Uzma Haque Syeda, Stephen Intille and Michelle Borkin</p>
       <div class="pub-links">
-        <a href="pdfs/VIS25.pdf" target="_blank" rel="noopener">pdf</a>
+        <a class="icon-btn" href="https://ieeexplore.ieee.org/document/11298755" target="_blank" rel="noopener" aria-label="View publication link" title="View publication link"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+        <a class="icon-btn" href="pdfs/VIS25.pdf" target="_blank" rel="noopener" aria-label="Download PDF" title="Download PDF"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></a>
       </div>
     </div>
 
@@ -523,8 +547,8 @@
       <p class="pub-venue">CHI'25</p>
       <p class="pub-authors"><strong>Ha Le</strong>, Veronika Potter, Rithika Lakshminarayanan, Varun Mishra, and Stephen Intille</p>
       <div class="pub-links">
-        <a href="https://doi.org/10.1145/3706598.3714086" target="_blank" rel="noopener">link</a>
-        <a href="pdfs/multimodalEMA.pdf" target="_blank" rel="noopener">pdf</a>
+        <a class="icon-btn" href="https://doi.org/10.1145/3706598.3714086" target="_blank" rel="noopener" aria-label="View publication link" title="View publication link"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+        <a class="icon-btn" href="pdfs/multimodalEMA.pdf" target="_blank" rel="noopener" aria-label="Download PDF" title="Download PDF"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></a>
       </div>
     </div>
 
@@ -535,8 +559,8 @@
       <p class="pub-venue">IMWUT'24</p>
       <p class="pub-authors"><strong>Ha Le</strong>, Rithika Lakshminarayanan, Jixin Li, Varun Mishra, and Stephen Intille</p>
       <div class="pub-links">
-        <a href="https://doi.org/10.1145/3678584" target="_blank" rel="noopener">link</a>
-        <a href="pdfs/audiouEMA.pdf" target="_blank" rel="noopener">pdf</a>
+        <a class="icon-btn" href="https://doi.org/10.1145/3678584" target="_blank" rel="noopener" aria-label="View publication link" title="View publication link"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+        <a class="icon-btn" href="pdfs/audiouEMA.pdf" target="_blank" rel="noopener" aria-label="Download PDF" title="Download PDF"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></a>
       </div>
     </div>
 
@@ -545,8 +569,8 @@
       <p class="pub-venue">PervasiveHealth'24</p>
       <p class="pub-authors">Rithika Lakshminarayanan, Arushi Uppal, <strong>Ha Le</strong>, James C. Spilsbury and Stephen Intille</p>
       <div class="pub-links">
-        <a href="https://link.springer.com/chapter/10.1007/978-3-031-85572-6_20" target="_blank" rel="noopener">link</a>
-        <a href="pdfs/sleep.pdf" target="_blank" rel="noopener">pdf</a>
+        <a class="icon-btn" href="https://link.springer.com/chapter/10.1007/978-3-031-85572-6_20" target="_blank" rel="noopener" aria-label="View publication link" title="View publication link"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
+        <a class="icon-btn" href="pdfs/sleep.pdf" target="_blank" rel="noopener" aria-label="Download PDF" title="Download PDF"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></a>
       </div>
     </div>
 
@@ -555,7 +579,7 @@
       <p class="pub-venue">JMIR Research Protocols</p>
       <p class="pub-authors">Rachel L Carey*, <strong>Ha Le*</strong>, Donna L Coffman, Inbal Nahum-Shani, Mohanraj Thirumalai, Cole Hagen, Laura A Baehr, Mary Schmidt-Read, Marlyn S R Lamboy, Stephanie A Kolakowsky-Hayner, Ralph J Marino, Stephen S Intille, Shivayogi V Hiremath</p>
       <div class="pub-links">
-        <a href="https://www.researchprotocols.org/2024/1/e57699" target="_blank" rel="noopener">link</a>
+        <a class="icon-btn" href="https://www.researchprotocols.org/2024/1/e57699" target="_blank" rel="noopener" aria-label="View publication link" title="View publication link"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
       </div>
     </div>
 
@@ -566,7 +590,7 @@
       <p class="pub-venue">ASSETS'23</p>
       <p class="pub-authors">Jack Hester, <strong>Ha Le</strong>, Stephen Intille, Erin Meier</p>
       <div class="pub-links">
-        <a href="https://doi.org/10.1145/3597638.3608419" target="_blank" rel="noopener">link</a>
+        <a class="icon-btn" href="https://doi.org/10.1145/3597638.3608419" target="_blank" rel="noopener" aria-label="View publication link" title="View publication link"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
       </div>
     </div>
 
@@ -575,7 +599,7 @@
       <p class="pub-venue">PRIMUS</p>
       <p class="pub-authors">Jeff Ford, Rachel Erickson, <strong>Ha Le</strong>, Kaylee Vick, and Jillian Downey</p>
       <div class="pub-links">
-        <a href="https://doi.org/10.1080/10511970.2024.2361374" target="_blank" rel="noopener">link</a>
+        <a class="icon-btn" href="https://doi.org/10.1080/10511970.2024.2361374" target="_blank" rel="noopener" aria-label="View publication link" title="View publication link"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg></a>
       </div>
     </div>
 
@@ -583,10 +607,10 @@
       <p class="pub-title">A study on Channel Popularity in Twitch</p>
       <p class="pub-authors"><strong>Ha Le</strong>, Junming Wu, Louis Yu, Melissa Lynn</p>
       <div class="pub-links">
-        <a href="pdfs/twitch.pdf" target="_blank" rel="noopener">pdf</a>
-        <a href="pdfs/twitch_present_draft.pptx.pdf" target="_blank" rel="noopener">presentation</a>
-        <a href="https://github.com/hvrlxy/twitch_crawling" target="_blank" rel="noopener">code</a>
-        <a href="pdfs/POSTER.pdf" target="_blank" rel="noopener">poster</a>
+        <a class="icon-btn" href="pdfs/twitch.pdf" target="_blank" rel="noopener" aria-label="Download PDF" title="Download PDF"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></a>
+        <a class="icon-btn" href="pdfs/twitch_present_draft.pptx.pdf" target="_blank" rel="noopener" aria-label="View presentation" title="View presentation"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8"/><path d="M12 16v4"/></svg></a>
+        <a class="icon-btn" href="https://github.com/hvrlxy/twitch_crawling" target="_blank" rel="noopener" aria-label="View code" title="View code"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></a>
+        <a class="icon-btn" href="pdfs/POSTER.pdf" target="_blank" rel="noopener" aria-label="View poster" title="View poster"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></a>
       </div>
     </div>
 
@@ -594,8 +618,8 @@
       <p class="pub-title">One-dimensional Port-and-Sweep Solitaire Armies</p>
       <p class="pub-authors">Filip Belik, <strong>Ha Le</strong>, Jacob Siehler</p>
       <div class="pub-links">
-        <a href="pdfs/One_dimensional_Port_and_Sweep_Solitaire_Armies.pdf" target="_blank" rel="noopener">pdf</a>
-        <a href="pdfs/PaSS.pdf" target="_blank" rel="noopener">presentation</a>
+        <a class="icon-btn" href="pdfs/One_dimensional_Port_and_Sweep_Solitaire_Armies.pdf" target="_blank" rel="noopener" aria-label="Download PDF" title="Download PDF"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></a>
+        <a class="icon-btn" href="pdfs/PaSS.pdf" target="_blank" rel="noopener" aria-label="View presentation" title="View presentation"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8"/><path d="M12 16v4"/></svg></a>
       </div>
     </div>
   </section>
