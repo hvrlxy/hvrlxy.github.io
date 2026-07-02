@@ -19,6 +19,18 @@ I pursue this goal through:
 I received my Bachelor degree in Mathematics and Computer Science from Gustavus Adolphus College in 2022. During my 4 years at Gustavus, I did research under the supervision of Prof. Louis Yu, Jillian Downey and Jacob Siehler.
 
 ## PUBLICATIONS
+**Feasibility of using a multi-agent LLM system to correct annotations and support low-effort activity labeling**<br />
+Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (*IMWUT'26*)<br />
+**Ha Le**, Akshat Choube, Varun Mishra, and Stephen Intille<br />
+
+**DAIMON: Designing AI-Augmented Research Dashboards to Enable Novel Human-AI Collaborative Workflows in Longitudinal Sensing Studies**<br />
+Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (*IMWUT'26*)<br />
+Akshat Choube, Shreeti Shrestha, **Ha Le**, Jiachen Li, Vedant Das Swain, Varun Mishra<br />
+
+**Generating Personalized Games with Sensing Data for Longitudinal Data Collection**<br />
+The 39th Annual ACM Symposium on User Interface Software and Technology (*UIST'26*)<br />
+Jin-seo Kim, **Ha Le**, Akshat Choube, Varun Mishra, and Stephen Intille<br />
+
 **A Context-Assisted, Semi-Automated Activity Recall Interface Allowing Uncertainty**<br />
 Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (*IMWUT'25*)<br />
 **Ha Le**, Veronika Potter, Akshat Choube, Rithika  Lakshminarayanan, Varun Mishra, and Stephen Intille<br /> 
