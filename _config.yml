@@ -1,9 +1,0 @@
-title: Ha Le
-description: Northeaster University, Khoury College of Computer Science. le.ha1@northeastern.edu
-show_downloads: false
-google_analytics: UA-108144808-1
-theme: jekyll-theme-minimal
-plugins:
-  - jekyll-sitemap
-  - jekyll-seo-tag
-  - jemoji

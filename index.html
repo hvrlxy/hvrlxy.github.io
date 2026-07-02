@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ha Le — Northeastern University</title>
+<meta name="description" content="Ha Le is a PhD candidate at Khoury College of Computer Sciences, Northeastern University, working on wearable sensing and human activity recognition.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #EFF1EE;
+    --paper-raised: #F7F8F5;
+    --ink: #142027;
+    --ink-soft: #536159;
+    --line: #CDD3CA;
+    --teal: #1B6E68;
+    --teal-deep: #0F4A46;
+    --amber: #D99A3D;
+    --radius: 3px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .mono{
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  a{ color: var(--teal-deep); text-decoration: none; }
+  a:hover{ color: var(--amber); }
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--teal);
+    outline-offset: 3px;
+  }
+
+  h1,h2,h3{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .wrap{
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- Header / nav ---------- */
+  header.site{
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(239,241,238,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner{
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 14px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-name{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+  }
+  nav.links{
+    display: flex;
+    gap: 22px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.82rem;
+    text-transform: lowercase;
+  }
+  nav.links a{ color: var(--ink-soft); }
+  nav.links a:hover{ color: var(--teal-deep); }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding: 64px 0 8px;
+  }
+  .eyebrow{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--teal-deep);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .eyebrow .dot{
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--amber);
+    display:inline-block;
+    flex: none;
+  }
+  .hero h1{
+    font-size: clamp(2.4rem, 6vw, 3.4rem);
+    line-height: 1.05;
+  }
+  .hero .role{
+    margin-top: 14px;
+    font-size: 1.08rem;
+    color: var(--ink-soft);
+    max-width: 60ch;
+  }
+  .hero .role a{ color: var(--teal-deep); border-bottom: 1px solid var(--line); }
+  .hero .role a:hover{ border-color: var(--amber); }
+
+  .hero-layout{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: start;
+  }
+  .headshot{
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    background: var(--paper-raised);
+  }
+  @media (max-width: 560px){
+    .hero-layout{ grid-template-columns: 1fr; }
+    .headshot{ width: 96px; height: 96px; order: -1; }
+  }
+
+  .contact-row{
+    margin-top: 26px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.82rem;
+  }
+  .pill{
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 6px 12px;
+    color: var(--ink);
+    background: var(--paper-raised);
+    transition: border-color .15s ease, color .15s ease;
+  }
+  .pill:hover{
+    border-color: var(--teal);
+    color: var(--teal-deep);
+  }
+
+  /* ---------- Sensor trace, signature element ---------- */
+  .trace{
+    margin: 44px 0 0;
+    width: 100%;
+    display: block;
+    overflow: visible;
+  }
+  .trace path{
+    fill: none;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .trace .ch-accel{ stroke: var(--teal); }
+  .trace .ch-gyro{ stroke: var(--amber); }
+  .trace .ch-audio{ stroke: var(--ink-soft); }
+  .trace .ch-label{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    fill: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .trace .draw{
+      stroke-dasharray: 900;
+      stroke-dashoffset: 900;
+      animation: draw 2.6s ease-out forwards;
+    }
+    .trace .ch-gyro.draw{ animation-delay: .15s; }
+    .trace .ch-audio.draw{ animation-delay: .3s; }
+  }
+  @keyframes draw{ to{ stroke-dashoffset: 0; } }
+
+  hr.rule{
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 56px 0;
+  }
+
+  /* ---------- Sections ---------- */
+  section{ padding: 4px 0 8px; }
+  .sec-head{
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 26px;
+  }
+  .sec-head .tag{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--teal-deep);
+    border: 1px solid var(--teal);
+    border-radius: var(--radius);
+    padding: 2px 8px;
+    letter-spacing: 0.03em;
+  }
+  .sec-head h2{ font-size: 1.5rem; }
+
+  .about p{ color: var(--ink); }
+  .about p + p{ margin-top: 14px; }
+
+  /* research channels */
+  .channels{
+    display: grid;
+    gap: 18px;
+    margin-top: 8px;
+  }
+  .channel{
+    display: grid;
+    grid-template-columns: 132px 1fr;
+    gap: 18px;
+    padding: 16px 0;
+    border-top: 1px solid var(--line);
+  }
+  .channel:first-child{ border-top: none; }
+  .channel .ch-tag{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding-top: 2px;
+  }
+  .channel p{ margin: 0; }
+  @media (max-width: 560px){
+    .channel{ grid-template-columns: 1fr; gap: 4px; }
+  }
+
+  /* publications */
+  .pub-year{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--teal-deep);
+    margin: 30px 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .pub-year::after{
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+  .pub{
+    padding: 16px 0;
+    border-top: 1px solid var(--line);
+  }
+  .pub:first-of-type{ border-top: none; }
+  .pub-title{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.05rem;
+    margin: 0 0 6px;
+  }
+  .pub-venue{
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+  .pub-authors{
+    font-size: 0.92rem;
+    margin-top: 4px;
+    color: var(--ink);
+  }
+  .pub-links{
+    margin-top: 8px;
+    display: flex;
+    gap: 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+  }
+  .pub-links a{ color: var(--teal-deep); }
+  .pub-links a::before{ content: "→ "; color: var(--amber); }
+
+  /* teaching */
+  .teach-list{ list-style: none; margin: 0; padding: 0; }
+  .teach-list li{
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 14px;
+    padding: 10px 0;
+    border-top: 1px solid var(--line);
+    font-size: 0.95rem;
+  }
+  .teach-list li:first-child{ border-top: none; }
+  .teach-list .term{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+  }
+  @media (max-width: 560px){
+    .teach-list li{ grid-template-columns: 1fr; gap: 2px; }
+  }
+
+  footer{
+    margin-top: 60px;
+    padding: 30px 0 60px;
+    border-top: 1px solid var(--line);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  footer a{ color: var(--ink-soft); border-bottom: 1px dotted var(--line); }
+  footer a:hover{ color: var(--teal-deep); }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav-inner">
+    <span class="nav-name">Ha Le</span>
+    <nav class="links">
+      <a href="#about">about</a>
+      <a href="#research">research</a>
+      <a href="#publications">publications</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="eyebrow"><span class="dot"></span>PhD Candidate · Northeastern University</div>
+
+    <div class="hero-layout">
+      <div>
+        <h1>Ha Le</h1>
+        <p class="role">
+          I build human-in-the-loop wearable sensing systems for personalized activity recognition,
+          advised by Prof. <a href="https://www.khoury.northeastern.edu/home/intille/" target="_blank" rel="noopener">Stephen Intille</a>
+          and Prof. <a href="https://varunmishra.com/" target="_blank" rel="noopener">Varun Mishra</a> at Northeastern University.
+        </p>
+      </div>
+      <img class="headshot" src="img/ha.jpg" alt="Portrait of Ha Le">
+    </div>
+
+    <div class="contact-row">
+      <a class="pill" href="mailto:le.ha1@northeastern.edu">email</a>
+      <a class="pill" href="https://scholar.google.com/citations?user=OLtHYoUAAAAJ&hl=en" target="_blank" rel="noopener">google scholar</a>
+      <a class="pill" href="https://github.com/hvrlxy" target="_blank" rel="noopener">github</a>
+      <a class="pill" href="https://twitter.com/xxx_hrl" target="_blank" rel="noopener">twitter</a>
+      <a class="pill" href="pdfs/Le_Ha_Resume.pdf" target="_blank" rel="noopener">cv</a>
+    </div>
+
+    <!-- Signature element: a stylized multi-channel sensor trace, standing in for the
+         accelerometer / gyroscope / audio streams at the center of Ha's research -->
+    <svg class="trace" viewBox="0 0 700 90" preserveAspectRatio="none" role="img" aria-label="Illustration of three overlapping wearable sensor signal traces">
+      <path class="ch-accel draw" d="M0,45 C20,20 40,70 60,45 C80,20 100,70 120,45 C140,15 160,72 180,45 C200,25 220,65 240,45 C260,18 280,70 300,45 C320,25 340,60 360,45 C380,20 400,68 420,45 C440,22 460,64 480,45 C500,18 520,70 540,45 C560,25 580,60 600,45 C620,20 640,68 660,45 C670,32 685,55 700,45"/>
+      <path class="ch-gyro draw" d="M0,58 C30,58 30,32 60,32 C90,32 90,58 120,58 C150,58 150,32 180,32 C210,32 210,58 240,58 C270,58 270,32 300,32 C330,32 330,58 360,58 C390,58 390,32 420,32 C450,32 450,58 480,58 C510,58 510,32 540,32 C570,32 570,58 600,58 C630,58 630,32 660,32 C680,32 690,45 700,45"/>
+      <path class="ch-audio draw" d="M0,45 L10,45 L14,25 L18,65 L22,10 L26,75 L30,45 L40,45 L44,30 L48,60 L52,45 L60,45 L64,20 L68,70 L72,45 L80,45 L84,35 L88,55 L92,45 L100,45 L104,15 L108,75 L112,45 L120,45 L124,32 L128,58 L132,45 L140,45 L200,45 L204,22 L208,68 L212,45 L220,45 L280,45 L284,28 L288,62 L292,45 L300,45 L360,45 L364,18 L368,72 L372,45 L380,45 L440,45 L444,30 L448,60 L452,45 L460,45 L520,45 L524,20 L528,70 L532,45 L540,45 L600,45 L604,32 L608,58 L612,45 L620,45 L660,45 L664,25 L668,65 L672,45 L700,45"/>
+    </svg>
+  </section>
+
+  <hr class="rule">
+
+  <section id="about" class="about">
+    <div class="sec-head">
+      <span class="tag">01</span>
+      <h2>About</h2>
+    </div>
+    <p>
+      I am a PhD candidate at Khoury College of Computer Sciences, Northeastern University, working
+      at the intersection of Human-Computer Interaction, Ubiquitous/Wearable Computing, and Personal
+      Health Informatics. My work has been recognized with Northeastern University's
+      <a href="https://academic-honors.provost.northeastern.edu/graduate-awards/outstanding-graduate-student-award-for-humanics/" target="_blank" rel="noopener">Outstanding PhD Student Award in Humanics</a>
+      and the <a href="https://machinelearning.apple.com/updates/apple-scholars-aiml-2026" target="_blank" rel="noopener">Apple AI/ML PhD Fellowship 2026</a>.
+    </p>
+    <p>
+      Most commercial activity-tracking systems rely on passive sensing and machine learning models
+      trained on lab-collected datasets — and often fail to generalize to real-world settings and
+      across individuals. I build <strong>personalized, human-in-the-loop tracking and measurement
+      systems</strong> that (1) collect high-quality behavioral labels to capture each person's habits
+      and support personalized recognition models, and (2) let users provide feedback with minimal
+      effort.
+    </p>
+    <p>
+      I received my Bachelor's degree in Mathematics and Computer Science from Gustavus Adolphus
+      College in 2022, where I did research under Prof. Louis Yu, Jillian Downey, and Jacob Siehler.
+    </p>
+  </section>
+
+  <hr class="rule">
+
+  <section id="research">
+    <div class="sec-head">
+      <span class="tag">02</span>
+      <h2>Research focus</h2>
+    </div>
+    <div class="channels">
+      <div class="channel">
+        <div class="ch-tag">In-situ &amp; recall</div>
+        <p>Developing novel multimodal tracking systems using both in-situ methods
+          (<a href="https://doi.org/10.1145/3678584" target="_blank" rel="noopener">IMWUT'24</a>,
+          <a href="https://doi.org/10.1145/3706598.3714086" target="_blank" rel="noopener">CHI'25</a>,
+          <a href="https://link.springer.com/chapter/10.1007/978-3-031-85572-6_20" target="_blank" rel="noopener">PervasiveHealth'24</a>)
+          and retrospective recall methods (<a href="https://doi.org/10.1145/3770710" target="_blank" rel="noopener">IMWUT'25</a>).</p>
+      </div>
+      <div class="channel">
+        <div class="ch-tag">Uncertainty</div>
+        <p>Studying users' uncertainty when self-reporting their behaviors, and how to incorporate
+          that uncertainty into the tracking process
+          (<a href="pdfs/VIS25.pdf" target="_blank" rel="noopener">VIS'25</a>,
+          <a href="https://doi.org/10.1145/3770710" target="_blank" rel="noopener">IMWUT'25</a>).</p>
+      </div>
+      <div class="channel">
+        <div class="ch-tag">LLM-assisted labeling</div>
+        <p>Investigating how AI/LLMs can support the extraction of high-quality behavioral labels
+          and enable low-effort tracking for health and wellbeing
+          (<a href="pdfs/3714394.3756185.pdf" target="_blank" rel="noopener">Ubicomp'25</a>,
+          <a href="https://dl.acm.org/doi/10.1145/3749474" target="_blank" rel="noopener">IMWUT'25</a>).</p>
+      </div>
+      <div class="channel">
+        <div class="ch-tag">Health interventions</div>
+        <p>Integrating behavioral tracking into health-related interactive or intervention systems
+          to improve outcomes
+          (<a href="https://doi.org/10.1145/3597638.3608419" target="_blank" rel="noopener">ASSETS'23</a>,
+          <a href="https://www.researchprotocols.org/2024/1/e57699" target="_blank" rel="noopener">JMIR'24</a>).</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section id="publications">
+    <div class="sec-head">
+      <span class="tag">03</span>
+      <h2>Publications</h2>
+    </div>
+
+    <div class="pub-year">2026</div>
+
+    <div class="pub">
+      <p class="pub-title">Feasibility of using a multi-agent LLM system to correct annotations and support low-effort activity labeling</p>
+      <p class="pub-venue">IMWUT'26</p>
+      <p class="pub-authors"><strong>Ha Le</strong>, Akshat Choube, Varun Mishra, and Stephen Intille</p>
+    </div>
+
+    <div class="pub">
+      <p class="pub-title">DAIMON: Designing AI-Augmented Research Dashboards to Enable Novel Human-AI Collaborative Workflows in Longitudinal Sensing Studies</p>
+      <p class="pub-venue">IMWUT'26</p>
+      <p class="pub-authors">Akshat Choube, Shreeti Shrestha, <strong>Ha Le</strong>, Jiachen Li, Vedant Das Swain, Varun Mishra</p>
+    </div>
+
+    <div class="pub">
+      <p class="pub-title">Generating Personalized Games with Sensing Data for Longitudinal Data Collection</p>
+      <p class="pub-venue">UIST'26</p>
+      <p class="pub-authors">Jin-seo Kim, <strong>Ha Le</strong>, Akshat Choube, Varun Mishra, and Stephen Intille</p>
+    </div>
+
+    <div class="pub-year">2025</div>
+
+    <div class="pub">
+      <p class="pub-title">A Context-Assisted, Semi-Automated Activity Recall Interface Allowing Uncertainty</p>
+      <p class="pub-venue">IMWUT'25</p>
+      <p class="pub-authors"><strong>Ha Le</strong>, Veronika Potter, Akshat Choube, Rithika Lakshminarayanan, Varun Mishra, and Stephen Intille</p>
+      <div class="pub-links">
+        <a href="https://doi.org/10.1145/3770710" target="_blank" rel="noopener">link</a>
+        <a href="pdfs/ACAI.pdf" target="_blank" rel="noopener">pdf</a>
+      </div>
+    </div>
+
+    <div class="pub">
+      <p class="pub-title">A Multi-Agent LLM Network for Suggesting and Correcting Human Activity and Posture Annotations</p>
+      <p class="pub-venue">GenAI4HS Workshop @ Ubicomp'25</p>
+      <p class="pub-authors"><strong>Ha Le</strong>, Akshat Choube, Vedant Das Swain, Varun Mishra, Stephen Intille</p>
+      <div class="pub-links">
+        <a href="https://doi.org/10.1145/3714394.3756185" target="_blank" rel="noopener">link</a>
+        <a href="pdfs/3714394.3756185.pdf" target="_blank" rel="noopener">pdf</a>
+      </div>
+    </div>
+
+    <div class="pub">
+      <p class="pub-title">GLOSS: Group of LLMs for Open-Ended Sensemaking of Passive Sensing Data for Health and Wellbeing</p>
+      <p class="pub-venue">IMWUT'25</p>
+      <p class="pub-authors">Akshat Choube, <strong>Ha Le</strong>, Jiachen Li, Kaixin Ji, Vedant Das Swain, Varun Mishra</p>
+      <div class="pub-links">
+        <a href="https://dl.acm.org/doi/10.1145/3749474" target="_blank" rel="noopener">link</a>
+        <a href="pdfs/GLOSS.pdf" target="_blank" rel="noopener">pdf</a>
+      </div>
+    </div>
+
+    <div class="pub">
+      <p class="pub-title">An Evaluation of Temporal and Categorical Uncertainty on Timelines: A Case Study in Human Activity Recall Visualizations</p>
+      <p class="pub-venue">IEEE VIS'25</p>
+      <p class="pub-authors">Veronika Potter, <strong>Ha Le</strong>, Uzma Haque Syeda, Stephen Intille and Michelle Borkin</p>
+      <div class="pub-links">
+        <a href="pdfs/VIS25.pdf" target="_blank" rel="noopener">pdf</a>
+      </div>
+    </div>
+
+    <div class="pub">
+      <p class="pub-title">Feasibility and Utility of Multimodal Micro Ecological Momentary Assessment on a Smartwatch</p>
+      <p class="pub-venue">CHI'25</p>
+      <p class="pub-authors"><strong>Ha Le</strong>, Veronika Potter, Rithika Lakshminarayanan, Varun Mishra, and Stephen Intille</p>
+      <div class="pub-links">
+        <a href="https://doi.org/10.1145/3706598.3714086" target="_blank" rel="noopener">link</a>
+        <a href="pdfs/multimodalEMA.pdf" target="_blank" rel="noopener">pdf</a>
+      </div>
+    </div>
+
+    <div class="pub-year">2024</div>
+
+    <div class="pub">
+      <p class="pub-title">Collecting Self-reported Physical Activity and Posture Data using Audio-based Ecological Momentary Assessment</p>
+      <p class="pub-venue">IMWUT'24</p>
+      <p class="pub-authors"><strong>Ha Le</strong>, Rithika Lakshminarayanan, Jixin Li, Varun Mishra, and Stephen Intille</p>
+      <div class="pub-links">
+        <a href="https://doi.org/10.1145/3678584" target="_blank" rel="noopener">link</a>
+        <a href="pdfs/audiouEMA.pdf" target="_blank" rel="noopener">pdf</a>
+      </div>
+    </div>
+
+    <div class="pub">
+      <p class="pub-title">Detecting Sleep Disruptions in Adolescents Using Context-sensitive Ecological Momentary Assessment: A Feasibility Study</p>
+      <p class="pub-venue">PervasiveHealth'24</p>
+      <p class="pub-authors">Rithika Lakshminarayanan, Arushi Uppal, <strong>Ha Le</strong>, James C. Spilsbury and Stephen Intille</p>
+      <div class="pub-links">
+        <a href="https://link.springer.com/chapter/10.1007/978-3-031-85572-6_20" target="_blank" rel="noopener">link</a>
+        <a href="pdfs/sleep.pdf" target="_blank" rel="noopener">pdf</a>
+      </div>
+    </div>
+
+    <div class="pub">
+      <p class="pub-title">mHealth-Based Just-in-Time Adaptive Intervention to Improve the Physical Activity Levels of Individuals With Spinal Cord Injury: Protocol for a Randomized Controlled Trial</p>
+      <p class="pub-venue">JMIR Research Protocols</p>
+      <p class="pub-authors">Rachel L Carey*, <strong>Ha Le*</strong>, Donna L Coffman, Inbal Nahum-Shani, Mohanraj Thirumalai, Cole Hagen, Laura A Baehr, Mary Schmidt-Read, Marlyn S R Lamboy, Stephanie A Kolakowsky-Hayner, Ralph J Marino, Stephen S Intille, Shivayogi V Hiremath</p>
+      <div class="pub-links">
+        <a href="https://www.researchprotocols.org/2024/1/e57699" target="_blank" rel="noopener">link</a>
+      </div>
+    </div>
+
+    <div class="pub-year">2023 &amp; earlier</div>
+
+    <div class="pub">
+      <p class="pub-title">A Feasibility Study on the Use of Audio-based Ecological Momentary Assessment with Persons with Aphasia</p>
+      <p class="pub-venue">ASSETS'23</p>
+      <p class="pub-authors">Jack Hester, <strong>Ha Le</strong>, Stephen Intille, Erin Meier</p>
+      <div class="pub-links">
+        <a href="https://doi.org/10.1145/3597638.3608419" target="_blank" rel="noopener">link</a>
+      </div>
+    </div>
+
+    <div class="pub">
+      <p class="pub-title">Relating Consistent Improvement to Overall Performance in a Calculus I Course that Utilizes Standards-Based Grading</p>
+      <p class="pub-venue">PRIMUS</p>
+      <p class="pub-authors">Jeff Ford, Rachel Erickson, <strong>Ha Le</strong>, Kaylee Vick, and Jillian Downey</p>
+      <div class="pub-links">
+        <a href="https://doi.org/10.1080/10511970.2024.2361374" target="_blank" rel="noopener">link</a>
+      </div>
+    </div>
+
+    <div class="pub">
+      <p class="pub-title">A study on Channel Popularity in Twitch</p>
+      <p class="pub-authors"><strong>Ha Le</strong>, Junming Wu, Louis Yu, Melissa Lynn</p>
+      <div class="pub-links">
+        <a href="pdfs/twitch.pdf" target="_blank" rel="noopener">pdf</a>
+        <a href="pdfs/twitch_present_draft.pptx.pdf" target="_blank" rel="noopener">presentation</a>
+        <a href="https://github.com/hvrlxy/twitch_crawling" target="_blank" rel="noopener">code</a>
+        <a href="pdfs/POSTER.pdf" target="_blank" rel="noopener">poster</a>
+      </div>
+    </div>
+
+    <div class="pub">
+      <p class="pub-title">One-dimensional Port-and-Sweep Solitaire Armies</p>
+      <p class="pub-authors">Filip Belik, <strong>Ha Le</strong>, Jacob Siehler</p>
+      <div class="pub-links">
+        <a href="pdfs/One_dimensional_Port_and_Sweep_Solitaire_Armies.pdf" target="_blank" rel="noopener">pdf</a>
+        <a href="pdfs/PaSS.pdf" target="_blank" rel="noopener">presentation</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Ha Le</span>
+    <span><a href="mailto:le.ha1@northeastern.edu">le.ha1@northeastern.edu</a> · Khoury College of Computer Sciences, Northeastern University</span>
+  </footer>
+
+</main>
+
+</body>
+</html>
