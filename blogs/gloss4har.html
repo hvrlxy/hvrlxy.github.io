@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ha Le — Northeastern University</title>
-<meta name="description" content="Ha Le is a PhD candidate at Khoury College of Computer Sciences, Northeastern University, working on wearable sensing and human activity recognition.">
+<title>GLOSS4HAR — an interactive walkthrough</title>
+<meta name="description" content="An interactive demo of GLOSS4HAR: a multi-agent LLM system that corrects activity annotations and reconstructs activity timelines by triangulating passive sensing data with low-effort self-reports.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,164 +13,124 @@
     --bg:#0E1316; --panel:#141B1F; --chrome:#101619; --gutter:#111A1E; --gutter-ink:#3E4B50;
     --ink:#DCE3E0; --muted:#7C8B85; --line:#223036;
     --kw:#C99BE6; --str:#5AC7BA; --num:#E3A85C; --fn:#EC8494; --punc:#5B6863; --accent:#5AC7BA;
+    --dblue:#5877C4; --lblue:rgba(90,120,200,.22); --lblue-b:#6E86D8; --ablue:#93A6EC;
     --sel:rgba(90,199,186,.16);
   }
   :root[data-theme="day"]{
     --bg:#EAECE7; --panel:#FBFCFA; --chrome:#F1F3EE; --gutter:#EEF0EB; --gutter-ink:#AFB7AF;
     --ink:#1B2428; --muted:#5F6A64; --line:#DBE0D8;
     --kw:#8A3FB0; --str:#12786F; --num:#B0651A; --fn:#C13B54; --punc:#98A199; --accent:#12786F;
+    --dblue:#3E4E96; --lblue:#E7ECFA; --lblue-b:#8CA0DC; --ablue:#42539C;
     --sel:rgba(18,120,111,.12);
   }
-
   *{ box-sizing:border-box; }
   html{ scroll-behavior:smooth; }
-  body{
-    margin:0; background:var(--bg); color:var(--ink);
-    font-family:'Inter',sans-serif; font-size:16px; line-height:1.65;
-    -webkit-font-smoothing:antialiased;
-    padding:32px 20px 60px; transition:background .25s ease,color .25s ease;
-  }
+  body{ margin:0; background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased; padding:32px 20px 60px; transition:background .25s ease,color .25s ease; }
   .mono{ font-family:'JetBrains Mono',monospace; }
-  a{ color:var(--str); text-decoration:none; }
-  a:hover{ color:var(--fn); }
+  a{ color:var(--str); text-decoration:none; } a:hover{ color:var(--fn); }
   a:focus-visible,button:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; border-radius:2px; }
   ::selection{ background:var(--sel); }
 
-  /* ---------- editor window ---------- */
-  .win{
-    max-width:940px; margin:0 auto;
-    background:var(--panel); border:1px solid var(--line); border-radius:10px;
-    overflow:hidden; box-shadow:0 24px 60px -30px rgba(0,0,0,.55);
-  }
-  .chrome{
-    display:flex; align-items:center; gap:14px; height:46px; padding:0 16px;
-    background:var(--chrome); border-bottom:1px solid var(--line);
-    font-family:'JetBrains Mono',monospace; font-size:.8rem; color:var(--muted);
-  }
-  .lights{ display:flex; gap:7px; }
-  .lights i{ width:11px; height:11px; border-radius:50%; display:block; }
-  .lights i:nth-child(1){ background:#E1685E; }
-  .lights i:nth-child(2){ background:#E3B04B; }
-  .lights i:nth-child(3){ background:#66B04A; }
-  .fname{ color:var(--ink); }
-  .fname .ind{ color:var(--num); }
-  .chrome nav{ margin-left:auto; display:flex; gap:4px; }
-  .chrome nav a{ color:var(--muted); padding:4px 10px; border-radius:4px; }
-  .chrome nav a:hover{ color:var(--ink); background:var(--panel); }
-  .theme-btn{
-    font-family:'JetBrains Mono',monospace; font-size:.76rem; cursor:pointer;
-    background:transparent; border:1px solid var(--line); color:var(--muted);
-    padding:4px 10px; border-radius:4px; margin-left:6px;
-  }
-  .theme-btn:hover{ color:var(--ink); border-color:var(--accent); }
-  @media(max-width:600px){ .chrome nav{ display:none; } }
-
+  .win{ max-width:960px; margin:0 auto; background:var(--panel); border:1px solid var(--line); border-radius:10px; overflow:hidden; box-shadow:0 24px 60px -30px rgba(0,0,0,.55); }
+  .chrome{ display:flex; align-items:center; gap:14px; height:46px; padding:0 16px; background:var(--chrome); border-bottom:1px solid var(--line); font-family:'JetBrains Mono',monospace; font-size:.8rem; color:var(--muted); }
+  .lights{ display:flex; gap:7px; } .lights i{ width:11px; height:11px; border-radius:50%; display:block; }
+  .lights i:nth-child(1){ background:#E1685E; } .lights i:nth-child(2){ background:#E3B04B; } .lights i:nth-child(3){ background:#66B04A; }
+  .fname{ color:var(--ink); } .fname .ind{ color:var(--num); }
+  .chrome nav{ margin-left:auto; display:flex; gap:4px; align-items:center; }
+  .chrome nav a{ color:var(--muted); padding:4px 10px; border-radius:4px; } .chrome nav a:hover{ color:var(--ink); background:var(--panel); }
+  .theme-btn{ font-family:'JetBrains Mono',monospace; font-size:.76rem; cursor:pointer; background:transparent; border:1px solid var(--line); color:var(--muted); padding:4px 10px; border-radius:4px; margin-left:6px; }
+  .theme-btn:hover{ color:var(--ink); }
+  @media(max-width:600px){ .chrome nav a{ display:none; } }
   .body{ padding:34px 40px 44px; }
-  @media(max-width:600px){ .body{ padding:26px 20px 34px; } }
+  @media(max-width:600px){ .body{ padding:24px 16px 30px; } }
 
-  /* ---------- section comment headers ---------- */
-  .comment{ font-family:'JetBrains Mono',monospace; font-size:.82rem; color:var(--muted); margin:0 0 18px; }
-  .comment .slash{ color:var(--punc); }
-  .comment b{ color:var(--accent); font-weight:600; }
-  .comment .lead{ color:var(--punc); }
-  section{ margin-bottom:52px; }
-  section:last-child{ margin-bottom:0; }
+  .comment{ font-family:'JetBrains Mono',monospace; font-size:.82rem; color:var(--muted); margin:0 0 16px; }
+  .comment .slash{ color:var(--punc); } .comment b{ color:var(--accent); font-weight:600; } .comment .lead{ color:var(--punc); }
+  section{ margin-bottom:50px; } section:last-child{ margin-bottom:0; }
 
-  /* ---------- hero ---------- */
-  .hero h1{
-    font-family:'JetBrains Mono',monospace; font-weight:700;
-    font-size:clamp(2rem,6vw,3rem); letter-spacing:-.02em; margin:0 0 20px;
-  }
-  .hero .cursor{ display:inline-block; width:.55ch; height:1.05em; vertical-align:-.15em; background:var(--num); animation:blink 1.1s steps(1) infinite; }
-  @keyframes blink{ 50%{ opacity:0; } }
-  @media(prefers-reduced-motion:reduce){ .hero .cursor{ animation:none; } }
+  .hero h1{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:clamp(1.7rem,4.5vw,2.5rem); letter-spacing:-.02em; margin:0 0 10px; line-height:1.1; }
+  .hero .sub{ color:var(--muted); font-size:1.02rem; max-width:60ch; margin:0 0 18px; }
+  .meta-row{ display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .tag{ font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--str); border:1px solid var(--line); border-radius:4px; padding:3px 9px; }
+  .authors{ font-size:.9rem; color:var(--muted); margin:14px 0 0; } .authors strong{ color:var(--ink); font-weight:600; }
+  .prose p{ margin:0 0 14px; max-width:66ch; } .prose strong{ font-weight:600; } .prose ul{ margin:0 0 14px; padding-left:20px; } .prose li{ margin:4px 0; }
+  .stats{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin-top:6px; }
+  .stat{ border:1px solid var(--line); border-left:3px solid var(--num); border-radius:6px; padding:12px 14px; background:var(--bg); }
+  .stat .n{ font-family:'JetBrains Mono',monospace; font-size:1.35rem; font-weight:700; color:var(--ink); } .stat .n small{ font-size:.9rem; color:var(--num); font-weight:600; }
+  .stat .l{ font-size:.8rem; color:var(--muted); margin-top:2px; }
+  .callout-note{ font-size:.82rem; color:var(--muted); border-left:3px solid var(--line); padding:2px 0 2px 12px; margin:12px 0 0; }
 
-  /* ---------- code panel ---------- */
-  .panel{ border:1px solid var(--line); border-radius:8px; overflow:hidden; background:var(--bg); }
-  .panel .tabline{
-    font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--muted);
-    padding:7px 14px; border-bottom:1px solid var(--line); background:var(--chrome);
-  }
-  .codewrap{ display:grid; grid-template-columns:auto 1fr; font-family:'JetBrains Mono',monospace; font-size:.88rem; line-height:1.85; }
-  .codewrap .gutter{
-    text-align:right; padding:14px 12px; color:var(--gutter-ink);
-    background:var(--gutter); border-right:1px solid var(--line); user-select:none; white-space:pre;
-  }
-  .codewrap .code{ padding:14px 18px; overflow-x:auto; white-space:pre; }
-  .kw{ color:var(--kw); } .str{ color:var(--str); } .num{ color:var(--num); }
-  .fn{ color:var(--fn); } .punc{ color:var(--punc); } .prop{ color:var(--ink); }
-  .code a.str{ border-bottom:1px solid transparent; }
-  .code a.str:hover{ border-color:var(--str); }
-  @media(max-width:600px){ .codewrap{ font-size:.78rem; } }
+  /* ---- controls ---- */
+  .demo-head{ display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:12px; }
+  .taskbtn{ font-family:'JetBrains Mono',monospace; font-size:.78rem; cursor:pointer; background:var(--bg); color:var(--muted); border:1px solid var(--line); border-radius:5px; padding:6px 12px; }
+  .taskbtn:hover{ color:var(--ink); border-color:var(--accent); } .taskbtn.on{ color:var(--accent); border-color:var(--accent); background:var(--sel); }
+  .demo-head .spacer{ flex:1; } .stepc{ font-family:'JetBrains Mono',monospace; font-size:.74rem; color:var(--muted); }
+  .query-box{ border:1px solid var(--line); border-left:3px solid var(--str); border-radius:6px; padding:12px 14px; background:var(--bg); margin-bottom:12px; }
+  .query-box .who{ font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--str); margin-bottom:5px; } .query-box .q{ font-size:.92rem; color:var(--ink); }
+  .controls{ display:flex; gap:8px; align-items:center; margin-top:12px; flex-wrap:wrap; }
+  .ctl{ font-family:'JetBrains Mono',monospace; font-size:.78rem; cursor:pointer; background:var(--panel); color:var(--ink); border:1px solid var(--line); border-radius:5px; padding:7px 13px; }
+  .ctl:hover{ border-color:var(--accent); color:var(--accent); } .ctl.primary{ background:var(--accent); color:var(--bg); border-color:var(--accent); font-weight:600; } .ctl.primary:hover{ filter:brightness(1.08); color:var(--bg); }
+  .ctl:disabled{ opacity:.4; cursor:not-allowed; } .hint{ font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--punc); }
 
-  /* ---------- prose ---------- */
-  .prose p{ margin:0 0 14px; max-width:64ch; }
-  .prose strong{ font-weight:600; }
-  /* ---------- awards ---------- */
-  .award-list{ display:grid; gap:10px; }
-  .award-card{
-    display:flex; align-items:baseline; gap:12px;
-    border:1px solid var(--line); border-left:3px solid var(--num);
-    border-radius:6px; padding:14px 16px; background:var(--bg);
-    transition:border-color .15s ease, background .15s ease;
-  }
-  .award-card:hover{ border-color:var(--num); border-left-color:var(--num); background:var(--sel); }
-  .award-card::before{ content:"\2605"; color:var(--num); font-size:.85rem; line-height:1.4; }
-  .award-name{ color:var(--ink); font-weight:600; font-size:.98rem; flex:1; }
-  .award-card:hover .award-name{ color:var(--ink); }
-  .award-meta{ font-family:'JetBrains Mono',monospace; font-size:.74rem; color:var(--muted); white-space:nowrap; }
-  @media(max-width:600px){
-    .award-card{ flex-wrap:wrap; gap:4px 12px; }
-    .award-meta{ flex-basis:100%; }
-  }
+  /* ---- paper-style chart ---- */
+  .panelbox{ border:1px solid var(--line); border-radius:8px; background:var(--panel); padding:12px 14px; margin-top:12px; }
+  .panelbox h4{ font-family:'JetBrains Mono',monospace; font-size:.74rem; color:var(--muted); font-weight:500; margin:0 0 6px; }
+  svg.chart{ width:100%; height:auto; display:block; }
+  .chart .grid{ stroke:var(--line); stroke-dasharray:3 4; stroke-width:1; opacity:.55; }
+  .chart .axis{ stroke:var(--muted); stroke-width:1; }
+  .chart .tick{ fill:var(--muted); font-family:'JetBrains Mono',monospace; font-size:12px; }
+  .chart .axlabel{ fill:var(--muted); font-family:'JetBrains Mono',monospace; font-size:12px; }
+  .chart .bar{ fill:var(--dblue); }
+  .chart .hr{ fill:none; stroke:var(--num); stroke-width:1.5; }
+  .chart .hrdot{ fill:var(--num); }
+  .chart .legend-t{ fill:var(--ink); font-family:'JetBrains Mono',monospace; font-size:12px; }
+  .chart .co-box{ fill:var(--panel); stroke:var(--ink); stroke-width:1.1; }
+  .chart .co-text{ fill:var(--ink); font-family:'JetBrains Mono',monospace; font-size:12.5px; }
+  .chart .co-arrow{ fill:none; stroke:var(--ink); stroke-width:1.3; }
+  .chart .nowear{ fill:var(--muted); opacity:.12; }
+  .chart .trk{ fill:var(--bg); stroke:var(--line); stroke-width:1; }
+  .chart .trk.fixed{ stroke:var(--num); stroke-width:1.6; }
+  .chart .trk-t{ fill:var(--ink); font-family:'Inter',sans-serif; font-size:12.5px; }
+  .chart .trk-lab{ fill:var(--muted); font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:600; }
 
-  /* ---------- publications ---------- */
-  .pubbar{ display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:20px; }
-  .chip{
-    font-family:'JetBrains Mono',monospace; font-size:.75rem; cursor:pointer;
-    background:var(--bg); color:var(--muted); border:1px solid var(--line);
-    border-radius:4px; padding:5px 11px;
-  }
-  .chip:hover{ color:var(--ink); border-color:var(--accent); }
-  .chip.on{ color:var(--accent); border-color:var(--accent); background:var(--sel); }
-  .search{
-    flex:1; min-width:160px; font-family:'JetBrains Mono',monospace; font-size:.78rem;
-    background:var(--bg); color:var(--ink); border:1px solid var(--line);
-    border-radius:4px; padding:6px 11px;
-  }
-  .search::placeholder{ color:var(--muted); }
-  .yr{ font-family:'JetBrains Mono',monospace; font-size:.8rem; color:var(--num); margin:24px 0 8px; display:flex; align-items:center; gap:10px; }
-  .yr::after{ content:""; flex:1; height:1px; background:var(--line); }
-  .pub{ padding:16px 0; border-top:1px solid var(--line); }
-  .pub:first-of-type{ border-top:none; }
-  .pub-t{ font-weight:600; font-size:1.02rem; margin:0 0 5px; line-height:1.4; }
-  .pub-a{ font-size:.92rem; color:var(--muted); margin:0 0 4px; }
-  .pub-a strong{ color:var(--ink); font-weight:600; }
-  .pub-meta{ display:flex; flex-wrap:wrap; align-items:baseline; gap:8px; margin:0; }
-  .venue-tag{
-    font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--str);
-    border:1px solid var(--line); border-radius:4px; padding:2px 8px; white-space:nowrap;
-  }
-  .venue-full{ font-size:.9rem; color:var(--muted); }
-  .pub-note{ font-family:'JetBrains Mono',monospace; font-size:.74rem; color:var(--num); }
-  .pub-links{ display:flex; flex-wrap:wrap; gap:6px; margin-top:11px; }
-  .lnk{
-    font-family:'JetBrains Mono',monospace; font-size:.73rem; cursor:pointer;
-    display:inline-flex; align-items:center; gap:5px;
-    background:var(--bg); color:var(--muted); border:1px solid var(--line);
-    border-radius:4px; padding:4px 9px;
-  }
-  .lnk:hover{ color:var(--str); border-color:var(--str); }
-  .lnk.copied{ color:var(--num); border-color:var(--num); }
-  .lnk svg{ width:12px; height:12px; stroke:currentColor; stroke-width:1.8; fill:none; }
-  .src-slot .panel{ margin-top:12px; }
-  .empty{ font-family:'JetBrains Mono',monospace; font-size:.85rem; color:var(--muted); padding:16px 0; line-height:1.9; }
+  /* ---- architecture figure (bigger text) ---- */
+  .arch{ border:1px solid var(--line); border-radius:10px; background:var(--bg); padding:8px 8px 4px; margin-top:12px; }
+  .arch svg{ width:100%; height:auto; display:block; overflow:visible; }
+  .arch .phase-t{ fill:var(--ablue); font-family:'JetBrains Mono',monospace; font-size:19px; font-weight:700; }
+  .arch .cont{ fill:none; stroke:var(--muted); stroke-width:1.4; stroke-dasharray:3 4; opacity:.7; }
+  .arch .flow{ fill:none; stroke:var(--muted); stroke-width:1.7; }
+  .arch .flow.dash{ stroke-dasharray:4 4; opacity:.75; }
+  .anode{ height:100%; display:flex; align-items:center; justify-content:center; text-align:center; font-family:'JetBrains Mono',monospace; font-size:17px; font-weight:600; line-height:1.25; border-radius:7px; border:1px solid var(--line); background:var(--panel); color:var(--ink); padding:4px 6px; cursor:pointer; transition:opacity .18s ease, box-shadow .18s ease, transform .12s ease; }
+  .anode.clk:hover{ transform:translateY(-1px); box-shadow:0 4px 14px -6px rgba(0,0,0,.5); }
+  .anode.t-blue{ background:var(--dblue); border-color:var(--dblue); color:#fff; }
+  .anode.t-lblue{ background:var(--lblue); border-color:var(--lblue-b); color:var(--ink); }
+  .anode.io{ border:none; background:transparent; cursor:default; flex-direction:column; gap:6px; }
+  .anode.io .bub{ width:46px; height:46px; border:2px solid var(--ink); border-radius:14px 14px 14px 3px; display:flex; align-items:center; justify-content:center; font-size:24px; font-weight:700; }
+  .anode.io span{ font-size:16px; font-weight:600; }
+  .arch.has-sel .anode.clk:not(.sel){ opacity:.28; }
+  .anode.sel{ box-shadow:0 0 0 2px var(--accent), 0 0 18px -2px var(--accent); }
+  .anode.io.clk{ cursor:pointer; }
+  .anode.io.clk:hover{ box-shadow:none; }
+  .anode.io.sel .bub{ box-shadow:0 0 0 2px var(--accent), 0 0 14px -2px var(--accent); }
+  .streams{ height:100%; display:flex; flex-direction:column; }
+  .stream-grid{ flex:1; display:grid; grid-template-columns:repeat(4,1fr); gap:8px 4px; padding:8px 6px 2px; align-content:center; }
+  .sc{ display:flex; flex-direction:column; align-items:center; gap:4px; font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--muted); text-align:center; line-height:1.15; }
+  .sc svg{ width:24px; height:24px; stroke:var(--str); fill:none; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+  .stream-title{ text-align:center; font-family:'JetBrains Mono',monospace; font-size:16px; font-weight:700; color:var(--str); padding:2px 0 6px; }
+  .shared{ height:100%; padding:10px 14px; }
+  .shared h5{ font-family:'JetBrains Mono',monospace; font-size:14px; text-align:center; margin:0 0 8px; color:var(--ink); }
+  .shared .two{ display:grid; grid-template-columns:1fr 1fr; gap:16px; font-size:13px; color:var(--ink); line-height:1.4; }
+  .shared b{ color:var(--accent); font-family:'JetBrains Mono',monospace; }
 
-  footer{
-    max-width:940px; margin:18px auto 0; padding:0 6px;
-    font-family:'JetBrains Mono',monospace; font-size:.74rem; color:var(--muted);
-    display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
-  }
+  /* ---- explanation / output panel ---- */
+  .explain{ margin-top:12px; border:1px solid var(--line); border-left:3px solid var(--accent); border-radius:6px; background:var(--panel); padding:12px 14px; }
+  .explain .who{ font-family:'JetBrains Mono',monospace; font-size:.8rem; color:var(--accent); font-weight:600; margin-bottom:6px; }
+  .explain .txt{ font-size:.9rem; color:var(--ink); } .explain .txt .k{ color:var(--str); } .explain .txt .kn{ color:var(--num); } .explain .txt .kk{ color:var(--kw); }
+  .explain ul{ margin:4px 0 0; padding-left:18px; } .explain li{ margin:3px 0; font-size:.88rem; }
+  .explain .code{ font-family:'JetBrains Mono',monospace; font-size:.8rem; white-space:pre-wrap; color:var(--ink); background:var(--bg); border:1px solid var(--line); border-radius:5px; padding:10px 12px; overflow-x:auto; margin-top:4px; }
+  .explain b{ color:var(--accent); }
+
+  footer{ max-width:960px; margin:18px auto 0; padding:0 6px; font-family:'JetBrains Mono',monospace; font-size:.74rem; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
 </style>
 </head>
 <body>
@@ -178,266 +138,346 @@
 <div class="win">
   <div class="chrome">
     <span class="lights"><i></i><i></i><i></i></span>
-    <span class="fname">ha_le.js<span class="ind"> &#9679;</span></span>
+    <span class="fname">gloss4har.md<span class="ind"> &#9679;</span></span>
     <nav>
-      <a href="#about">about</a>
-      <a href="#awards">awards</a>
-      <a href="#publications">publications</a>
+      <a href="index.html">&larr; home</a>
+      <a href="#system">system</a>
+      <a href="https://doi.org/10.1145/3831653" target="_blank" rel="noopener">paper</a>
     </nav>
     <button class="theme-btn" id="themeBtn" aria-label="Toggle color theme">day</button>
   </div>
 
   <div class="body">
 
-    <!-- ===== HERO ===== -->
-    <section class="hero" id="about">
-      <h1>Ha&nbsp;Le<span class="cursor"></span></h1>
-      <div class="panel">
-        <div class="tabline">// whoami</div>
-        <div class="codewrap">
-          <div class="gutter">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12</div>
-          <div class="code"><span class="kw">const</span> <span class="fn">haLe</span> <span class="punc">=</span> <span class="punc">{</span>
-  <span class="prop">role</span><span class="punc">:</span>     <span class="str">"PhD Candidate @ Northeastern University"</span><span class="punc">,</span>
-  <span class="prop">advisors</span><span class="punc">:</span> <span class="punc">[</span><a class="str" href="https://www.khoury.northeastern.edu/home/intille/" target="_blank" rel="noopener">"Stephen Intille"</a><span class="punc">,</span> <a class="str" href="https://varunmishra.com/" target="_blank" rel="noopener">"Varun Mishra"</a><span class="punc">]</span><span class="punc">,</span>
-  <span class="prop">focus</span><span class="punc">:</span>    <span class="str">"human-in-the-loop wearable sensing"</span><span class="punc">,</span>
-  <span class="prop">links</span><span class="punc">:</span>    <span class="punc">{</span>
-    <span class="prop">email</span><span class="punc">:</span>   <a class="str" href="mailto:le.ha1@northeastern.edu">"le.ha1@northeastern.edu"</a><span class="punc">,</span>
-    <span class="prop">scholar</span><span class="punc">:</span> <a class="str" href="https://scholar.google.com/citations?user=OLtHYoUAAAAJ&amp;hl=en" target="_blank" rel="noopener">"google scholar"</a><span class="punc">,</span>
-    <span class="prop">github</span><span class="punc">:</span>  <a class="str" href="https://github.com/hvrlxy" target="_blank" rel="noopener">"hvrlxy"</a><span class="punc">,</span>
-    <span class="prop">twitter</span><span class="punc">:</span> <a class="str" href="https://twitter.com/xxx_hrl" target="_blank" rel="noopener">"@xxx_hrl"</a><span class="punc">,</span>
-    <span class="prop">cv</span><span class="punc">:</span>      <a class="str" href="pdfs/Le_Ha_Resume.pdf" target="_blank" rel="noopener">"resume.pdf"</a>
-  <span class="punc">}</span>
-<span class="punc">};</span></div>
-        </div>
+    <section class="hero">
+      <h1>Can a team of LLMs clean up messy activity labels?</h1>
+      <p class="sub">A walkthrough of <strong>GLOSS4HAR</strong> — a multi-agent LLM system that triangulates passive sensing data with low-effort self-reports to correct annotations and rebuild activity timelines.</p>
+      <div class="meta-row">
+        <span class="tag">IMWUT '26</span>
+        <span class="tag">multi-agent LLM</span>
+        <span class="tag">activity recognition</span>
+        <a class="tag" href="https://doi.org/10.1145/3831653" target="_blank" rel="noopener">doi ↗</a>
       </div>
+      <p class="authors"><strong>Ha Le</strong>, Akshat Choube, Varun Mishra, Stephen Intille &middot; Northeastern University</p>
     </section>
 
-    <!-- ===== ABOUT ===== -->
     <section class="prose">
-      <p class="comment"><span class="slash">//</span> <b>about</b></p>
-      <p>
-        I am a PhD candidate at Khoury College of Computer Sciences, Northeastern University, working
-        at the intersection of Human-Computer Interaction, Ubiquitous/Wearable Computing, and Personal
-        Health Informatics.
-      </p>
-      <p>
-        Most commercial activity-tracking systems rely on passive sensing and models trained on
-        lab-collected datasets, and often fail to generalize across real-world settings and
-        individuals. I build <strong>personalized, human-in-the-loop tracking and measurement
-        systems</strong> that (1) collect high-quality behavioral labels to capture each person's
-        habits and support personalized recognition models, and (2) let users give feedback with
-        minimal effort.
-      </p>
-      <p>
-        I received my B.A. in Mathematics and Computer Science from Gustavus Adolphus College in 2022,
-        where I did research with Prof. Louis Yu, Jillian Downey, and Jacob Siehler.
-      </p>
+      <p class="comment"><span class="slash">//</span> <b>the problem</b></p>
+      <p>Human activity recognition needs labeled data, but labels are painful to get. Participants' self-reports drift — they misremember start and end times, bunch several activities into one, or forget a quick errand. Researchers then spend hours reconciling those reports against sensor streams by hand. In the ACAI dataset this work builds on, <strong>22.6% of the minutes</strong> needed correcting.</p>
+      <p class="comment"><span class="slash">//</span> <b>the idea</b></p>
+      <p>GLOSS4HAR treats annotation cleanup as a <strong>sensemaking</strong> problem. A network of eight LLM agents plans what evidence to gather, pulls the relevant sensor streams (steps, heart rate, phone use, ambient sound, GPS), reasons over them, and emits a structured, corrected timeline — with a written justification for every change. It does two jobs:</p>
+      <ul>
+        <li><strong>Correction</strong> — take a participant's annotation and fix bunching, omissions, and boundary errors using the sensors.</li>
+        <li><strong>Reconstruction</strong> — rebuild a detailed timeline from a low-effort self-report (a rough activity list) plus the sensors.</li>
+      </ul>
+      <div class="stats">
+        <div class="stat"><div class="n">85.9 <small>&rarr; 93.6</small></div><div class="l">F1 on correction (orig &rarr; GLOSS, gpt-4o)</div></div>
+        <div class="stat"><div class="n">75&ndash;92<small>%</small></div><div class="l">timeline F1 vs human annotations</div></div>
+        <div class="stat"><div class="n">88.9<small>%</small></div><div class="l">exact match, context-aware &micro;EMA</div></div>
+      </div>
+      <p class="callout-note">The walkthrough below follows the paper's example runs. Heart-rate and step traces are drawn at a realistic minute-level resolution for illustration; the agent reasoning and the corrected labels follow the paper.</p>
     </section>
 
-    <!-- ===== AWARDS ===== -->
-    <section id="awards">
-      <p class="comment"><span class="slash">//</span> <b>awards</b> <span class="lead">&mdash; honors &amp; fellowships</span></p>
-      <div class="award-list">
-        <a class="award-card" href="https://machinelearning.apple.com/updates/apple-scholars-aiml-2026" target="_blank" rel="noopener">
-          <span class="award-name">Apple AI/ML PhD Fellowship</span>
-          <span class="award-meta">Apple Machine Learning &middot; 2026</span>
-        </a>
-        <a class="award-card" href="https://academic-honors.provost.northeastern.edu/graduate-awards/outstanding-graduate-student-award-for-humanics/" target="_blank" rel="noopener">
-          <span class="award-name">Outstanding PhD Student Award in Humanics</span>
-          <span class="award-meta">Northeastern University</span>
-        </a>
+    <section id="system">
+      <p class="comment"><span class="slash">//</span> <b>the system</b> <span class="lead">— pick a mode, then click any box in the diagram (Query &amp; Answer included)</span></p>
+
+      <div class="demo-head">
+        <button class="taskbtn on" data-mode="correction">task 1 · correction</button>
+        <button class="taskbtn" data-mode="reconstruction">task 2 · reconstruction</button>
+        <button class="taskbtn" data-mode="explore">explore</button>
+        <span class="spacer"></span>
+        <span class="stepc" id="stepc"></span>
       </div>
+
+      <div id="chartWrap"></div>
+
+      <div class="arch" id="archCanvas"></div>
+
+      <div class="explain" id="explain"></div>
     </section>
 
-    <!-- ===== PUBLICATIONS ===== -->
-    <section id="publications">
-      <p class="comment"><span class="slash">//</span> <b>publications</b> <span class="lead">&mdash; parsed from the BibTeX block below</span></p>
-      <div class="pubbar">
-        <input class="search" id="search" type="search" placeholder="grep title / author / venue&hellip;" aria-label="Search publications">
-        <div id="years"></div>
+    <section class="prose">
+      <p class="comment"><span class="slash">//</span> <b>what this shows</b></p>
+      <p>The multi-agent structure matters. Against a single-shot RAG baseline, GLOSS4HAR made far more correct fixes per day (up to ~126 min vs ~58) while keeping incorrect fixes low, and its written justifications let a researcher accept or reject each change. On reconstruction, a rough list of activities with approximate times was enough to rebuild timelines that align with researcher-reviewed ground truth — temporal precision, the most tedious thing to self-report, mattered least.</p>
+      <div class="meta-row">
+        <a class="tag" href="https://doi.org/10.1145/3831653" target="_blank" rel="noopener">read the paper ↗</a>
+        <a class="tag" href="https://github.com/hvrlxy" target="_blank" rel="noopener">code ↗</a>
+        <a class="tag" href="index.html">← back to home</a>
       </div>
-      <div id="pubs"><p class="empty">parsing&hellip;</p></div>
     </section>
 
   </div>
 </div>
 
-<footer>
-  <span>&copy; 2026 Ha Le</span>
-  <span>le.ha1@northeastern.edu &middot; Khoury College, Northeastern University</span>
-</footer>
-
-<!-- Publications live in publications.js — edit that file to add papers. -->
-<script src="publications.js"></script>
+<footer><span>© 2026 Ha Le</span><span>GLOSS4HAR · IMWUT '26</span></footer>
 
 <script>
-
-/* ---------- theme toggle ---------- */
-const root = document.documentElement, tbtn = document.getElementById('themeBtn');
-const saved = localStorage.getItem('theme');
-if (saved) root.setAttribute('data-theme', saved);
-function syncBtn(){ tbtn.textContent = root.getAttribute('data-theme') === 'night' ? 'day' : 'night'; }
+/* ---------- theme ---------- */
+var root=document.documentElement, tbtn=document.getElementById('themeBtn');
+var saved=localStorage.getItem('theme'); if(saved) root.setAttribute('data-theme',saved);
+function syncBtn(){ tbtn.textContent = root.getAttribute('data-theme')==='night' ? 'day' : 'night'; }
 syncBtn();
-tbtn.addEventListener('click', () => {
-  const next = root.getAttribute('data-theme') === 'night' ? 'day' : 'night';
-  root.setAttribute('data-theme', next); localStorage.setItem('theme', next); syncBtn();
-});
+tbtn.addEventListener('click',function(){ var n=root.getAttribute('data-theme')==='night'?'day':'night'; root.setAttribute('data-theme',n); localStorage.setItem('theme',n); syncBtn(); });
 
-/* ---------- BibTeX parser (ignores % comment lines) ---------- */
-function parseBib(raw){
-  const text = raw.split('\n').filter(l => !/^\s*%/.test(l)).join('\n');
-  const entries = [];
-  for (let i = 0; i < text.length; i++){
-    if (text[i] !== '@') continue;
-    let j = i + 1, type = '';
-    while (j < text.length && text[j] !== '{'){ type += text[j]; j++; }
-    if (text[j] !== '{') continue;
-    let depth = 0, start = j, k = j;
-    for (; k < text.length; k++){
-      if (text[k] === '{') depth++;
-      else if (text[k] === '}'){ depth--; if (depth === 0){ k++; break; } }
-    }
-    const src = text.slice(i, k);
-    const body = text.slice(start + 1, k - 1);
-    const comma = body.indexOf(',');
-    if (comma < 0){ i = k - 1; continue; }
-    const key = body.slice(0, comma).trim();
-    const rest = body.slice(comma + 1);
-    const fields = {};
-    let d = 0, buf = '', parts = [];
-    for (const ch of rest){
-      if (ch === '{' || ch === '(') d++;
-      else if (ch === '}' || ch === ')') d--;
-      if (ch === ',' && d === 0){ parts.push(buf); buf = ''; } else buf += ch;
-    }
-    parts.push(buf);
-    for (const p of parts){
-      const eq = p.indexOf('=');
-      if (eq < 0) continue;
-      const name = p.slice(0, eq).trim().toLowerCase();
-      let val = p.slice(eq + 1).trim();
-      if ((val.startsWith('{') && val.endsWith('}')) || (val.startsWith('"') && val.endsWith('"')))
-        val = val.slice(1, -1).trim();
-      if (name) fields[name] = val;
-    }
-    entries.push({ key, type: type.trim().toLowerCase(), fields, src: src.trim() });
-    i = k - 1;
+/* ---------- helpers ---------- */
+function toMin(t){ var p=t.split(':').map(Number); return p[0]*60+p[1]+(p[2]?p[2]/60:0); }
+function mulberry32(seed){ return function(){ seed|=0; seed=seed+0x6D2B79F5|0; var t=Math.imul(seed^seed>>>15,1|seed); t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; }
+function hhmm(m){ return String(Math.floor(m/60)).padStart(2,'0')+':'+String(Math.round(m%60)).padStart(2,'0'); }
+function esc(s){ return s.replace(/&(?![a-z#])/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function wrap(str,boxW){ var max=Math.max(6,Math.floor(boxW/6.6)); var words=str.split(' '); var lines=[],cur=''; words.forEach(function(w){ if((cur+' '+w).trim().length<=max) cur=(cur+' '+w).trim(); else{ if(cur) lines.push(cur); cur=w; } }); if(cur) lines.push(cur); return lines.slice(0,3); }
+
+/* ============================================================
+   DATA — example runs (correction: Fig. 5 style; reconstruction: Appendix C)
+   ============================================================ */
+var DATA={
+  correction:{
+    query:'Subject <b>pilot5</b> annotated <b>"walking"</b> for 21:00–21:10, then "cooking, standing, talking". Using the passive sensing data, refine the annotation — correct posture &amp; activities, tighten start/end times, merge identical labels, no overlaps.',
+    stages:[
+      { agent:'Action Plan Generation Agent', type:'list', body:[
+        'Define target interval 21:00–21:10; expand to 20:55–21:15 for context.',
+        'Query step count to locate actual movement vs. stationary time.',
+        'Query heart rate for exertion consistent with walking.',
+        'Query phone / app usage to detect seated computer work.',
+        'Query ambient noise every 5 min for speech and kitchen cues.',
+        'Check watch-wear status for reliability.',
+        'Triangulate signals, then trim the over-labeled "walking" span and merge identical labels.'
+      ]},
+      { agent:'Information Seeking · DB Manager · Code Generation', type:'code',
+        body:'// retrieved sensor data, 20:55–21:15\nstep_count : ~0–2 /min until 21:05\n           -> 21:05–21:08  ~22 /min   (real walking)\n           -> ~0 /min after 21:08\nheart_rate : ~78 bpm flat -> peak ~128 (21:06) -> ~100\nphone_use  : active 21:00–21:05  (computer / app use)\nambient    : "Speech" throughout; "Dishes, Cutlery" after 21:08\nwatch      : worn continuously' },
+      { agent:'Local · Global Sensemaking Agents', type:'narr',
+        body:'The label "walking" spans 21:00–21:10, but steps and heart rate stay <span class="kn">flat until ~21:05</span> while phone / app use is logged — consistent with <span class="k">sitting at a computer</span>, not walking. A genuine walking bout appears only at <span class="kn">21:05–21:08</span> (steps ≈22/min, heart rate rising to ~128). After 21:08 steps fall while ambient "dishes / cutlery" + speech suggest <span class="k">cooking while standing and talking</span>. The original label overfills a ~3-minute walk across a 10-minute window.' },
+      { agent:'Presentation Agent', type:'code',
+        body:'[\n  {"start":"21:00","end":"21:05","posture":"sitting",\n   "activity":"computer using, talking"},\n  {"start":"21:05","end":"21:08","posture":"standing","activity":"walking",\n   "reasoning":"step burst + HR rise = the real walking bout"},\n  {"start":"21:08","end":"21:15","posture":"standing",\n   "activity":"cooking, talking"}\n]' }
+    ],
+    chart:{ win:['21:00','21:15'], stepMax:30, hrMin:70, hrMax:135, seed:11,
+      stepBouts:[{s:'21:05',e:'21:08',rate:22,jit:5}],
+      hrKeys:[['21:00',78],['21:03',80],['21:05',96],['21:06',128],['21:07',118],['21:08',106],['21:10',100],['21:12',98],['21:15',101]],
+      callout:{ to:'21:06', lines:['[GLOSS]: increased step count and','elevated heart rate suggest walking','activity during this period.'] } },
+    tracks:[
+      { label:'Original annotations', segs:[ {s:'21:00',e:'21:10',label:'walking'}, {s:'21:10',e:'21:15',label:'cooking, standing, talking'} ] },
+      { label:'Fixed annotations', segs:[ {s:'21:00',e:'21:05',label:'computer using, sitting, talking'}, {s:'21:05',e:'21:08',label:'standing, walking',fixed:true}, {s:'21:08',e:'21:15',label:'cooking, standing, talking'} ] }
+    ]
+  },
+
+  reconstruction:{
+    query:'The participant reports they woke up, did their morning routine, rode the bus, used the computer, and studied in the morning. Reconstruct the activities from <b>8–9am</b> that day.',
+    stages:[
+      { agent:'Action Plan Generation Agent', type:'list', body:[
+        'Parse the query window: 08:00–09:00.',
+        'Query GPS; compute per-minute speed (home / walking / vehicular).',
+        'Query step count; classify lying (<5), walking (5–30), transit (<2 /min).',
+        'Query heart rate to corroborate exertion during movement.',
+        'Query phone usage and ambient noise for transition cues.',
+        'Check watch-wear reliability across the interval.',
+        'Triangulate with the reported list, merge identical consecutive segments, output non-overlapping JSON.'
+      ]},
+      { agent:'Information Seeking · DB Manager · Code Generation', type:'code',
+        body:'// retrieved sensor data, 08:00–09:00\nwatch_non_wear : 08:00–08:22  (early signals unreliable)\nstep_count : 08:25–08:39  sustained walking\n             08:52–08:56  sustained walking\nheart_rate : ~72 bpm -> rises with each walking bout\nphone_use  : brief taps 08:16–08:19, 08:37, 08:53…\nambient    : silence -> speech -> footsteps' },
+      { agent:'Local · Global Sensemaking Agents', type:'narr',
+        body:'The watch was <span class="kn">not worn until 08:22</span>, so early signals are weak — but the reported list starts with waking, so the participant was likely <span class="kk">lying down, then getting ready</span>. A sustained walking bout at <span class="kn">08:25–08:39</span> (with rising heart rate) matches leaving home; sporadic phone taps line up with getting ready. After ~08:40 steps drop to near zero while the reported "riding bus" fits — consistent with <span class="k">sitting in transit</span>.' },
+      { agent:'Presentation Agent', type:'code',
+        body:'[\n  {"start":"08:00","end":"08:15","posture":"lying down","activity":"sleeping"},\n  {"start":"08:15","end":"08:25","posture":"standing","activity":"getting ready, phone using"},\n  {"start":"08:25","end":"08:40","posture":"standing","activity":"walking"},\n  {"start":"08:40","end":"09:00","posture":"sitting","activity":"riding bus"}\n]' }
+    ],
+    chart:{ win:['08:00','09:00'], stepMax:30, hrMin:65, hrMax:130, seed:5, nowear:['08:00','08:22'],
+      stepBouts:[{s:'08:25',e:'08:39',rate:19,jit:4},{s:'08:52',e:'08:56',rate:21,jit:4}],
+      hrKeys:[['08:00',70],['08:15',72],['08:24',76],['08:26',96],['08:33',110],['08:39',102],['08:44',90],['08:52',94],['08:55',114],['08:57',104],['09:00',96]],
+      callout:{ to:'08:31', lines:['[GLOSS]: sustained steps and rising','heart rate indicate walking —','the participant left home.'] } },
+    tracks:[
+      { label:'GLOSS4HAR reconstructed timeline', segs:[ {s:'08:00',e:'08:15',label:'sleeping'}, {s:'08:15',e:'08:25',label:'getting ready, phone'}, {s:'08:25',e:'08:40',label:'walking',fixed:true}, {s:'08:40',e:'09:00',label:'riding bus'} ] }
+    ]
   }
-  return entries;
-}
-
-const ME = 'Ha Le';
-const esc = s => (s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-function fmtAuthors(a){
-  return (a || '').split(/\s+and\s+/).map(n => {
-    n = esc(n.trim()); return n === ME ? '<strong>' + n + '</strong>' : n;
-  }).join(', ');
-}
-const COPY = '<svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
-const BRACE = '<svg viewBox="0 0 24 24"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5a2 2 0 0 0 2 2h1"/><path d="M16 3h1a2 2 0 0 1 2 2v5a2 2 0 0 0 2 2 2 2 0 0 0-2 2v5a2 2 0 0 1-2 2h-1"/></svg>';
-const ICON = {
-  url:'<svg viewBox="0 0 24 24"><path d="M10 14 21 3"/><path d="M15 3h6v6"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>',
-  pdf:'<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>',
-  code:'<svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
-  slides:'<svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8"/><path d="M12 16v4"/></svg>',
-  poster:'<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>'
 };
-const LABEL = { url:'link', pdf:'pdf', code:'code', slides:'slides', poster:'poster' };
 
-let ALL = [], activeYear = 'all';
-const pubsEl = document.getElementById('pubs');
-const yearsEl = document.getElementById('years');
-const searchEl = document.getElementById('search');
+/* ---------- HR + step generators ---------- */
+function genHR(a,b,keys,seed){ var rnd=mulberry32(seed||7), pts=[], stepMin=0.5;
+  for(var t=a;t<=b+1e-6;t+=stepMin){ var v;
+    if(t<=keys[0].t) v=keys[0].v; else if(t>=keys[keys.length-1].t) v=keys[keys.length-1].v;
+    else{ for(var i=0;i<keys.length-1;i++){ if(t>=keys[i].t&&t<=keys[i+1].t){ var f=(t-keys[i].t)/(keys[i+1].t-keys[i].t); v=keys[i].v+f*(keys[i+1].v-keys[i].v); break; } } }
+    v += (rnd()-0.5)*5; pts.push({t:t,v:v}); }
+  return pts; }
+function genBars(bouts,stepMax){ var bars=[]; (bouts||[]).forEach(function(bt){ var s=toMin(bt.s),e=toMin(bt.e),rnd=mulberry32(Math.floor(s*7));
+  for(var m=Math.floor(s);m<e-1e-6;m+=1){ var v=Math.max(3, Math.min(stepMax, bt.rate+(rnd()-0.5)*(bt.jit||0)*2)); bars.push({s:m,e:Math.min(m+1,e),v:v}); } }); return bars; }
 
-function sourcePanel(src){
-  const lines = src.split('\n');
-  const nums = lines.map((_, n) => n + 1).join('\n');
-  return '<div class="panel"><div class="tabline">// bibtex</div><div class="codewrap">'
-    + '<div class="gutter">' + nums + '</div>'
-    + '<div class="code">' + esc(src) + '</div></div></div>';
+/* ---------- paper-style chart ---------- */
+function drawChart(task, showTracks){
+  var d=DATA[task], ch=d.chart, a=toMin(ch.win[0]), b=toMin(ch.win[1]), span=b-a;
+  var W=1000, padL=54, padR=58, chartTop=20, chartBottom=196;
+  var x=function(t){ return padL+((t-a)/span)*(W-padL-padR); };
+  var stepMax=ch.stepMax, hrMin=ch.hrMin, hrMax=ch.hrMax;
+  var yS=function(v){ return chartBottom-(v/stepMax)*(chartBottom-chartTop); };
+  var yH=function(v){ return chartBottom-((v-hrMin)/(hrMax-hrMin))*(chartBottom-chartTop); };
+  var tracks = showTracks ? (d.tracks||[]) : [];
+  var trackY0=224, rowH=66, boxH=48;
+  var gridBottom = tracks.length ? (trackY0+(tracks.length-1)*rowH+boxH) : chartBottom;
+  var timeY = gridBottom+18, svgH=timeY+8, g='';
+  g+='<defs><marker id="cah" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--ink)"/></marker></defs>';
+  // gridlines + time labels
+  var g0=Math.ceil(a/5)*5;
+  for(var m=g0;m<=b+1e-6;m+=5){ var xx=x(m);
+    g+='<line class="grid" x1="'+xx+'" y1="'+chartTop+'" x2="'+xx+'" y2="'+gridBottom+'"/>';
+    g+='<text class="tick" x="'+xx+'" y="'+timeY+'" text-anchor="middle">'+hhmm(m)+'</text>'; }
+  // watch-off shading
+  if(ch.nowear){ var nx0=x(toMin(ch.nowear[0])),nx1=x(toMin(ch.nowear[1]));
+    g+='<rect class="nowear" x="'+nx0+'" y="'+chartTop+'" width="'+(nx1-nx0)+'" height="'+(chartBottom-chartTop)+'"/>';
+    g+='<text class="axlabel" x="'+(nx0+4)+'" y="'+(chartTop+12)+'">watch off</text>'; }
+  // axes
+  g+='<line class="axis" x1="'+padL+'" y1="'+chartTop+'" x2="'+padL+'" y2="'+chartBottom+'"/>';
+  g+='<line class="axis" x1="'+padL+'" y1="'+chartBottom+'" x2="'+(W-padR)+'" y2="'+chartBottom+'"/>';
+  [0,10,20].forEach(function(v){ g+='<text class="tick" x="'+(padL-6)+'" y="'+(yS(v)+4)+'" text-anchor="end">'+v+'</text>'; });
+  g+='<text class="axlabel" transform="translate(14,'+((chartTop+chartBottom)/2)+') rotate(-90)" text-anchor="middle">steps / min</text>';
+  g+='<line class="axis" x1="'+(W-padR)+'" y1="'+chartTop+'" x2="'+(W-padR)+'" y2="'+chartBottom+'"/>';
+  [80,100,120].forEach(function(v){ if(v>=hrMin&&v<=hrMax) g+='<text class="tick" x="'+(W-padR+6)+'" y="'+(yH(v)+4)+'" text-anchor="start">'+v+'</text>'; });
+  g+='<text class="axlabel" transform="translate('+(W-14)+','+((chartTop+chartBottom)/2)+') rotate(90)" text-anchor="middle">heart rate (BPM)</text>';
+  // step bars
+  genBars(ch.stepBouts,stepMax).forEach(function(br){ var x0=x(br.s),x1=x(br.e); g+='<rect class="bar" x="'+(x0+1)+'" y="'+yS(br.v)+'" width="'+Math.max(x1-x0-2,2)+'" height="'+(chartBottom-yS(br.v))+'"/>'; });
+  // HR line + dots
+  var hr=genHR(a,b, ch.hrKeys.map(function(k){return {t:toMin(k[0]),v:k[1]};}), ch.seed);
+  g+='<polyline class="hr" points="'+hr.map(function(p){return x(p.t)+','+yH(p.v);}).join(' ')+'"/>';
+  for(var i=0;i<hr.length;i+=3){ g+='<circle class="hrdot" cx="'+x(hr[i].t)+'" cy="'+yH(hr[i].v)+'" r="1.4"/>'; }
+  // legend
+  var lx=W-padR-208, ly=chartTop+4;
+  g+='<rect class="bar" x="'+lx+'" y="'+ly+'" width="14" height="10"/><text class="legend-t" x="'+(lx+20)+'" y="'+(ly+9)+'">Steps</text>';
+  g+='<line class="hr" x1="'+(lx+82)+'" y1="'+(ly+5)+'" x2="'+(lx+106)+'" y2="'+(ly+5)+'"/><circle class="hrdot" cx="'+(lx+94)+'" cy="'+(ly+5)+'" r="1.5"/><text class="legend-t" x="'+(lx+112)+'" y="'+(ly+9)+'">Heart rate</text>';
+  // callout
+  if(ch.callout){ var co=ch.callout, bx=padL+56, by=chartTop+2, bw=304, lines=co.lines, bh=8+lines.length*15;
+    g+='<rect class="co-box" x="'+bx+'" y="'+by+'" width="'+bw+'" height="'+bh+'" rx="5"/>';
+    lines.forEach(function(ln,ix){ g+='<text class="co-text" x="'+(bx+10)+'" y="'+(by+16+ix*15)+'">'+ln+'</text>'; });
+    var ax=x(toMin(co.to)), ayTop=by+bh, ayEnd=chartBottom-6;
+    g+='<path class="co-arrow" d="M'+(bx+bw*0.5)+','+ayTop+' Q'+ax+','+((ayTop+ayEnd)/2)+' '+ax+','+ayEnd+'" marker-end="url(#cah)"/>'; }
+  // tracks
+  tracks.forEach(function(tr,ti){ var ty=trackY0+ti*rowH;
+    g+='<text class="trk-lab" x="'+padL+'" y="'+(ty-6)+'">'+tr.label+'</text>';
+    tr.segs.forEach(function(sg){ var x0=x(toMin(sg.s)),x1=x(toMin(sg.e));
+      g+='<rect class="trk'+(sg.fixed?' fixed':'')+'" x="'+x0+'" y="'+ty+'" width="'+(x1-x0)+'" height="'+boxH+'"/>';
+      var ls=wrap(sg.label,x1-x0), sy=ty+boxH/2-(ls.length-1)*7+4;
+      ls.forEach(function(ln,ix){ g+='<text class="trk-t" x="'+((x0+x1)/2)+'" y="'+(sy+ix*14)+'" text-anchor="middle">'+ln+'</text>'; }); }); });
+  return '<div class="panelbox"><h4>sensor evidence the agents pulled'+(showTracks?' — before / after':'')+'</h4><svg class="chart" viewBox="0 0 '+W+' '+svgH+'" preserveAspectRatio="xMidYMid meet" role="img" aria-label="sensor chart">'+g+'</svg></div>';
 }
 
-function render(){
-  const q = searchEl.value.trim().toLowerCase();
-  let list = ALL.filter(e => {
-    const f = e.fields;
-    const okYear = activeYear === 'all' || f.year === activeYear;
-    const hay = ((f.title||'') + ' ' + (f.author||'') + ' ' + (f.venue||'') + ' ' + (f.venuefull||'')).toLowerCase();
-    return okYear && (!q || hay.includes(q));
-  });
-  if (!list.length){ pubsEl.innerHTML = '<p class="empty">// no matches</p>'; return; }
-  list.sort((a, b) => (b.fields.year||'0').localeCompare(a.fields.year||'0'));
-  let html = '', lastYear = null;
-  list.forEach((e, idx) => {
-    const f = e.fields;
-    if (f.year !== lastYear){ html += '<div class="yr">' + esc(f.year) + '</div>'; lastYear = f.year; }
-    let links = '';
-    ['url','pdf','code','slides','poster'].forEach(t => {
-      if (f[t]) links += '<a class="lnk" href="' + f[t] + '" target="_blank" rel="noopener">' + ICON[t] + LABEL[t] + '</a>';
-    });
-    links += '<button class="lnk" data-src="' + idx + '">' + BRACE + 'source</button>';
-    links += '<button class="lnk" data-copy="' + idx + '">' + COPY + 'copy bibtex</button>';
-    const note = f.note ? '<span class="pub-note">&middot; ' + esc(f.note) + '</span>' : '';
-    const vtag = f.venue ? '<span class="venue-tag">' + esc(f.venue) + '</span>' : '';
-    const vfull = f.venuefull ? '<span class="venue-full">' + esc(f.venuefull) + '</span>' : '';
-    html += '<div class="pub">'
-      + '<p class="pub-t">' + esc(f.title) + '</p>'
-      + '<p class="pub-a">' + fmtAuthors(f.author) + '</p>'
-      + '<p class="pub-meta">' + vtag + vfull + note + '</p>'
-      + '<div class="pub-links">' + links + '</div>'
-      + '<div class="src-slot" data-slot="' + idx + '"></div></div>';
-  });
-  pubsEl.innerHTML = html;
-
-  pubsEl.querySelectorAll('button[data-copy]').forEach(btn => btn.addEventListener('click', () => {
-    navigator.clipboard.writeText(list[+btn.dataset.copy].src).then(() => {
-      const prev = btn.innerHTML;
-      btn.classList.add('copied'); btn.textContent = 'copied \u2713';
-      setTimeout(() => { btn.classList.remove('copied'); btn.innerHTML = prev; }, 1400);
-    }).catch(() => {});
-  }));
-  pubsEl.querySelectorAll('button[data-src]').forEach(btn => btn.addEventListener('click', () => {
-    const idx = btn.dataset.src;
-    const slot = pubsEl.querySelector('.src-slot[data-slot="' + idx + '"]');
-    slot.innerHTML = slot.innerHTML ? '' : sourcePanel(list[+idx].src);
-  }));
+/* ============================================================
+   ARCHITECTURE FIGURE
+   ============================================================ */
+var EXPL={
+  query:{n:'User Query', t:'The question or instruction that enters the network — for example, "refine this annotation" or "reconstruct what happened from 8–9am." Everything downstream is planned around answering it.'},
+  plan:{n:'Action Plan Generation Agent', t:'Takes the user query and creates a high-level plan to answer it using the available data. If no data can answer the query, it stops the sensemaking process and informs the user.'},
+  next:{n:'Next Step Agent', t:'Assesses the action plan, the current understanding, and memory to decide the next step. Each cycle it checks whether the current understanding sufficiently answers the query; if not, it enters the information-seeking &harr; sensemaking loop. At the start, understanding and memory are empty, so it always enters the loop first.'},
+  seek:{n:'Information Seeking Agent', t:'Creates specific information requests to retrieve data from the databases — fetching, processing, or cross-validating multiple sensor streams.'},
+  process:{n:'Database / Model Manager + Code Generation Agents', t:'The Information Seeking Agent passes requests to the Database/Model Manager Agent to retrieve or process data. Using predefined helper functions, the Code Generation Agent writes and executes Python to process it, and the results are sent to the sensemaking loop.'},
+  sense:{n:'Local + Global Sensemaking Agents', t:'The Local Sensemaking Agent turns the retrieved data and code output into a natural-language representation, added to memory along with the information requests. The Global Sensemaking Agent then reviews the action plan, prior understanding, and memory to form a new understanding — then control returns to the Next Step Agent, completing one loop iteration.'},
+  present:{n:'Presentation Agent', t:'Once the Next Step Agent decides the understanding is sufficient, it hands off here. The Presentation Agent extracts the answer from the understanding and formats it according to any user-specified presentation instructions.'},
+  answer:{n:'Answer', t:'The final, formatted response returned to the user: a structured, corrected activity timeline with a short justification for every change the system made.'}
+};
+var IC={
+  loc:'<svg viewBox="0 0 24 24"><path d="M12 21s7-6.7 7-12a7 7 0 1 0-14 0c0 5.3 7 12 7 12z"/><circle cx="12" cy="9" r="2.3"/></svg>',
+  phone:'<svg viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>',
+  steps:'<svg viewBox="0 0 24 24"><ellipse cx="8" cy="9" rx="2.6" ry="4.5"/><ellipse cx="16" cy="15" rx="2.6" ry="4.5"/></svg>',
+  hr:'<svg viewBox="0 0 24 24"><path d="M3 12h4l2-5 3 10 2-5h7"/></svg>',
+  sound:'<svg viewBox="0 0 24 24"><path d="M4 9v6M8 5v14M12 8v8M16 5v14M20 9v6"/></svg>',
+  uema:'<svg viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 7V4h6v3M9 17v3h6v-3"/></svg>',
+  temp:'<svg viewBox="0 0 24 24"><path d="M12 3a2 2 0 0 1 2 2v9a4 4 0 1 1-4 0V5a2 2 0 0 1 2-2z"/></svg>',
+  wrist:'<svg viewBox="0 0 24 24"><path d="M8 11V6a1.5 1.5 0 0 1 3 0v4m0 0V4.5a1.5 1.5 0 0 1 3 0V10m0 0V6a1.5 1.5 0 0 1 3 0v6a6 6 0 0 1-6 6h-1a5 5 0 0 1-4-2l-1.5-2.5"/></svg>'
+};
+var NODES=[
+  {io:'?',node:'query',label:'Query',x:26,y:56,w:124,h:100},
+  {node:'plan',cls:'t-white',x:195,y:66,w:190,h:68,label:'Action Plan<br/>Generation Agent'},
+  {node:'next',cls:'t-white',x:520,y:66,w:170,h:68,label:'Next Step<br/>Agent'},
+  {node:'seek',cls:'t-blue',x:912,y:74,w:184,h:62,label:'Information<br/>Seeking Agent'},
+  {node:'process',cls:'t-blue',x:878,y:196,w:178,h:70,label:'Database / Model<br/>Manager Agent'},
+  {node:'process',cls:'t-blue',x:1072,y:196,w:116,h:70,label:'Code<br/>Generation'},
+  {node:'sense',cls:'t-lblue',x:516,y:246,w:188,h:62,label:'Global<br/>Sensemaking Agent'},
+  {node:'sense',cls:'t-lblue',x:742,y:356,w:188,h:70,label:'Local<br/>Sensemaking Agent'},
+  {node:'present',cls:'t-white',x:195,y:356,w:186,h:70,label:'Presentation<br/>Agent'},
+  {io:'\u2713',node:'answer',label:'Answer',x:26,y:350,w:124,h:100}
+];
+var ARROWS=[
+  {d:'M150,106 H191'},
+  {d:'M385,100 H516'},
+  {d:'M690,92 L845,92 L845,105 L908,105'},
+  {d:'M1004,136 V196'},
+  {d:'M1056,231 H1072', both:true},
+  {d:'M958,266 L958,391 L934,391'},
+  {d:'M836,356 L836,332 L610,332 L610,310'},
+  {d:'M610,246 V136'},
+  {d:'M524,134 L470,134 L470,342 L288,342 L288,354'},
+  {d:'M195,391 H154'},
+  {d:'M940,266 V330', both:true, dash:true},
+  {d:'M1120,266 V330', both:true, dash:true}
+];
+function foTag(x,y,w,hh,inner){ return '<foreignObject x="'+x+'" y="'+y+'" width="'+w+'" height="'+hh+'"><div xmlns="http://www.w3.org/1999/xhtml" style="width:100%;height:100%">'+inner+'</div></foreignObject>'; }
+function foNode(n){ var inner = n.io ? '<div class="anode io clk" data-node="'+n.node+'"><div class="bub">'+n.io+'</div><span>'+n.label+'</span></div>' : '<div class="anode clk '+(n.cls||'')+'" data-node="'+n.node+'">'+n.label+'</div>'; return foTag(n.x,n.y,n.w,n.h,inner); }
+function foStreams(){ var items=[['location',IC.loc],['phone use',IC.phone],['steps',IC.steps],['heart rate',IC.hr],['ambient sound',IC.sound],['&micro;EMA responses',IC.uema],['skin temp.',IC.temp],['wrist movement',IC.wrist]], gg='';
+  items.forEach(function(it){ gg+='<div class="sc">'+it[1]+'<span>'+it[0]+'</span></div>'; });
+  return foTag(866,332,329,278,'<div class="streams"><div class="stream-grid">'+gg+'</div><div class="stream-title">Sensor Streams</div></div>'); }
+function foShared(){ var inner='<div class="shared"><h5>Components shared by all LLM agents</h5><div class="two"><div><b>Memory</b> — all the data retrieved so far via information requests, used to build up an understanding of the query.</div><div><b>Understanding</b> — logs of the answer so far, including what additional data is still needed to complete the response.</div></div></div>';
+  return '<rect class="cont" x="40" y="466" width="760" height="150" rx="12" style="stroke-dasharray:none;opacity:1"/>'+foTag(48,474,744,134,inner); }
+function buildArch(){
+  var s='<svg viewBox="0 0 1210 640" preserveAspectRatio="xMidYMid meet" role="img" aria-label="GLOSS4HAR agent architecture">';
+  s+='<defs><marker id="ah" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto-start-reverse"><path d="M0,0 L7,3 L0,6 Z" fill="var(--muted)"/></marker></defs>';
+  s+='<rect class="cont" x="855" y="44" width="340" height="240" rx="18"/>';
+  s+='<text class="phase-t" x="1025" y="36" text-anchor="middle">Information Seeking phase</text>';
+  s+='<rect class="cont" x="855" y="324" width="345" height="290" rx="18"/>';
+  s+='<text class="phase-t" x="600" y="452" text-anchor="middle">Sensemaking phase</text>';
+  ARROWS.forEach(function(a){ var m='marker-end="url(#ah)"'; if(a.both) m+=' marker-start="url(#ah)"'; s+='<path class="flow'+(a.dash?' dash':'')+'" d="'+a.d+'" '+m+'/>'; });
+  NODES.forEach(function(n){ s+=foNode(n); });
+  s+=foStreams(); s+=foShared(); s+='</svg>';
+  return s;
 }
 
-function buildYearChips(){
-  const yrs = [...new Set(ALL.map(e => e.fields.year).filter(Boolean))].sort().reverse();
-  let html = '<button class="chip on" data-y="all">all</button>';
-  yrs.forEach(y => html += '<button class="chip" data-y="' + y + '">' + y + '</button>');
-  yearsEl.innerHTML = html;
-  yearsEl.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => {
-    yearsEl.querySelectorAll('.chip').forEach(x => x.classList.remove('on'));
-    c.classList.add('on'); activeYear = c.dataset.y; render();
-  }));
-}
+/* ============================================================
+   STEPPER — the architecture drives the walkthrough
+   ============================================================ */
+var mode='correction', sel=null;
+var arch, explain, chartWrap, stepc;
+var NEXT_NOTE='At this point the understanding and memory are still empty, so the Next Step Agent enters the information-seeking ↔ sensemaking loop to gather evidence before it lets the system answer.';
+DATA.correction.answerNote='GLOSS4HAR returns the corrected timeline below: the 10-minute "walking" label is trimmed to the real ~3-minute walk (21:05–21:08), with computer use before it and cooking after — each change carrying its own justification.';
+DATA.reconstruction.answerNote='GLOSS4HAR returns the reconstructed timeline below: sleeping, then getting ready, a walking bout as the participant leaves home, then sitting on the bus — inferred from the rough report plus the sensors.';
+var STAGE_IX={plan:0,seek:1,process:1,sense:2,present:3};
 
-function boot(raw){
-  ALL = parseBib(raw);
-  if (!ALL.length){ pubsEl.innerHTML = '<p class="empty">// no BibTeX entries found</p>'; return; }
-  buildYearChips(); render();
+function highlight(nodes){
+  arch.querySelectorAll('.anode.sel').forEach(function(x){ x.classList.remove('sel'); });
+  if(!nodes||!nodes.length){ arch.classList.remove('has-sel'); return; }
+  nodes.forEach(function(nd){ arch.querySelectorAll('.anode.clk[data-node="'+nd+'"]').forEach(function(x){ x.classList.add('sel'); }); });
+  arch.classList.add('has-sel');
 }
-
-searchEl.addEventListener('input', render);
-
-if (window.BIBTEX){
-  boot(window.BIBTEX);
-} else {
-  pubsEl.innerHTML = '<p class="empty">// publications.js did not load &mdash; make sure it sits next to index.html</p>';
+function stageBody(st){
+  if(st.type==='list') return '<ul>'+st.body.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul>';
+  if(st.type==='code') return '<div class="code">'+esc(st.body)+'</div>';
+  return '<div class="txt">'+st.body+'</div>';
 }
+function exContent(task,node){
+  var d=DATA[task];
+  if(node==='query')  return {who:'user query', html:'<div class="txt">'+d.query+'</div>'};
+  if(node==='next')   return {who:'Next Step Agent', html:'<div class="txt">'+NEXT_NOTE+'</div>'};
+  if(node==='answer') return {who:'Answer', html:'<div class="txt">'+d.answerNote+'</div>'};
+  var st=d.stages[STAGE_IX[node]];
+  return {who:st.agent, html:stageBody(st)};
+}
+function tracksFor(node){ return node==='present'||node==='answer'; }
+function selectNode(node){
+  sel=node; highlight([node]);
+  if(mode==='explore'){ var e=EXPL[node]; explain.innerHTML='<div class="who">'+e.n+'</div><div class="txt">'+e.t+'</div>'; }
+  else{ var c=exContent(mode,node); explain.innerHTML='<div class="who">'+c.who+'</div>'+c.html; chartWrap.innerHTML=drawChart(mode, tracksFor(node)); }
+}
+function setMode(m){
+  mode=m; sel=null; highlight([]);
+  document.querySelectorAll('.taskbtn').forEach(function(x){ x.classList.toggle('on', x.dataset.mode===m); });
+  if(mode==='explore'){
+    chartWrap.innerHTML=''; stepc.textContent='explore mode';
+    explain.innerHTML='<div class="who">explore</div><div class="txt">Click any box in the diagram to read what it does. Blue boxes (right) do the data work, light-blue boxes interpret it, white boxes plan and present.</div>';
+  } else {
+    chartWrap.innerHTML=drawChart(mode,false);
+    stepc.textContent = (m==='correction'?'example 1 · correction':'example 2 · reconstruction');
+    explain.innerHTML='<div class="who">'+(m==='correction'?'correction example':'reconstruction example')+'</div><div class="txt">Click any box in the diagram — start at <b>Query</b> on the left and follow the arrows around to <b>Answer</b>. Each box reveals its step in the run below.</div>';
+  }
+}
+function initArch(){
+  arch=document.getElementById('archCanvas'); explain=document.getElementById('explain'); chartWrap=document.getElementById('chartWrap'); stepc=document.getElementById('stepc');
+  arch.innerHTML=buildArch();
+  arch.querySelectorAll('.anode.clk').forEach(function(el){ el.addEventListener('click',function(){ selectNode(el.dataset.node); }); });
+  document.querySelectorAll('.taskbtn').forEach(function(b){ b.addEventListener('click',function(){ setMode(b.dataset.mode); }); });
+  setMode('correction');
+}
+initArch();
 </script>
 </body>
 </html>
