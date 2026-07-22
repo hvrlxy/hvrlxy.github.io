@@ -45,7 +45,7 @@
      year   = {2026},
      venue     = {UIST '26},
      venuefull = {ACM Symposium on User Interface Software and Technology},
-     doi={https://doi.org/10.1145/3830398.3830678},
+     url = {https://doi.org/10.1145/3830398.3830678},
      note      = {Conditionally Accepted}
    }
    
