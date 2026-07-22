@@ -14,7 +14,7 @@
      year      = {2026},
      venue     = {AJSLP '26},
      venuefull = {American Journal of Speech-Language Pathology},
-     note      = {In press}
+     note      = {Conditionally Accepted}
    }
    
    @inproceedings{le2026multiagent,
@@ -24,7 +24,9 @@
      venue     = {IMWUT '26},
      venuefull = {Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies},
      pdf       = {pdfs/GLOSS4HAR_imwut26.pdf},
-     demo      = {blogs/gloss4har.html}
+     demo      = {blogs/gloss4har.html},
+     url = {https://doi.org/10.1145/3831653},
+     note      = {Conditionally Accepted}
    }
    
    @inproceedings{choube2026daimon,
@@ -32,7 +34,9 @@
      author = {Akshat Choube and Shreeti Shrestha and Ha Le and Jiachen Li and Vedant Das Swain and Varun Mishra},
      year   = {2026},
      venue     = {IMWUT '26},
-     venuefull = {Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies}
+     url = {https://doi.org/10.1145/3832033},
+     venuefull = {Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies},
+     note      = {Conditionally Accepted}
    }
    
    @inproceedings{kim2026games,
@@ -40,7 +44,9 @@
      author = {Jin-seo Kim and Ha Le and Akshat Choube and Varun Mishra and Stephen Intille},
      year   = {2026},
      venue     = {UIST '26},
-     venuefull = {ACM Symposium on User Interface Software and Technology}
+     venuefull = {ACM Symposium on User Interface Software and Technology},
+     doi={https://doi.org/10.1145/3830398.3830678},
+     note      = {Conditionally Accepted}
    }
    
    @article{le2025acai,
