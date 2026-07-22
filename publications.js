@@ -18,7 +18,7 @@
    }
    
    @inproceedings{le2026multiagent,
-     title  = {Feasibility of using a multi-agent LLM system to correct annotations and support low-effort activity labeling},
+     title  = {Feasibility of using a Multi-Agent LLM System to Correct Annotations and Support Low-Effort Activity Labeling},
      author = {Ha Le and Akshat Choube and Varun Mishra and Stephen Intille},
      year   = {2026},
      venue     = {IMWUT '26},
