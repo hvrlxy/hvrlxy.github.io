@@ -23,6 +23,7 @@ window.BIBTEX = String.raw`
   year   = {2026},
   venue     = {IMWUT '26},
   venuefull = {Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies},
+  url    = {https://doi.org/10.1145/3831653},
   note      = {Conditionally Accepted}
 }
 
@@ -32,15 +33,17 @@ window.BIBTEX = String.raw`
   year   = {2026},
   venue     = {IMWUT '26},
   venuefull = {Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies},
+  url    = {https://doi.org/10.1145/3832033},
   note      = {Conditionally Accepted}
 }
 
 @inproceedings{kim2026games,
-  title  = {Generating Personalized Games with Sensing Data for Longitudinal Data Collection},
+  title  = {Generating Personalized Games with Sensing Data for Data Collection},
   author = {Jin-seo Kim and Ha Le and Akshat Choube and Varun Mishra and Stephen Intille},
   year   = {2026},
   venue     = {UIST '26},
   venuefull = {ACM Symposium on User Interface Software and Technology},
+  url    = {https://doi.org/10.1145/3830398.3830678},
   note      = {Conditionally Accepted}
 }
 

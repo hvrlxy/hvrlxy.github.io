@@ -44,21 +44,25 @@
   .body{ padding:34px 40px 44px; }
   @media(max-width:600px){ .body{ padding:24px 16px 30px; } }
 
-  .comment{ font-family:'JetBrains Mono',monospace; font-size:.82rem; color:var(--muted); margin:0 0 16px; }
-  .comment .slash{ color:var(--punc); } .comment b{ color:var(--accent); font-weight:600; } .comment .lead{ color:var(--punc); }
+  .comment{ font-family:'JetBrains Mono',monospace; font-size:1.3rem; font-weight:700; letter-spacing:-.01em; color:var(--muted); margin:0 0 18px; }
+  .comment .slash{ color:var(--punc); } .comment b{ color:var(--accent); font-weight:700; } .comment .lead{ color:var(--punc); font-size:.8rem; font-weight:400; letter-spacing:0; }
   section{ margin-bottom:50px; } section:last-child{ margin-bottom:0; }
 
   .hero h1{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:clamp(1.7rem,4.5vw,2.5rem); letter-spacing:-.02em; margin:0 0 10px; line-height:1.1; }
-  .hero .sub{ color:var(--muted); font-size:1.02rem; max-width:60ch; margin:0 0 18px; }
+  .hero .sub{ color:var(--muted); font-size:1.02rem; margin:0 0 18px; }
   .meta-row{ display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
   .tag{ font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--str); border:1px solid var(--line); border-radius:4px; padding:3px 9px; }
   .authors{ font-size:.9rem; color:var(--muted); margin:14px 0 0; } .authors strong{ color:var(--ink); font-weight:600; }
-  .prose p{ margin:0 0 14px; max-width:66ch; } .prose strong{ font-weight:600; } .prose ul{ margin:0 0 14px; padding-left:20px; } .prose li{ margin:4px 0; }
+  .prose p{ margin:0 0 14px; } .prose strong{ font-weight:600; } .prose ul{ margin:0 0 14px; padding-left:20px; } .prose li{ margin:4px 0; }
   .stats{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin-top:6px; }
   .stat{ border:1px solid var(--line); border-left:3px solid var(--num); border-radius:6px; padding:12px 14px; background:var(--bg); }
   .stat .n{ font-family:'JetBrains Mono',monospace; font-size:1.35rem; font-weight:700; color:var(--ink); } .stat .n small{ font-size:.9rem; color:var(--num); font-weight:600; }
   .stat .l{ font-size:.8rem; color:var(--muted); margin-top:2px; }
   .callout-note{ font-size:.82rem; color:var(--muted); border-left:3px solid var(--line); padding:2px 0 2px 12px; margin:12px 0 0; }
+  .rq{ border:1px solid var(--line); border-left:3px solid var(--accent); border-radius:6px; padding:14px 16px; background:var(--bg); margin-top:12px; }
+  .rq .rqn{ font-family:'JetBrains Mono',monospace; font-size:.74rem; color:var(--accent); font-weight:600; margin-bottom:5px; }
+  .rq .rqq{ font-weight:600; color:var(--ink); margin:0 0 6px; }
+  .rq p{ margin:0; color:var(--muted); font-size:.92rem; }
 
   /* ---- controls ---- */
   .demo-head{ display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:12px; }
@@ -88,6 +92,10 @@
   .chart .co-text{ fill:var(--ink); font-family:'JetBrains Mono',monospace; font-size:12.5px; }
   .chart .co-arrow{ fill:none; stroke:var(--ink); stroke-width:1.3; }
   .chart .nowear{ fill:var(--muted); opacity:.12; }
+  .chart .phone-track{ fill:none; stroke:var(--line); stroke-width:1; }
+  .chart .phone-on{ fill:var(--dblue); }
+  .chart .mic{ stroke:var(--str); stroke-width:1; fill:none; }
+  .chart .amb-lab{ fill:var(--muted); font-family:'JetBrains Mono',monospace; font-size:9.5px; }
   .chart .trk{ fill:var(--bg); stroke:var(--line); stroke-width:1; }
   .chart .trk.fixed{ stroke:var(--num); stroke-width:1.6; }
   .chart .trk-t{ fill:var(--ink); font-family:'Inter',sans-serif; font-size:12.5px; }
@@ -130,6 +138,81 @@
   .explain .code{ font-family:'JetBrains Mono',monospace; font-size:.8rem; white-space:pre-wrap; color:var(--ink); background:var(--bg); border:1px solid var(--line); border-radius:5px; padding:10px 12px; overflow-x:auto; margin-top:4px; }
   .explain b{ color:var(--accent); }
 
+  /* ---------- dataset & tasks ---------- */
+  .dflow{ display:flex; flex-wrap:wrap; align-items:stretch; gap:12px; margin-top:10px; }
+  .dcol{ display:flex; flex-direction:column; gap:12px; flex:1 1 320px; }
+  .dcard{ border:1px solid var(--line); border-radius:8px; background:var(--bg); padding:13px 15px; flex:1; }
+  .dcard h5{ font-family:'JetBrains Mono',monospace; font-size:.78rem; margin:0 0 8px; color:var(--str); font-weight:600; }
+  .dcard.sr h5{ color:var(--num); }
+  .dcard.gt{ border-color:var(--accent); border-left:3px solid var(--accent); background:var(--panel); flex:1 1 300px; display:flex; flex-direction:column; justify-content:center; }
+  .dcard.gt h5{ color:var(--accent); }
+  .dchips{ display:flex; flex-wrap:wrap; gap:6px; }
+  .dchip{ font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--muted); border:1px solid var(--line); border-radius:4px; padding:3px 8px; }
+  .dline{ font-size:.86rem; color:var(--ink); margin:3px 0; } .dline .k{ color:var(--num); font-family:'JetBrains Mono',monospace; font-size:.9em; }
+  .dnote{ font-size:.84rem; color:var(--muted); }
+  .dconnect{ display:flex; flex-direction:column; align-items:center; justify-content:center; color:var(--punc); font-family:'JetBrains Mono',monospace; font-size:.66rem; gap:2px; text-align:center; }
+  .dconnect b{ font-size:1.4rem; line-height:1; color:var(--punc); }
+  .subhead{ font-family:'JetBrains Mono',monospace; font-size:.82rem; color:var(--accent); font-weight:600; margin:26px 0 2px; }
+  .sublead{ color:var(--muted); font-size:.9rem; margin:0 0 6px; }
+  .tflow{ display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-top:8px; }
+  .tbox{ font-family:'JetBrains Mono',monospace; font-size:.76rem; border:1px solid var(--line); border-radius:7px; background:var(--panel); padding:9px 12px; text-align:center; color:var(--ink); line-height:1.3; }
+  .tbox small{ color:var(--muted); }
+  .tbox.accent{ background:var(--dblue); border-color:var(--dblue); color:#fff; font-weight:600; }
+  .tbox.gt{ border-color:var(--accent); border-left:3px solid var(--accent); }
+  .tarrow{ color:var(--punc); font-family:'JetBrains Mono',monospace; font-size:1.05rem; text-align:center; }
+  .tarrow small{ display:block; font-size:.6rem; color:var(--muted); margin-top:-3px; }
+  .tarrow.dash{ color:var(--num); }
+  .simflow{ display:flex; flex-wrap:wrap; align-items:stretch; gap:8px; margin-top:6px; }
+  .scard{ font-family:'JetBrains Mono',monospace; font-size:.7rem; border:1px solid var(--line); border-radius:8px; background:var(--bg); padding:10px 11px; min-width:148px; }
+  .scard.narr{ font-style:italic; max-width:236px; }
+  .scard h6{ font-size:.68rem; color:var(--str); margin:0 0 6px; font-weight:600; }
+  .scard .r{ color:var(--ink); margin:2px 0; } .scard .r .t{ color:var(--num); }
+  .sarrow{ display:flex; flex-direction:column; justify-content:center; align-items:center; color:var(--punc); font-family:'JetBrains Mono',monospace; font-size:.6rem; min-width:62px; text-align:center; line-height:1.2; }
+  .sarrow b{ font-size:1.1rem; color:var(--punc); }
+  .sbranch{ display:flex; flex-direction:column; gap:8px; }
+  .sbr{ display:flex; align-items:stretch; gap:8px; }
+
+  /* ---------- self-report cartoons ---------- */
+  .sr-row{ display:flex; flex-wrap:wrap; gap:12px; margin-top:8px; }
+  .sr-scene{ flex:1 1 160px; border:1px solid var(--line); border-radius:8px; background:var(--bg); padding:10px 8px 8px; text-align:center; }
+  .sr-scene svg{ width:100%; height:auto; max-height:140px; display:block; margin:0 auto; }
+  .sr-cap{ font-family:'JetBrains Mono',monospace; font-size:.7rem; color:var(--muted); margin-top:8px; line-height:1.3; }
+  .sr-cap b{ color:var(--accent); display:block; font-size:.74rem; }
+  .cartoon .ln{ stroke:var(--ink); stroke-width:2; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+  .cartoon .fillbg{ fill:var(--bg); }
+  .cartoon .bubble{ fill:var(--panel); stroke:var(--ink); stroke-width:2; }
+  .cartoon .txtline{ stroke:var(--muted); stroke-width:2.4; stroke-linecap:round; }
+  .cartoon .tnum{ fill:var(--num); font-family:'JetBrains Mono',monospace; font-size:8px; }
+  .cartoon .dotA{ fill:var(--num); }
+  .cartoon .eye{ fill:var(--ink); }
+  .cartoon .ping{ transform-box:fill-box; transform-origin:center; }
+  @keyframes sr-ping{ 0%{ transform:scale(.35); opacity:.8 } 100%{ transform:scale(1.7); opacity:0 } }
+  @keyframes sr-bob{ 0%,100%{ transform:translateY(0) } 50%{ transform:translateY(-3px) } }
+  @keyframes sr-write{ 0%{opacity:0} 12%{opacity:1} 82%{opacity:1} 96%{opacity:0} 100%{opacity:0} }
+  @keyframes sr-talk{ 0%,100%{opacity:.25} 50%{opacity:1} }
+  @media(prefers-reduced-motion:no-preference){
+    .cartoon .ping{ animation:sr-ping 1.9s ease-out infinite; }
+    .cartoon .ping.p2{ animation-delay:.63s } .cartoon .ping.p3{ animation-delay:1.26s }
+    .cartoon .bob{ transform-box:fill-box; transform-origin:center; animation:sr-bob 2.6s ease-in-out infinite; }
+    .cartoon .wi{ animation:sr-write 4.2s ease infinite; }
+    .cartoon .wi.d2{ animation-delay:.5s } .cartoon .wi.d3{ animation-delay:1s } .cartoon .wi.d4{ animation-delay:1.5s }
+    .cartoon .talk{ animation:sr-talk 1.3s ease-in-out infinite; } .cartoon .talk.t2{ animation-delay:.32s } .cartoon .talk.t3{ animation-delay:.64s }
+  }
+
+  /* ---------- related reading + citation ---------- */
+  .ref{ border:1px solid var(--line); border-radius:6px; padding:12px 14px; background:var(--bg); margin-top:10px; }
+  .ref .rt{ font-weight:600; color:var(--ink); }
+  .ref .ra{ font-size:.86rem; color:var(--muted); margin:4px 0; }
+  .ref .ra strong{ color:var(--ink); }
+  .ref .rv{ font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--str); }
+  .ref .rwhy{ font-size:.86rem; color:var(--muted); margin:6px 0 0; }
+  .ref a.tag{ margin-top:9px; display:inline-block; }
+  .cite-wrap{ position:relative; margin-top:10px; }
+  .cite-block{ font-family:'JetBrains Mono',monospace; font-size:.78rem; white-space:pre; overflow-x:auto; background:var(--bg); border:1px solid var(--line); border-radius:8px; padding:14px 16px; margin:0; color:var(--ink); }
+  .cite-copy{ position:absolute; top:10px; right:10px; font-family:'JetBrains Mono',monospace; font-size:.72rem; cursor:pointer; background:var(--panel); color:var(--muted); border:1px solid var(--line); border-radius:5px; padding:5px 10px; }
+  .cite-copy:hover{ color:var(--accent); border-color:var(--accent); }
+  .cite-copy.copied{ color:var(--num); border-color:var(--num); }
+
   footer{ max-width:960px; margin:18px auto 0; padding:0 6px; font-family:'JetBrains Mono',monospace; font-size:.74rem; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
 </style>
 </head>
@@ -142,6 +225,8 @@
     <nav>
       <a href="index.html">&larr; home</a>
       <a href="#system">system</a>
+      <a href="#dataset">data</a>
+      <a href="#results">results</a>
       <a href="https://doi.org/10.1145/3831653" target="_blank" rel="noopener">paper</a>
     </nav>
     <button class="theme-btn" id="themeBtn" aria-label="Toggle color theme">day</button>
@@ -150,36 +235,44 @@
   <div class="body">
 
     <section class="hero">
-      <h1>Can a team of LLMs clean up messy activity labels?</h1>
-      <p class="sub">A walkthrough of <strong>GLOSS4HAR</strong> — a multi-agent LLM system that triangulates passive sensing data with low-effort self-reports to correct annotations and rebuild activity timelines.</p>
+      <h1>Can a team of LLMs support low-effort data collection for longitudinal research studies?</h1>
       <div class="meta-row">
         <span class="tag">IMWUT '26</span>
-        <span class="tag">multi-agent LLM</span>
-        <span class="tag">activity recognition</span>
         <a class="tag" href="https://doi.org/10.1145/3831653" target="_blank" rel="noopener">doi ↗</a>
+        <a class="tag" href="pdfs/GLOSS4HAR_imwut26.pdf" target="_blank" rel="noopener">pdf ↗</a>
+        <a class="tag" href="https://github.com/UbiWell/GLOSS4HAR/" target="_blank" rel="noopener">code ↗</a>
       </div>
       <p class="authors"><strong>Ha Le</strong>, Akshat Choube, Varun Mishra, Stephen Intille &middot; Northeastern University</p>
     </section>
 
     <section class="prose">
       <p class="comment"><span class="slash">//</span> <b>the problem</b></p>
-      <p>Human activity recognition needs labeled data, but labels are painful to get. Participants' self-reports drift — they misremember start and end times, bunch several activities into one, or forget a quick errand. Researchers then spend hours reconciling those reports against sensor streams by hand. In the ACAI dataset this work builds on, <strong>22.6% of the minutes</strong> needed correcting.</p>
+      <p>Collecting high-quality labels for human activity recognition (HAR) in free-living settings is one of the hardest problems in ubiquitous computing. Most studies lean on participants' self-reports, which are often incomplete and temporally inaccurate, and take real effort from both participants and researchers to clean and verify.</p>
+      <p>As wearables become part of everyday life, that process won't scale. We need annotation methods that improve data quality <em>and</em> the user experience — without researchers manually reviewing every timeline.</p>
+
       <p class="comment"><span class="slash">//</span> <b>the idea</b></p>
-      <p>GLOSS4HAR treats annotation cleanup as a <strong>sensemaking</strong> problem. A network of eight LLM agents plans what evidence to gather, pulls the relevant sensor streams (steps, heart rate, phone use, ambient sound, GPS), reasons over them, and emits a structured, corrected timeline — with a written justification for every change. It does two jobs:</p>
-      <ul>
-        <li><strong>Correction</strong> — take a participant's annotation and fix bunching, omissions, and boundary errors using the sensors.</li>
-        <li><strong>Reconstruction</strong> — rebuild a detailed timeline from a low-effort self-report (a rough activity list) plus the sensors.</li>
-      </ul>
-      <div class="stats">
-        <div class="stat"><div class="n">85.9 <small>&rarr; 93.6</small></div><div class="l">F1 on correction (orig &rarr; GLOSS, gpt-4o)</div></div>
-        <div class="stat"><div class="n">75&ndash;92<small>%</small></div><div class="l">timeline F1 vs human annotations</div></div>
-        <div class="stat"><div class="n">88.9<small>%</small></div><div class="l">exact match, context-aware &micro;EMA</div></div>
+      <p><strong>Humans and AI have complementary strengths.</strong></p>
+      <p>People remember the meaningful events of their day — studying for an exam, a meeting, a concert, cooking dinner — the high-level activities that are often impossible to infer from sensors alone. But they are unreliable on exact timestamps, short transitions, and brief activities.</p>
+      <p>Sensing systems are the opposite: they continuously detect movement, flag anomalies, and reason across many data streams, yet lack the personal context to know what those signals mean.</p>
+      <p><strong>GLOSS4HAR</strong> combines the two — a multi-agent LLM system that mimics human sensemaking. Rather than replacing participants, it collaborates with them, triangulating passive sensing with lightweight self-reports to produce more accurate activity timelines.</p>
+
+      <p class="comment"><span class="slash">//</span> <b>research questions</b></p>
+      <p>Our work explores two questions:</p>
+      <div class="rq">
+        <div class="rqn">RQ1 · correcting self-reports</div>
+        <p class="rqq">Can a multi-agent LLM identify mistakes in participants' self-reports and suggest reasonable corrections?</p>
+        <p>Can the system detect omissions, temporal misalignment, and merged activities by combining multiple sensor streams with participants' own descriptions?</p>
       </div>
-      <p class="callout-note">The walkthrough below follows the paper's example runs. Heart-rate and step traces are drawn at a realistic minute-level resolution for illustration; the agent reasoning and the corrected labels follow the paper.</p>
+      <div class="rq">
+        <div class="rqn">RQ2 · low-effort self-reporting</div>
+        <p class="rqq">Can a multi-agent LLM support low-effort self-reporting?</p>
+        <p>Can passive sensing combined with lightweight self-reports — μEMA, activity lists, or end-of-day summaries — recover detailed activity timelines while reducing participant burden?</p>
+      </div>
     </section>
 
-    <section id="system">
+        <section id="system">
       <p class="comment"><span class="slash">//</span> <b>the system</b> <span class="lead">— pick a mode, then click any box in the diagram (Query &amp; Answer included)</span></p>
+      <p style="margin:0 0 16px">Below you can watch GLOSS4HAR work end to end. Run it on either study example, or switch to Explore to read each agent's role. In an example, click any box in the diagram — from the Query to the Answer — to reveal that step's sensor evidence, reasoning, and resulting timeline.</p>
 
       <div class="demo-head">
         <button class="taskbtn on" data-mode="correction">task 1 · correction</button>
@@ -196,15 +289,235 @@
       <div class="explain" id="explain"></div>
     </section>
 
+    <!-- DATASET & TASKS -->
+    <section id="dataset" class="prose">
+      <p class="comment"><span class="slash">//</span> <b>the dataset &amp; tasks</b></p>
+      <p>Both tasks are evaluated on <strong>ACAI</strong>, a one-week free-living dataset of passive sensing paired with participant self-reports. Here's what's in it, and how each task uses it. <a href="https://doi.org/10.1145/3770710" target="_blank" rel="noopener">Read the ACAI paper ↗</a></p>
+
+      <div class="dflow">
+        <div class="dcol">
+          <div class="dcard">
+            <h5>passive sensing</h5>
+            <div class="dchips"><span class="dchip">GPS</span><span class="dchip">app use</span><span class="dchip">steps</span><span class="dchip">heart rate</span><span class="dchip">ambient sound</span><span class="dchip">skin temp</span><span class="dchip">wrist motion</span></div>
+          </div>
+          <div class="dcard sr">
+            <h5>participant self-reports</h5>
+            <div class="dline"><span class="k">μEMA</span> — spoken, every 15 min</div>
+            <div class="dline"><span class="k">annotations</span> — end of day, 5-min grid</div>
+          </div>
+        </div>
+        <div class="dconnect"><b>→</b><span>researchers<br>triangulate</span></div>
+        <div class="dcard gt">
+          <h5>researcher-fixed annotations</h5>
+          <div class="dnote">Manually reconciled against the sensors to form the reviewed <strong>ground truth</strong> — 22.6% of minutes changed (bunching · omission · boundary).</div>
+        </div>
+      </div>
+
+      <p>Throughout the week the phone and smartwatch log passive signals continuously, while participants add two kinds of self-report: quick spoken μEMA check-ins every 15 minutes, and a longer end-of-day session labeling activities on a five-minute grid. Those raw labels still carry recall errors, so the research team reconciled each one against the sensors to build a reviewed ground truth — a process that changed 22.6% of all minutes. That reviewed set is what every model is scored against.</p>
+      <div class="subhead">task 1 · correcting self-reports</div>
+      <div class="sublead">Fix errors in an existing annotation using the sensors.</div>
+      <div class="tflow">
+        <div class="tbox">participant<br>annotation</div>
+        <span class="tarrow">+</span>
+        <div class="tbox">passive sensing<br><small>(no thigh)</small></div>
+        <span class="tarrow">→</span>
+        <div class="tbox accent">GLOSS4HAR</div>
+        <span class="tarrow">→</span>
+        <div class="tbox">corrected<br>annotation</div>
+        <span class="tarrow dash">⇢<small>compare</small></span>
+        <div class="tbox gt">researcher<br>ground truth</div>
+      </div>
+
+      <p>In the correction task, the system sees one participant annotation at a time — its text and timestamp — together with every sensor stream except the held-out thigh accelerometer. It judges whether the label is wrong, proposes a corrected version, and writes a short justification a researcher can accept or reject. We measure how close those corrections land to the researcher-reviewed labels, with a retrieval-augmented (RAG) system as the baseline.</p>
+      <div class="subhead">task 2 · low-effort reconstruction</div>
+      <div class="sublead">Rebuild the timeline from a lightweight report.</div>
+      <div class="tflow">
+        <div class="tbox">original<br>annotation</div>
+        <span class="tarrow">→<small>simulate</small></span>
+        <div class="tbox" style="border-style:dashed">low-effort<br>report</div>
+        <span class="tarrow">+</span>
+        <div class="tbox">passive<br>sensing</div>
+        <span class="tarrow">→</span>
+        <div class="tbox accent">GLOSS4HAR</div>
+        <span class="tarrow">→</span>
+        <div class="tbox">reconstructed<br>timeline</div>
+        <span class="tarrow dash">⇢<small>compare</small></span>
+        <div class="tbox gt">3 ground truths</div>
+      </div>
+
+      <p>In the reconstruction task the participant never produces a detailed timeline at all. Instead they give a lightweight report, and GLOSS4HAR rebuilds the full hour-by-hour timeline by fusing that report with the passive sensing. We score the result against three references: the thigh-sensor postures, the researcher-reviewed labels, and the participant's own original annotations.</p>
+      <div class="sublead" style="margin-top:16px">Instead of making detailed, minute-by-minute annotations all day, participants can self-report their activities in much lighter ways — for example:</div>
+      <div class="sr-row">
+        <div class="sr-scene">
+          <svg class="cartoon" viewBox="0 0 120 120" role="img" aria-label="person speaking into their smartwatch">
+            <path class="ln fillbg" d="M22 100 Q22 68 40 68 Q58 68 58 100"/>
+            <circle class="ln fillbg" cx="40" cy="38" r="13"/>
+            <circle class="eye" cx="35" cy="37" r="1.5"/><circle class="eye" cx="45" cy="37" r="1.5"/>
+            <path class="ln" d="M35 43 Q40 46 45 43"/>
+            <path class="ln" d="M54 80 Q70 72 63 52"/>
+            <rect x="55" y="46" width="14" height="11" rx="2.5" fill="var(--str)" stroke="var(--ink)" stroke-width="2"/>
+            <circle class="ln ping" cx="82" cy="51" r="6" style="stroke:var(--str)"/>
+            <circle class="ln ping p2" cx="82" cy="51" r="6" style="stroke:var(--str)"/>
+            <circle class="ln ping p3" cx="82" cy="51" r="6" style="stroke:var(--str)"/>
+          </svg>
+          <div class="sr-cap"><b>in the moment</b>μEMA</div>
+        </div>
+        <div class="sr-scene">
+          <svg class="cartoon" viewBox="0 0 120 120" role="img" aria-label="person writing a list of activities with times">
+            <path class="ln fillbg" d="M16 100 Q16 70 33 70 Q50 70 50 100"/>
+            <circle class="ln fillbg" cx="33" cy="40" r="12"/>
+            <circle class="eye" cx="28.5" cy="39" r="1.4"/><circle class="eye" cx="37.5" cy="39" r="1.4"/>
+            <path class="ln" d="M29 45 Q33 48 37 45"/>
+            <rect class="ln fillbg" x="64" y="34" width="44" height="66" rx="4"/>
+            <text class="tnum wi" x="69" y="50">7:30</text><line class="txtline wi" x1="87" y1="47" x2="103" y2="47"/>
+            <text class="tnum wi d2" x="69" y="63">8:00</text><line class="txtline wi d2" x1="87" y1="60" x2="103" y2="60"/>
+            <text class="tnum wi d3" x="69" y="76">8:40</text><line class="txtline wi d3" x1="87" y1="73" x2="103" y2="73"/>
+            <text class="tnum wi d4" x="69" y="89">9:10</text><line class="txtline wi d4" x1="87" y1="86" x2="103" y2="86"/>
+          </svg>
+          <div class="sr-cap"><b>list activities</b>with time</div>
+        </div>
+        <div class="sr-scene">
+          <svg class="cartoon" viewBox="0 0 120 120" role="img" aria-label="person listing activities without times">
+            <path class="ln fillbg" d="M16 100 Q16 70 33 70 Q50 70 50 100"/>
+            <circle class="ln fillbg" cx="33" cy="40" r="12"/>
+            <circle class="eye" cx="28.5" cy="39" r="1.4"/><circle class="eye" cx="37.5" cy="39" r="1.4"/>
+            <path class="ln" d="M29 45 Q33 48 37 45"/>
+            <rect class="ln fillbg" x="64" y="34" width="44" height="66" rx="4"/>
+            <circle class="dotA wi" cx="72" cy="47" r="2.4"/><line class="txtline wi" x1="80" y1="47" x2="102" y2="47"/>
+            <circle class="dotA wi d2" cx="72" cy="60" r="2.4"/><line class="txtline wi d2" x1="80" y1="60" x2="102" y2="60"/>
+            <circle class="dotA wi d3" cx="72" cy="73" r="2.4"/><line class="txtline wi d3" x1="80" y1="73" x2="102" y2="73"/>
+            <circle class="dotA wi d4" cx="72" cy="86" r="2.4"/><line class="txtline wi d4" x1="80" y1="86" x2="102" y2="86"/>
+          </svg>
+          <div class="sr-cap"><b>list activities</b>no time</div>
+        </div>
+        <div class="sr-scene">
+          <svg class="cartoon" viewBox="0 0 120 120" role="img" aria-label="person talking about their day">
+            <path class="ln fillbg" d="M14 100 Q14 70 31 70 Q48 70 48 100"/>
+            <circle class="ln fillbg" cx="31" cy="40" r="12"/>
+            <circle class="eye" cx="27" cy="39" r="1.4"/><circle class="eye" cx="35" cy="39" r="1.4"/>
+            <ellipse class="talk" cx="31" cy="46" rx="3" ry="2.4" fill="var(--ink)"/>
+            <g class="bob">
+              <rect class="bubble" x="56" y="26" width="52" height="40" rx="9"/>
+              <path class="bubble" d="M58 54 L49 62 L61 58 Z"/>
+              <circle class="dotA talk" cx="70" cy="46" r="3"/>
+              <circle class="dotA talk t2" cx="82" cy="46" r="3"/>
+              <circle class="dotA talk t3" cx="94" cy="46" r="3"/>
+            </g>
+          </svg>
+          <div class="sr-cap"><b>talk about</b>your day</div>
+        </div>
+      </div>
+
+      <p>These formats trade detail for effort — μEMA is fast but sparse, activity lists capture what happened while blurring exact timing, and a spoken narration is the most natural but least structured. Studying all of them in a real deployment would be impractical, so we recreate each format from the detailed annotations we already collected.</p>
+      <div class="sublead" style="margin-top:16px">How a low-effort report is simulated from the detailed annotation:</div>
+      <div class="simflow">
+        <div class="scard">
+          <h6>original annotation</h6>
+          <div class="r"><span class="t">7:30–8:10</span> sitting, dressed</div>
+          <div class="r"><span class="t">8:15–8:30</span> standing, cooking</div>
+          <div class="r"><span class="t">8:40–9:10</span> standing, walking</div>
+          <div class="r"><span class="t">9:10–11:35</span> sitting, studying</div>
+          <div class="r">…</div>
+        </div>
+        <div class="sarrow"><b>→</b><span>info loss ·<br>jitter · swap</span></div>
+        <div class="scard">
+          <h6>list (approx time)</h6>
+          <div class="r">Wake up — <span class="t">7:30</span></div>
+          <div class="r">Getting dressed — <span class="t">30m</span></div>
+          <div class="r">Cooking — <span class="t">20m</span></div>
+          <div class="r">Walking — <span class="t">20m</span></div>
+          <div class="r">Studying — <span class="t">135m</span></div>
+        </div>
+        <div class="sbranch">
+          <div class="sbr">
+            <div class="sarrow"><b>→</b><span>remove<br>times</span></div>
+            <div class="scard">
+              <h6>list (no time)</h6>
+              <div class="r">Wake up</div>
+              <div class="r">Getting dressed</div>
+              <div class="r">Cooking · Walking</div>
+              <div class="r">Studying …</div>
+            </div>
+          </div>
+          <div class="sbr">
+            <div class="sarrow"><b>→</b><span>LLM<br>narration</span></div>
+            <div class="scard narr">
+              <h6>open-ended narration</h6>
+              “I started my morning around 7:30 getting dressed… around 8:40 I started walking for about half an hour…”
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>Each step throws away a little more information: we drop posture labels and turn exact times into rough durations, jitter those durations, and shuffle some of the ordering to mimic imperfect recall. Dropping the durations entirely yields an untimed list, while passing the timed list through an LLM produces the free-form narration.</p>
+    </section>
+
+    <!-- RESULTS -->
+    <section id="results" class="prose">
+      <p class="comment"><span class="slash">//</span> <b>results</b></p>
+      <p>Our experiments show strong performance on both tasks.</p>
+      <div class="stats">
+        <div class="stat">
+          <div class="n">+7.7<small> F1</small></div>
+          <div class="l"><strong>Task 1 · correction.</strong> Gain in annotation F1 from GLOSS4HAR's corrections (gpt-4o) over the participant's raw labels — also ahead of a RAG baseline.</div>
+        </div>
+        <div class="stat">
+          <div class="n">86.7<small>% F1</small></div>
+          <div class="l"><strong>Task 2 · reconstruction.</strong> Timeline rebuilt from nothing but a rough activity list plus passive sensing (gpt-4o) — close to what a detailed recall would give.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAKEAWAY -->
     <section class="prose">
-      <p class="comment"><span class="slash">//</span> <b>what this shows</b></p>
-      <p>The multi-agent structure matters. Against a single-shot RAG baseline, GLOSS4HAR made far more correct fixes per day (up to ~126 min vs ~58) while keeping incorrect fixes low, and its written justifications let a researcher accept or reject each change. On reconstruction, a rough list of activities with approximate times was enough to rebuild timelines that align with researcher-reviewed ground truth — temporal precision, the most tedious thing to self-report, mattered least.</p>
-      <div class="meta-row">
+      <p class="comment"><span class="slash">//</span> <b>takeaway</b></p>
+      <p>First, GLOSS4HAR shows the feasibility of an automated human–AI collaboration system that supports <strong>low-effort reporting of behavioral data</strong>. Instead of asking participants to produce detailed, minute-by-minute annotations, it meets them where they are — reconciling lightweight self-reports with passive sensing — a step away from traditional, high-burden data-collection protocols.</p>
+      <p>Second, it points beyond the usual homogeneous pipeline of <span class="mono">data → model → prediction</span>. A system like GLOSS4HAR can take in many kinds of input at once — not just fixed-format, high-frequency wearable signals, but also high-level contextual descriptions and user feedback — and reason across them toward a prediction. That flexibility is hard to reach with traditional ML pipelines, and opens the door to more adaptive, human-in-the-loop sensing systems.</p>
+    </section>
+
+    <!-- CITE -->
+    <section id="cite" class="prose">
+      <p class="comment"><span class="slash">//</span> <b>cite</b></p>
+      <p>If you find this work useful, please consider citing our paper:</p>
+      <div class="cite-wrap">
+        <button class="cite-copy" id="citeCopy">copy</button>
+        <pre class="cite-block" id="bib">@article{le2026multiagent,
+  title   = {Feasibility of using a Multi-Agent LLM System to Correct Annotations and Support Low-Effort Activity Labeling},
+  volume  = {10},
+  url     = {https://doi.org/10.1145/3831653},
+  doi     = {10.1145/3831653},
+  number  = {3},
+  journal = {Proc. ACM Interact. Mob. Wearable Ubiquitous Technol.},
+  author  = {Le, Ha and Choube, Akshat and Mishra, Varun and Intille, Stephen},
+  month   = sep,
+  year    = {2026}
+}</pre>
+      </div>
+    </section>
+
+    <!-- READ NEXT -->
+    <section id="reading" class="prose">
+      <p class="comment"><span class="slash">//</span> <b>read next</b></p>
+      <p>GLOSS4HAR builds directly on two earlier projects:</p>
+      <div class="ref">
+        <div class="rt">GLOSS: Group of LLMs for Open-Ended Sensemaking of Passive Sensing Data for Health and Wellbeing</div>
+        <div class="ra">Akshat Choube, <strong>Ha Le</strong>, Jiachen Li, Kaixin Ji, Vedant Das Swain, Varun Mishra &middot; <span class="rv">IMWUT '25</span></div>
+        <div class="rwhy">The multi-agent LLM sensemaking network that GLOSS4HAR extends to activity annotation.</div>
+        <a class="tag" href="https://dl.acm.org/doi/10.1145/3749474" target="_blank" rel="noopener">doi ↗</a>
+      </div>
+      <div class="ref">
+        <div class="rt">A Context-Assisted, Semi-Automated Activity Recall Interface Allowing Uncertainty</div>
+        <div class="ra"><strong>Ha Le</strong>, Veronika Potter, Akshat Choube, Rithika Lakshminarayanan, Varun Mishra, Stephen Intille &middot; <span class="rv">IMWUT '25</span></div>
+        <div class="rwhy">ACAI &mdash; the one-week free-living dataset of passive sensing and participant self-reports used to evaluate GLOSS4HAR.</div>
+        <a class="tag" href="https://doi.org/10.1145/3770710" target="_blank" rel="noopener">doi ↗</a>
+      </div>
+      <div class="meta-row" style="margin-top:18px">
         <a class="tag" href="https://doi.org/10.1145/3831653" target="_blank" rel="noopener">read the paper ↗</a>
-        <a class="tag" href="https://github.com/hvrlxy" target="_blank" rel="noopener">code ↗</a>
+        <a class="tag" href="https://github.com/UbiWell/GLOSS4HAR/" target="_blank" rel="noopener">code ↗</a>
         <a class="tag" href="index.html">← back to home</a>
       </div>
     </section>
+
+
 
   </div>
 </div>
@@ -247,15 +560,17 @@ var DATA={
       { agent:'Local · Global Sensemaking Agents', type:'narr',
         body:'The label "walking" spans 21:00–21:10, but steps and heart rate stay <span class="kn">flat until ~21:05</span> while phone / app use is logged — consistent with <span class="k">sitting at a computer</span>, not walking. A genuine walking bout appears only at <span class="kn">21:05–21:08</span> (steps ≈22/min, heart rate rising to ~128). After 21:08 steps fall while ambient "dishes / cutlery" + speech suggest <span class="k">cooking while standing and talking</span>. The original label overfills a ~3-minute walk across a 10-minute window.' },
       { agent:'Presentation Agent', type:'code',
-        body:'[\n  {"start":"21:00","end":"21:05","posture":"sitting",\n   "activity":"computer using, talking"},\n  {"start":"21:05","end":"21:08","posture":"standing","activity":"walking",\n   "reasoning":"step burst + HR rise = the real walking bout"},\n  {"start":"21:08","end":"21:15","posture":"standing",\n   "activity":"cooking, talking"}\n]' }
+        body:'[\n  {"start":"21:00","end":"21:05","posture":"sitting",\n   "activity":"phone using, talking"},\n  {"start":"21:05","end":"21:08","posture":"standing","activity":"walking",\n   "reasoning":"step burst + HR rise = the real walking bout"},\n  {"start":"21:08","end":"21:15","posture":"standing",\n   "activity":"cooking, talking"}\n]' }
     ],
     chart:{ win:['21:00','21:15'], stepMax:30, hrMin:70, hrMax:135, seed:11,
       stepBouts:[{s:'21:05',e:'21:08',rate:22,jit:5}],
       hrKeys:[['21:00',78],['21:03',80],['21:05',96],['21:06',128],['21:07',118],['21:08',106],['21:10',100],['21:12',98],['21:15',101]],
+      phone:[{s:'21:00',e:'21:05'}],
+      ambient:[['21:00','typing'],['21:05','speech'],['21:10','dishes'],['21:15','speech']],
       callout:{ to:'21:06', lines:['[GLOSS]: increased step count and','elevated heart rate suggest walking','activity during this period.'] } },
     tracks:[
       { label:'Original annotations', segs:[ {s:'21:00',e:'21:10',label:'walking'}, {s:'21:10',e:'21:15',label:'cooking, standing, talking'} ] },
-      { label:'Fixed annotations', segs:[ {s:'21:00',e:'21:05',label:'computer using, sitting, talking'}, {s:'21:05',e:'21:08',label:'standing, walking',fixed:true}, {s:'21:08',e:'21:15',label:'cooking, standing, talking'} ] }
+      { label:'Fixed annotations', segs:[ {s:'21:00',e:'21:05',label:'phone using, sitting, talking'}, {s:'21:05',e:'21:08',label:'standing, walking',fixed:true}, {s:'21:08',e:'21:15',label:'cooking, standing, talking'} ] }
     ]
   },
 
@@ -281,6 +596,8 @@ var DATA={
     chart:{ win:['08:00','09:00'], stepMax:30, hrMin:65, hrMax:130, seed:5, nowear:['08:00','08:22'],
       stepBouts:[{s:'08:25',e:'08:39',rate:19,jit:4},{s:'08:52',e:'08:56',rate:21,jit:4}],
       hrKeys:[['08:00',70],['08:15',72],['08:24',76],['08:26',96],['08:33',110],['08:39',102],['08:44',90],['08:52',94],['08:55',114],['08:57',104],['09:00',96]],
+      phone:[{s:'08:16',e:'08:19'},{s:'08:33',e:'08:34'},{s:'08:37',e:'08:38'},{s:'08:42',e:'08:43'},{s:'08:46',e:'08:47'},{s:'08:49',e:'08:50'},{s:'08:51',e:'08:52'},{s:'08:53',e:'08:54'}],
+      ambient:[['08:00','silence'],['08:05','silence'],['08:10','silence'],['08:15','silence'],['08:20','silence'],['08:25','speech'],['08:30','speech'],['08:35','rooster?'],['08:40','footsteps'],['08:45','indoor'],['08:50','speech'],['08:55','footsteps'],['09:00','insect']],
       callout:{ to:'08:31', lines:['[GLOSS]: sustained steps and rising','heart rate indicate walking —','the participant left home.'] } },
     tracks:[
       { label:'GLOSS4HAR reconstructed timeline', segs:[ {s:'08:00',e:'08:15',label:'sleeping'}, {s:'08:15',e:'08:25',label:'getting ready, phone'}, {s:'08:25',e:'08:40',label:'walking',fixed:true}, {s:'08:40',e:'09:00',label:'riding bus'} ] }
@@ -299,28 +616,32 @@ function genBars(bouts,stepMax){ var bars=[]; (bouts||[]).forEach(function(bt){ 
   for(var m=Math.floor(s);m<e-1e-6;m+=1){ var v=Math.max(3, Math.min(stepMax, bt.rate+(rnd()-0.5)*(bt.jit||0)*2)); bars.push({s:m,e:Math.min(m+1,e),v:v}); } }); return bars; }
 
 /* ---------- paper-style chart ---------- */
+function micIcon(cx,cy){ return '<g class="mic" transform="translate('+(cx-4)+','+(cy-9)+')">'
+  +'<rect x="2" y="0" width="4" height="7" rx="2"/>'
+  +'<path d="M0.5 5.2 a3.5 3.5 0 0 0 7 0"/>'
+  +'<line x1="4" y1="8.7" x2="4" y2="11"/>'
+  +'<line x1="2" y1="11" x2="6" y2="11"/></g>'; }
+
 function drawChart(task, showTracks){
   var d=DATA[task], ch=d.chart, a=toMin(ch.win[0]), b=toMin(ch.win[1]), span=b-a;
-  var W=1000, padL=54, padR=58, chartTop=20, chartBottom=196;
+  var W=1000, padL=56, padR=58, chartTop=20, chartBottom=172;
   var x=function(t){ return padL+((t-a)/span)*(W-padL-padR); };
   var stepMax=ch.stepMax, hrMin=ch.hrMin, hrMax=ch.hrMax;
   var yS=function(v){ return chartBottom-(v/stepMax)*(chartBottom-chartTop); };
   var yH=function(v){ return chartBottom-((v-hrMin)/(hrMax-hrMin))*(chartBottom-chartTop); };
+  var phoneY=182, phoneH=11, ambY=208, ambBottom=256;
   var tracks = showTracks ? (d.tracks||[]) : [];
-  var trackY0=224, rowH=66, boxH=48;
-  var gridBottom = tracks.length ? (trackY0+(tracks.length-1)*rowH+boxH) : chartBottom;
-  var timeY = gridBottom+18, svgH=timeY+8, g='';
+  var trackY0=272, rowH=66, boxH=48;
+  var gridBottom = tracks.length ? (trackY0+(tracks.length-1)*rowH+boxH) : ambBottom;
+  var timeY=gridBottom+18, svgH=timeY+8, g='';
   g+='<defs><marker id="cah" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="var(--ink)"/></marker></defs>';
-  // gridlines + time labels
   var g0=Math.ceil(a/5)*5;
   for(var m=g0;m<=b+1e-6;m+=5){ var xx=x(m);
     g+='<line class="grid" x1="'+xx+'" y1="'+chartTop+'" x2="'+xx+'" y2="'+gridBottom+'"/>';
     g+='<text class="tick" x="'+xx+'" y="'+timeY+'" text-anchor="middle">'+hhmm(m)+'</text>'; }
-  // watch-off shading
   if(ch.nowear){ var nx0=x(toMin(ch.nowear[0])),nx1=x(toMin(ch.nowear[1]));
     g+='<rect class="nowear" x="'+nx0+'" y="'+chartTop+'" width="'+(nx1-nx0)+'" height="'+(chartBottom-chartTop)+'"/>';
     g+='<text class="axlabel" x="'+(nx0+4)+'" y="'+(chartTop+12)+'">watch off</text>'; }
-  // axes
   g+='<line class="axis" x1="'+padL+'" y1="'+chartTop+'" x2="'+padL+'" y2="'+chartBottom+'"/>';
   g+='<line class="axis" x1="'+padL+'" y1="'+chartBottom+'" x2="'+(W-padR)+'" y2="'+chartBottom+'"/>';
   [0,10,20].forEach(function(v){ g+='<text class="tick" x="'+(padL-6)+'" y="'+(yS(v)+4)+'" text-anchor="end">'+v+'</text>'; });
@@ -328,23 +649,30 @@ function drawChart(task, showTracks){
   g+='<line class="axis" x1="'+(W-padR)+'" y1="'+chartTop+'" x2="'+(W-padR)+'" y2="'+chartBottom+'"/>';
   [80,100,120].forEach(function(v){ if(v>=hrMin&&v<=hrMax) g+='<text class="tick" x="'+(W-padR+6)+'" y="'+(yH(v)+4)+'" text-anchor="start">'+v+'</text>'; });
   g+='<text class="axlabel" transform="translate('+(W-14)+','+((chartTop+chartBottom)/2)+') rotate(90)" text-anchor="middle">heart rate (BPM)</text>';
-  // step bars
   genBars(ch.stepBouts,stepMax).forEach(function(br){ var x0=x(br.s),x1=x(br.e); g+='<rect class="bar" x="'+(x0+1)+'" y="'+yS(br.v)+'" width="'+Math.max(x1-x0-2,2)+'" height="'+(chartBottom-yS(br.v))+'"/>'; });
-  // HR line + dots
   var hr=genHR(a,b, ch.hrKeys.map(function(k){return {t:toMin(k[0]),v:k[1]};}), ch.seed);
   g+='<polyline class="hr" points="'+hr.map(function(p){return x(p.t)+','+yH(p.v);}).join(' ')+'"/>';
   for(var i=0;i<hr.length;i+=3){ g+='<circle class="hrdot" cx="'+x(hr[i].t)+'" cy="'+yH(hr[i].v)+'" r="1.4"/>'; }
-  // legend
   var lx=W-padR-208, ly=chartTop+4;
   g+='<rect class="bar" x="'+lx+'" y="'+ly+'" width="14" height="10"/><text class="legend-t" x="'+(lx+20)+'" y="'+(ly+9)+'">Steps</text>';
   g+='<line class="hr" x1="'+(lx+82)+'" y1="'+(ly+5)+'" x2="'+(lx+106)+'" y2="'+(ly+5)+'"/><circle class="hrdot" cx="'+(lx+94)+'" cy="'+(ly+5)+'" r="1.5"/><text class="legend-t" x="'+(lx+112)+'" y="'+(ly+9)+'">Heart rate</text>';
-  // callout
   if(ch.callout){ var co=ch.callout, bx=padL+56, by=chartTop+2, bw=304, lines=co.lines, bh=8+lines.length*15;
     g+='<rect class="co-box" x="'+bx+'" y="'+by+'" width="'+bw+'" height="'+bh+'" rx="5"/>';
     lines.forEach(function(ln,ix){ g+='<text class="co-text" x="'+(bx+10)+'" y="'+(by+16+ix*15)+'">'+ln+'</text>'; });
     var ax=x(toMin(co.to)), ayTop=by+bh, ayEnd=chartBottom-6;
     g+='<path class="co-arrow" d="M'+(bx+bw*0.5)+','+ayTop+' Q'+ax+','+((ayTop+ayEnd)/2)+' '+ax+','+ayEnd+'" marker-end="url(#cah)"/>'; }
-  // tracks
+  // phone-use strip (filled = in use)
+  g+='<text class="axlabel" x="'+(padL-8)+'" y="'+(phoneY+phoneH-2)+'" text-anchor="end">phone</text>';
+  g+='<rect class="phone-track" x="'+x(a)+'" y="'+phoneY+'" width="'+(x(b)-x(a))+'" height="'+phoneH+'"/>';
+  (ch.phone||[]).forEach(function(p){ var x0=x(toMin(p.s)),x1=x(toMin(p.e)); g+='<rect class="phone-on" x="'+x0+'" y="'+phoneY+'" width="'+Math.max(x1-x0,2)+'" height="'+phoneH+'"/>'; });
+  // ambient-noise samples (mic every 5 min; label when it changes)
+  g+='<text class="axlabel" x="'+(padL-8)+'" y="'+(ambY+3)+'" text-anchor="end">ambient</text>';
+  var prev=null;
+  (ch.ambient||[]).forEach(function(sp){ var cx=x(toMin(sp[0])), lab=sp[1];
+    g+=micIcon(cx,ambY);
+    if(lab!==prev){ g+='<text class="amb-lab" transform="rotate(35 '+cx+' '+(ambY+14)+')" x="'+cx+'" y="'+(ambY+14)+'" text-anchor="start">'+lab+'</text>'; }
+    prev=lab; });
+  // before/after tracks
   tracks.forEach(function(tr,ti){ var ty=trackY0+ti*rowH;
     g+='<text class="trk-lab" x="'+padL+'" y="'+(ty-6)+'">'+tr.label+'</text>';
     tr.segs.forEach(function(sg){ var x0=x(toMin(sg.s)),x1=x(toMin(sg.e));
@@ -353,7 +681,6 @@ function drawChart(task, showTracks){
       ls.forEach(function(ln,ix){ g+='<text class="trk-t" x="'+((x0+x1)/2)+'" y="'+(sy+ix*14)+'" text-anchor="middle">'+ln+'</text>'; }); }); });
   return '<div class="panelbox"><h4>sensor evidence the agents pulled'+(showTracks?' — before / after':'')+'</h4><svg class="chart" viewBox="0 0 '+W+' '+svgH+'" preserveAspectRatio="xMidYMid meet" role="img" aria-label="sensor chart">'+g+'</svg></div>';
 }
-
 /* ============================================================
    ARCHITECTURE FIGURE
    ============================================================ */
@@ -381,42 +708,43 @@ var NODES=[
   {io:'?',node:'query',label:'Query',x:26,y:56,w:124,h:100},
   {node:'plan',cls:'t-white',x:195,y:66,w:190,h:68,label:'Action Plan<br/>Generation Agent'},
   {node:'next',cls:'t-white',x:520,y:66,w:170,h:68,label:'Next Step<br/>Agent'},
-  {node:'seek',cls:'t-blue',x:912,y:74,w:184,h:62,label:'Information<br/>Seeking Agent'},
+  {node:'seek',cls:'t-blue',x:912,y:69,w:184,h:62,label:'Information<br/>Seeking Agent'},
   {node:'process',cls:'t-blue',x:878,y:196,w:178,h:70,label:'Database / Model<br/>Manager Agent'},
   {node:'process',cls:'t-blue',x:1072,y:196,w:116,h:70,label:'Code<br/>Generation'},
-  {node:'sense',cls:'t-lblue',x:516,y:246,w:188,h:62,label:'Global<br/>Sensemaking Agent'},
-  {node:'sense',cls:'t-lblue',x:742,y:356,w:188,h:70,label:'Local<br/>Sensemaking Agent'},
+  {node:'sense',cls:'t-lblue',x:500,y:246,w:188,h:62,label:'Global<br/>Sensemaking Agent'},
+  {node:'sense',cls:'t-lblue',x:636,y:352,w:188,h:70,label:'Local<br/>Sensemaking Agent'},
   {node:'present',cls:'t-white',x:195,y:356,w:186,h:70,label:'Presentation<br/>Agent'},
   {io:'\u2713',node:'answer',label:'Answer',x:26,y:350,w:124,h:100}
 ];
 var ARROWS=[
   {d:'M150,106 H191'},
   {d:'M385,100 H516'},
-  {d:'M690,92 L845,92 L845,105 L908,105'},
-  {d:'M1004,136 V196'},
+  {d:'M690,100 H908'},
+  {d:'M1004,131 V196'},
   {d:'M1056,231 H1072', both:true},
-  {d:'M958,266 L958,391 L934,391'},
-  {d:'M836,356 L836,332 L610,332 L610,310'},
-  {d:'M610,246 V136'},
-  {d:'M524,134 L470,134 L470,342 L288,342 L288,354'},
+  {d:'M940,266 L940,387 L828,387'},
+  {d:'M636,387 L594,387 L594,310'},
+  {d:'M600,246 V136'},
+  {d:'M524,134 L440,134 L440,344 L288,344 L288,354'},
   {d:'M195,391 H154'},
-  {d:'M940,266 V330', both:true, dash:true},
-  {d:'M1120,266 V330', both:true, dash:true}
+  {d:'M970,266 V446', both:true, dash:true},
+  {d:'M1120,266 V446', both:true, dash:true}
 ];
 function foTag(x,y,w,hh,inner){ return '<foreignObject x="'+x+'" y="'+y+'" width="'+w+'" height="'+hh+'"><div xmlns="http://www.w3.org/1999/xhtml" style="width:100%;height:100%">'+inner+'</div></foreignObject>'; }
 function foNode(n){ var inner = n.io ? '<div class="anode io clk" data-node="'+n.node+'"><div class="bub">'+n.io+'</div><span>'+n.label+'</span></div>' : '<div class="anode clk '+(n.cls||'')+'" data-node="'+n.node+'">'+n.label+'</div>'; return foTag(n.x,n.y,n.w,n.h,inner); }
 function foStreams(){ var items=[['location',IC.loc],['phone use',IC.phone],['steps',IC.steps],['heart rate',IC.hr],['ambient sound',IC.sound],['&micro;EMA responses',IC.uema],['skin temp.',IC.temp],['wrist movement',IC.wrist]], gg='';
   items.forEach(function(it){ gg+='<div class="sc">'+it[1]+'<span>'+it[0]+'</span></div>'; });
-  return foTag(866,332,329,278,'<div class="streams"><div class="stream-grid">'+gg+'</div><div class="stream-title">Sensor Streams</div></div>'); }
+  return foTag(870,452,324,198,'<div class="streams"><div class="stream-grid">'+gg+'</div><div class="stream-title">Sensor Streams</div></div>'); }
 function foShared(){ var inner='<div class="shared"><h5>Components shared by all LLM agents</h5><div class="two"><div><b>Memory</b> — all the data retrieved so far via information requests, used to build up an understanding of the query.</div><div><b>Understanding</b> — logs of the answer so far, including what additional data is still needed to complete the response.</div></div></div>';
   return '<rect class="cont" x="40" y="466" width="760" height="150" rx="12" style="stroke-dasharray:none;opacity:1"/>'+foTag(48,474,744,134,inner); }
 function buildArch(){
-  var s='<svg viewBox="0 0 1210 640" preserveAspectRatio="xMidYMid meet" role="img" aria-label="GLOSS4HAR agent architecture">';
+  var s='<svg viewBox="0 0 1210 672" preserveAspectRatio="xMidYMid meet" role="img" aria-label="GLOSS4HAR agent architecture">';
   s+='<defs><marker id="ah" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto-start-reverse"><path d="M0,0 L7,3 L0,6 Z" fill="var(--muted)"/></marker></defs>';
-  s+='<rect class="cont" x="855" y="44" width="340" height="240" rx="18"/>';
-  s+='<text class="phase-t" x="1025" y="36" text-anchor="middle">Information Seeking phase</text>';
-  s+='<rect class="cont" x="855" y="324" width="345" height="290" rx="18"/>';
-  s+='<text class="phase-t" x="600" y="452" text-anchor="middle">Sensemaking phase</text>';
+  s+='<rect class="cont" x="862" y="52" width="340" height="236" rx="18"/>';
+  s+='<text class="phase-t" x="1032" y="44" text-anchor="middle">Information Seeking phase</text>';
+  s+='<rect class="cont" x="488" y="236" width="348" height="200" rx="18"/>';
+  s+='<text class="phase-t" x="662" y="458" text-anchor="middle">Sensemaking phase</text>';
+  s+='<rect class="cont" x="862" y="446" width="340" height="210" rx="18"/>';
   ARROWS.forEach(function(a){ var m='marker-end="url(#ah)"'; if(a.both) m+=' marker-start="url(#ah)"'; s+='<path class="flow'+(a.dash?' dash':'')+'" d="'+a.d+'" '+m+'/>'; });
   NODES.forEach(function(n){ s+=foNode(n); });
   s+=foStreams(); s+=foShared(); s+='</svg>';
@@ -478,6 +806,9 @@ function initArch(){
   setMode('correction');
 }
 initArch();
+
+var cbtn=document.getElementById('citeCopy');
+if(cbtn){ cbtn.addEventListener('click',function(){ navigator.clipboard.writeText(document.getElementById('bib').textContent).then(function(){ var prev=cbtn.textContent; cbtn.classList.add('copied'); cbtn.textContent='copied \u2713'; setTimeout(function(){ cbtn.classList.remove('copied'); cbtn.textContent=prev; },1400); }); }); }
 </script>
 </body>
 </html>
