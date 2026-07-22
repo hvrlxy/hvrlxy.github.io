@@ -162,9 +162,24 @@
   }
   .lnk:hover{ color:var(--str); border-color:var(--str); }
   .lnk.copied{ color:var(--num); border-color:var(--num); }
+  .lnk.demo{ color:var(--str); border-color:var(--str); background:var(--sel); font-weight:600; }
+  .lnk.demo:hover{ color:var(--fn); border-color:var(--fn); }
   .lnk svg{ width:12px; height:12px; stroke:currentColor; stroke-width:1.8; fill:none; }
   .src-slot .panel{ margin-top:12px; }
   .empty{ font-family:'JetBrains Mono',monospace; font-size:.85rem; color:var(--muted); padding:16px 0; line-height:1.9; }
+
+  .star{ color:var(--num); }
+  .news-item{ display:flex; gap:16px; padding:11px 0; border-top:1px solid var(--line); }
+  .news-item:first-child{ border-top:none; }
+  .news-date{ font-family:'JetBrains Mono',monospace; font-size:.76rem; color:var(--num); white-space:nowrap; flex:0 0 88px; padding-top:1px; }
+  .news-text{ font-size:.95rem; color:var(--ink); line-height:1.5; }
+  .news-ico{ font-size:1.05rem; margin-right:3px; }
+  #newsList{ max-height:200px; overflow-y:auto; padding-right:8px; scrollbar-width:thin; scrollbar-color:var(--line) transparent; }
+  #newsList::-webkit-scrollbar{ width:8px; }
+  #newsList::-webkit-scrollbar-thumb{ background:var(--line); border-radius:4px; }
+  #newsList::-webkit-scrollbar-thumb:hover{ background:var(--muted); }
+  #newsList::-webkit-scrollbar-track{ background:transparent; }
+  @media(max-width:520px){ .news-item{ flex-direction:column; gap:3px; } .news-date{ flex-basis:auto; } }
 
   footer{
     max-width:940px; margin:18px auto 0; padding:0 6px;
@@ -181,7 +196,7 @@
     <span class="fname">ha_le.js<span class="ind"> &#9679;</span></span>
     <nav>
       <a href="#about">about</a>
-      <a href="#awards">awards</a>
+      <a href="#news">news</a>
       <a href="#publications">publications</a>
     </nav>
     <button class="theme-btn" id="themeBtn" aria-label="Toggle color theme">day</button>
@@ -243,21 +258,15 @@
         I received my B.A. in Mathematics and Computer Science from Gustavus Adolphus College in 2022,
         where I did research with Prof. Louis Yu, Jillian Downey, and Jacob Siehler.
       </p>
+      <p>
+        For my work I've received the <a href="https://machinelearning.apple.com/updates/apple-scholars-aiml-2026" target="_blank" rel="noopener"><span class="star">&#9733;</span>&nbsp;Apple AI/ML PhD Fellowship (2026)</a> and the <a href="https://academic-honors.provost.northeastern.edu/graduate-awards/outstanding-graduate-student-award-for-humanics/" target="_blank" rel="noopener"><span class="star">&#9733;</span>&nbsp;Northeastern University's Outstanding PhD Student Award in Humanics</a>.
+      </p>
     </section>
 
-    <!-- ===== AWARDS ===== -->
-    <section id="awards">
-      <p class="comment"><span class="slash">//</span> <b>awards</b> <span class="lead">&mdash; honors &amp; fellowships</span></p>
-      <div class="award-list">
-        <a class="award-card" href="https://machinelearning.apple.com/updates/apple-scholars-aiml-2026" target="_blank" rel="noopener">
-          <span class="award-name">Apple AI/ML PhD Fellowship</span>
-          <span class="award-meta">Apple Machine Learning &middot; 2026</span>
-        </a>
-        <a class="award-card" href="https://academic-honors.provost.northeastern.edu/graduate-awards/outstanding-graduate-student-award-for-humanics/" target="_blank" rel="noopener">
-          <span class="award-name">Outstanding PhD Student Award in Humanics</span>
-          <span class="award-meta">Northeastern University</span>
-        </a>
-      </div>
+    <!-- ===== NEWS ===== -->
+    <section id="news">
+      <p class="comment"><span class="slash">//</span> <b>news</b></p>
+      <div id="newsList"><p class="empty">loading news&hellip;</p></div>
     </section>
 
     <!-- ===== PUBLICATIONS ===== -->
@@ -279,6 +288,7 @@
 </footer>
 
 <!-- Publications live in publications.js — edit that file to add papers. -->
+<script src="news.js"></script>
 <script src="publications.js"></script>
 
 <script>
@@ -351,9 +361,10 @@ const ICON = {
   pdf:'<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>',
   code:'<svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
   slides:'<svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8"/><path d="M12 16v4"/></svg>',
-  poster:'<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>'
+  poster:'<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>',
+  demo:'<svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18"/><path d="M10 12l4 2-4 2z"/></svg>'
 };
-const LABEL = { url:'link', pdf:'pdf', code:'code', slides:'slides', poster:'poster' };
+const LABEL = { url:'link', pdf:'pdf', code:'code', slides:'slides', poster:'poster', demo:'blog' };
 
 let ALL = [], activeYear = 'all';
 const pubsEl = document.getElementById('pubs');
@@ -383,6 +394,7 @@ function render(){
     const f = e.fields;
     if (f.year !== lastYear){ html += '<div class="yr">' + esc(f.year) + '</div>'; lastYear = f.year; }
     let links = '';
+    if (f.demo) links += '<a class="lnk demo" href="' + f.demo + '">' + ICON.demo + LABEL.demo + '</a>';
     ['url','pdf','code','slides','poster'].forEach(t => {
       if (f[t]) links += '<a class="lnk" href="' + f[t] + '" target="_blank" rel="noopener">' + ICON[t] + LABEL[t] + '</a>';
     });
@@ -432,6 +444,16 @@ function boot(raw){
 }
 
 searchEl.addEventListener('input', render);
+
+function renderNews(){
+  const el = document.getElementById('newsList'); if (!el) return;
+  const items = window.NEWS || [];
+  if (!items.length){ el.innerHTML = '<p class="empty">// no news yet</p>'; return; }
+  el.innerHTML = items.map(function(n){
+    return '<div class="news-item"><div class="news-date">' + (n.date||'') + '</div><div class="news-text">' + (n.icon ? '<span class="news-ico">' + n.icon + '</span> ' : '') + (n.text||'') + '</div></div>';
+  }).join('');
+}
+renderNews();
 
 if (window.BIBTEX){
   boot(window.BIBTEX);
