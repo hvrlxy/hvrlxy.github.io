@@ -24,7 +24,7 @@
      venue     = {IMWUT '26},
      venuefull = {Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies},
      pdf       = {pdfs/GLOSS4HAR_imwut26.pdf},
-     demo      = {gloss4har.html}
+     demo      = {blogs/gloss4har.html}
    }
    
    @inproceedings{choube2026daimon,
